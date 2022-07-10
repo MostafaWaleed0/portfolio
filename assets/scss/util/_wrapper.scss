@@ -1,0 +1,11 @@
+@use "../abstracts/function" as *;
+
+.wrapper {
+  width: min(100% - 2rem, rem(1150));
+  margin-inline: auto;
+}
+
+.wrapper-md {
+  width: min(100% - 2rem, rem(970));
+  margin-inline: auto;
+}

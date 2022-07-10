@@ -1,0 +1,58 @@
+@use "../abstracts/" as *;
+@use "../abstracts/tokens/tokens" as *;
+
+.site-head {
+  padding-block: var(--space-300);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__brand {
+    letter-spacing: 0.1em;
+    text-decoration: none;
+
+    em {
+      font-style: normal;
+    }
+
+    &:hover,
+    &:focus {
+      color: unset;
+    }
+  }
+
+  &__navigation {
+    $space: var(--space-100);
+    display: flex;
+    padding: $space;
+    overflow: auto;
+
+    @include breakpoint-down(small) {
+      order: 1;
+      width: 100%;
+      padding-block-start: var(--space-200);
+      padding-inline-start: calc($space * -1);
+    }
+  }
+
+  &__toggle-theme {
+    user-select: none;
+    #theme-toggle + label {
+      display: inline-block;
+      cursor: pointer;
+      user-select: none;
+      height: min(15vw, rem(90));
+      aspect-ratio: 1 / 1;
+      border-radius: $border-radius-rounded-full;
+    }
+
+    #theme-toggle + label {
+      box-shadow: inset -15px -13px 3px -2px $toggle-moon;
+      background-color: $toggle-sun;
+    }
+  }
+}

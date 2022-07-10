@@ -1,0 +1,18 @@
+@use "../abstracts/function" as *;
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-500);
+  margin: 0;
+
+  > li {
+    margin: rem(2.5) rem(8);
+    text-transform: capitalize;
+
+    a:not(:hover) {
+      text-decoration: none;
+    }
+  }
+}

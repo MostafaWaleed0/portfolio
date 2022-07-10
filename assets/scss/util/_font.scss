@@ -1,0 +1,69 @@
+@use "../abstracts/base/type-scale" as *;
+@use "../abstracts/tokens/tokens" as *;
+
+//////////////////////////////////////////// font-size
+
+@each $prop, $value in $type-scale {
+  .fs-#{$prop} {
+    font-size: var(--fs-#{$prop});
+  }
+}
+
+//////////////////////////////////////////// font-weight
+
+.weight-base {
+  font-weight: $font-weight-body;
+}
+
+.weight-medium {
+  font-weight: $font-weight-medium;
+}
+
+.weight-bold {
+  font-weight: $font-weight-bold;
+}
+
+//////////////////////////////////////////// font-family
+
+.font-base {
+  font-family: $font-family-body;
+}
+
+.font-serif {
+  font-family: $font-family-serif;
+}
+
+.font-mono {
+  font-family: $font-family-mono;
+}
+
+//////////////////////////////////////////// text-align
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+//////////////////////////////////////////// text-indent
+
+.text-indent-2 {
+  text-indent: $text-indent-2;
+}
+
+//////////////////////////////////////////// text-transform
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+//////////////////////////////////////////// font-style
+
+.style-normal {
+  font-style: normal;
+}

@@ -1,0 +1,45 @@
+@use "../abstracts/" as *;
+@use "../abstracts/tokens/tokens" as *;
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: $button-surface-default;
+  color: $button-text-default;
+  padding: $button-padding-default;
+  outline: 0;
+  border: 0;
+  border-radius: $button-border-radius;
+  text-transform: capitalize;
+
+  &:hover,
+  &:focus {
+    position: relative;
+    color: $button-text-default;
+    background-image: linear-gradient(
+      238deg,
+      red,
+      #ff8000,
+      #ff0,
+      #80ff00,
+      #0f0,
+      #00ff80,
+      #0ff,
+      #0080ff,
+      #00f,
+      #8000ff,
+      #ff0080
+    );
+    background-size: 1200% 1200%;
+    background-position: 50% 80%;
+    animation: rainbow 4s ease-out alternate infinite;
+    transform: scale(1.05);
+  }
+}

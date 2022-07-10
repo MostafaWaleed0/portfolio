@@ -1,0 +1,11 @@
+@use "../abstracts/base/spacing" as *;
+
+.flow > *:where(:not(:first-child)) {
+  margin-top: var(--flow-space, var(--space-300));
+}
+
+@each $prop, $value in $spaces {
+  .flow-space-#{$prop} {
+    --flow-space: #{$value} !important;
+  }
+}

@@ -1,0 +1,13 @@
+@use "../abstracts/" as *;
+@use "../abstracts/tokens/tokens" as *;
+
+.site-foot {
+  --region-padding: var(--space-600);
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-inline: auto;
+  }
+}

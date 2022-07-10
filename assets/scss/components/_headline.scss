@@ -1,0 +1,26 @@
+.headline {
+  & + * {
+    --flow-space: var(--space-700);
+  }
+
+  p {
+    max-width: 68ch;
+  }
+
+  &[data-align="center"] {
+    text-align: center;
+
+    h1,
+    h2 {
+      margin-inline: auto;
+    }
+
+    p {
+      margin-inline: auto;
+    }
+  }
+
+  &[data-headline-style="wide"] :where(h1, h2) {
+    max-width: 25ch;
+  }
+}

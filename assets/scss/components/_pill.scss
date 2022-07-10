@@ -1,0 +1,12 @@
+@use "../abstracts/" as *;
+@use "../abstracts/tokens/tokens" as *;
+
+.pill {
+  font-size: $font-size-300;
+  font-weight: $font-weight-500;
+  white-space: nowrap;
+  // margin-inline: var(--space-50);
+  padding-inline: var(--space-50);
+  text-transform: capitalize;
+  border: 2px solid $color-border-default;
+}

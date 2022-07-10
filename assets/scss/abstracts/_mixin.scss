@@ -1,0 +1,38 @@
+@mixin position(
+  $pos,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null,
+  $z-index: null
+) {
+  position: $pos;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  z-index: $z-index;
+}
+
+@mixin pseudo(
+  $loc: before,
+  $content: '',
+  $pos: absolute,
+  $top: 0,
+  $right: 0,
+  $bottom: 0,
+  $left: 0,
+  $z-index: 0
+) {
+  position: relative;
+  &::#{$loc} {
+    content: $content;
+    position: $pos;
+    top: $top;
+    bottom: $bottom;
+    right: $right;
+    left: $left;
+    z-index: $z-index;
+    @content;
+  }
+}

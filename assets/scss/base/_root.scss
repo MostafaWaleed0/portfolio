@@ -1,0 +1,29 @@
+@use "../abstracts/" as *;
+@use "../abstracts/tokens/tokens" as *;
+
+:root {
+  // Colors
+  @each $color, $shade in $active-theme {
+    @each $prop, $value in $shade {
+      --clr-#{$color}-#{$prop}: #{$value};
+    }
+  }
+  // Font Size
+  @each $prop, $value in $type-scale {
+    --fs-#{$prop}: #{$value};
+  }
+  // Spacing
+  @each $prop, $value in $spaces {
+    --space-#{$prop}: #{$value};
+  }
+}
+
+html[data-theme="dark"] {
+  @media (prefers-color-scheme: dark) {
+    @each $color, $shade in $dark-theme {
+      @each $prop, $value in $shade {
+        --clr-#{$color}-#{$prop}: #{$value};
+      }
+    }
+  }
+}

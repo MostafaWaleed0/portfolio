@@ -1,0 +1,29 @@
+.auto-grid {
+  & > * {
+    max-width: 25rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  & > * + * {
+    margin-top: var(--space-400);
+  }
+
+  @supports (display: grid) {
+    & {
+      display: grid;
+      justify-items: center;
+      justify-content: center;
+      grid-template-columns: repeat(
+        auto-fill,
+        minmax(var(--auto-grid-min-size, 21rem), 35rem)
+      );
+      grid-gap: var(--space-400);
+    }
+
+    & > * {
+      max-width: unset;
+      margin: unset;
+    }
+  }
+}

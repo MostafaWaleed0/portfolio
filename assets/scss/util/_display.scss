@@ -1,0 +1,22 @@
+@use '../abstracts/breakpoint' as *;
+
+.block {
+  display: block;
+}
+
+.flex-space-column-responsive {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include breakpoint-down(small) {
+    flex-direction: column;
+  }
+}
+
+[class*='flex-wrap'] {
+  flex-wrap: wrap;
+}
+
+.flex-row {
+  display: flex;
+}

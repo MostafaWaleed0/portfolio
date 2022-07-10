@@ -1,0 +1,83 @@
+@use '../abstracts/' as *;
+@use '../abstracts/tokens/tokens' as *;
+
+[data-layout='texture'] {
+  .card {
+    --flow-space: var(--space-500);
+    padding: var(--space-600);
+    max-width: rem(420);
+    border-radius: $border-radius-2;
+    box-shadow: 0 0 2em -0.25em $primary-400;
+  }
+}
+
+[data-layout='projects'] {
+  .card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: rem(350);
+    aspect-ratio: 1 / 1;
+    border-radius: $border-radius-1;
+    border: 2px solid $color-border-primary-600;
+    overflow: hidden;
+
+    &__focusable:where(:hover) > .card__github,
+    .card__github:where(:focus),
+    &__focusable:where(:hover) > .card__designer,
+    .card__designer:where(:focus) {
+      transition: all 300ms linear;
+      transform: translate(0, -50%);
+    }
+
+    &__focusable:where(:hover) > .card__technologies > * {
+      transform: translate(0, 150%);
+      transition: all 300ms linear;
+    }
+
+    &__technologies {
+      display: flex;
+      @include position(absolute, $top: 0, $right: 50%);
+      transform: translate(50%, -100%);
+
+      & > * {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: var(--space-50);
+        margin: var(--space-50);
+        width: rem(60);
+        aspect-ratio: 1 / 1;
+        border-radius: $border-radius-rounded-full;
+        background-color: $color-surface-inverse-2;
+      }
+    }
+
+    @for $i from 1 through 4 {
+      &__focusable:where(:hover, :focus)
+        > .card__technologies
+        > *:nth-of-type(#{$i}) {
+        transition-delay: calc($i * 70ms);
+      }
+    }
+
+    &__logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__github {
+      @include position(absolute, $left: 0, $top: 50%);
+      transform: translate(-100%, -50%);
+      padding: var(--space-100);
+    }
+
+    &__designer {
+      @include position(absolute, $right: 0, $top: 50%);
+      transform: translate(100%, -50%);
+      padding: var(--space-100);
+    }
+  }
+}

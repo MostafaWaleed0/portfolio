@@ -1,0 +1,53 @@
+@use '../abstracts/tokens/tokens' as *;
+
+.text-default {
+  color: $color-text-body;
+}
+
+.text-inverse {
+  color: $color-text-inverse;
+}
+
+.text-primary-600 {
+  color: $color-text-primary-600;
+}
+
+.text-primary-400 {
+  color: $color-text-primary-400;
+}
+
+.text-warring {
+  color: $color-text-error;
+}
+
+.fill-default {
+  fill: $color-text-body;
+}
+
+.fill-inverse {
+  fill: $color-text-inverse;
+}
+
+.stroke-default {
+  stroke: $color-text-body;
+}
+
+.stroke-inverse {
+  stroke: $color-text-inverse;
+}
+
+.bg-default {
+  background-color: $color-page-background;
+}
+
+.bg-inverse {
+  background-color: $color-surface-inverse;
+}
+
+.bg-primary-600 {
+  background-color: $color-surface-primary-600;
+}
+
+.bg-primary-400 {
+  background-color: $color-surface-primary-400;
+}

@@ -1,0 +1,44 @@
+@use "../abstracts/" as *;
+@use "../abstracts/tokens/tokens" as *;
+
+form {
+  --flow-space: var(--space-600);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  label {
+    font-weight: $font-weight-700;
+    font-family: $font-family-mono;
+    text-transform: uppercase;
+    margin-block-end: var(--space-100);
+
+    &::after {
+      content: "";
+      white-space: pre;
+    }
+  }
+
+  input,
+  textarea {
+    border: 0;
+    border-bottom: 2px solid $color-border-primary-600;
+    padding: var(--space-100) var(--space-200);
+    background-color: transparent;
+    line-height: 1;
+    width: 100%;
+    max-width: 100%;
+
+    & + * {
+      font-size: $font-size-200;
+      font-weight: $font-weight-bold;
+      margin-block-start: var(--space-200);
+      color: $color-text-error;
+      letter-spacing: 0.1em;
+    }
+  }
+
+  textarea {
+    border: 2px solid $color-border-primary-600;
+  }
+}

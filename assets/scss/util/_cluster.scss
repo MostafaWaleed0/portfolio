@@ -1,0 +1,25 @@
+@use "../abstracts/breakpoint" as *;
+
+.cluster {
+  --flow-space: var(--space-700);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+
+  & > * {
+    margin: var(--space-50);
+  }
+
+  @include breakpoint-down(medium) {
+    justify-content: flex-start;
+
+    > [href] {
+      margin-inline: auto;
+    }
+  }
+
+  &[data-align="start"] {
+    justify-content: start;
+  }
+}

@@ -1,0 +1,38 @@
+@use '../abstracts/base/spacing' as *;
+
+$sides: inline, inline-start, inline-end, block, block-start, block-end;
+@each $space, $space-value in $spaces {
+  .gap-#{$space} {
+    gap: $space-value;
+  }
+
+  .padding {
+    &-#{$space} {
+      padding: $space-value;
+    }
+    @each $side in $sides {
+      &-#{$side}-#{$space} {
+        padding-#{$side}: $space-value;
+      }
+    }
+  }
+
+  .margin {
+    &-#{$space} {
+      margin: $space-value;
+    }
+    @each $side in $sides {
+      &-#{$side}-#{$space} {
+        margin-#{$side}: $space-value;
+      }
+    }
+  }
+}
+
+.margin-inline-auto {
+  margin-inline: auto;
+}
+
+.margin-auto {
+  margin: auto;
+}

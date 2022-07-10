@@ -1,0 +1,22 @@
+@use "../abstracts/tokens/tokens" as *;
+@use "../abstracts/function" as *;
+
+.square {
+  --flow-space: var(--space-200);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: var(--space-300);
+  border-radius: $border-radius-1;
+  border: 1px solid $color-border-default;
+  text-decoration: none;
+  outline: 0;
+  height: rem(135);
+  aspect-ratio: 1 /1;
+
+  em {
+    font-style: normal;
+    white-space: pre-wrap;
+  }
+}

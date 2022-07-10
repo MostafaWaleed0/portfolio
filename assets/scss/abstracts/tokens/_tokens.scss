@@ -1,0 +1,97 @@
+@use '../base/colors' as *;
+@use '../base/type-scale' as *;
+@use '../function' as *;
+
+$active-theme: $light-theme;
+
+// color tokens
+$toggle-sun: var(--clr-toggle-sun);
+$toggle-moon: var(--clr-toggle-moon);
+$primary-600: var(--clr-primary-600);
+$primary-400: var(--clr-primary-400);
+$neutral-200: var(--clr-neutral-200);
+$neutral-100: var(--clr-neutral-100);
+$neutral-900: var(--clr-neutral-900);
+$red-300: --clr-red-300;
+$red-800: --clr-red-800;
+
+// type tokens
+$font-family-sans: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+  segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
+  sans-serif;
+
+$font-family-serif: Iowan Old Style, Apple Garamond, Baskerville,
+  Times New Roman, Droid Serif, Times, Source Serif Pro, serif,
+  Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+
+$font-family-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+  monospace;
+
+$font-weight-400: 400;
+$font-weight-500: 500;
+$font-weight-700: 700;
+
+// font size tokens
+$font-size-100: var(--fs-100);
+$font-size-200: var(--fs-200);
+$font-size-300: var(--fs-300);
+$font-size-400: var(--fs-400);
+$font-size-500: var(--fs-500);
+$font-size-600: var(--fs-600);
+$font-size-700: var(--fs-700);
+$font-size-800: var(--fs-800);
+$font-size-900: var(--fs-900);
+
+$color-surface-default: $neutral-100;
+$color-surface-inverse: $neutral-200;
+$color-surface-inverse-2: $neutral-900;
+$color-surface-primary-400: $primary-400;
+$color-surface-primary-600: $primary-600;
+
+$color-border-default: $neutral-900;
+$color-border-inverse: $neutral-200;
+$color-border-primary-600: $primary-600;
+$color-outline-global: $neutral-900;
+
+// ====================================
+// ========= contextual tokens ========
+// ====================================
+$font-family-body: $font-family-sans;
+$font-family-heading: $font-family-sans;
+$font-family-logo: $font-family-sans;
+
+$font-weight-body: $font-weight-400;
+$font-weight-heading: $font-weight-700;
+$font-weight-regular: $font-weight-400;
+$font-weight-medium: $font-weight-500;
+$font-weight-bold: $font-weight-700;
+
+$font-size-body: $font-size-400;
+
+$color-page-background: $color-surface-default;
+
+$color-text-body: $neutral-900;
+$color-text-inverse: $neutral-100;
+$color-text-primary-600: $primary-600;
+$color-text-primary-400: $primary-400;
+$color-text-error: var($red-300, var($red-800));
+
+$text-indent-1: 0.625em;
+$text-indent-2: 1em;
+$text-indent-3: 1.875em;
+$text-indent-4: 3em;
+
+$border-radius-0-5: 0.3em;
+$border-radius-1: 0.625em;
+$border-radius-2: 1em;
+$border-radius-3: 1.875em;
+$border-radius-4: 3em;
+$border-radius-rounded-full: 9999px;
+
+// button
+$button-surface-default: $neutral-900;
+$button-text-default: $neutral-100;
+$button-border-radius: $border-radius-1;
+$button-font-size: $font-size-300;
+$button-font-weight: $font-weight-bold;
+$button-padding-default: 0.8em 2em !default;
