@@ -32,7 +32,7 @@ export default function Tools() {
                         <div className="collection-item__title">
                           {tool.title}
                         </div>
-                        <div className="cluster" role="list">
+                        <div className="cluster">
                           {tool.functions?.map(
                             (_function: string, index: number) => {
                               return (

@@ -72,7 +72,7 @@ export default function Home() {
               <div className="box-reflect">
                 <Image
                   alt=""
-                  src="/../public/home-img1.webp"
+                  src="/home-img1.webp"
                   width={410}
                   height={500}
                   priority

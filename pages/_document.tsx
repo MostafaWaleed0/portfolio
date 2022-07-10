@@ -5,6 +5,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <title>MW | Frontend developer</title>
+        <link rel="preload" href="/fonts/fonts.css" media="all" />
         <link rel="icon" type="image/svg" sizes="32x32" href="/mw-logo.svg" />
         <link rel="apple-touch-icon" sizes="180x180" href="/mw-logo.svg" />
         <meta name="supported-color-schemes" content="light dark" />

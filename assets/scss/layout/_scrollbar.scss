@@ -1,0 +1,17 @@
+@use '../abstracts/tokens/tokens' as *;
+@use '../abstracts/' as *;
+
+::-webkit-scrollbar {
+  width: rem(23);
+}
+
+::-webkit-scrollbar-thumb {
+  border: rem(7) solid transparent;
+  background-clip: padding-box;
+  border-radius: 9999px;
+  background-color: $color-surface-primary-400;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: $color-surface-primary-600;
+}

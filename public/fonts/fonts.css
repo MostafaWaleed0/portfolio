@@ -1,7 +1,7 @@
 @font-face {
   font-family: Roboto Mono;
-  src: url(/RobotoMono-Regular.woff2) format("woff2"),
-    url(/RobotoMono-Regular.woff) format("woff");
+  src: url(./RobotoMono-Regular.woff2) format('woff2'),
+    url(./RobotoMono-Regular.woff) format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: Noto;
-  src: url(./Noto.woff2) format("woff2"), url(/Noto.woff) format("woff");
+  src: url(./Noto.woff2) format('woff2'), url(./Noto.woff) format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -17,56 +17,56 @@
 
 @font-face {
   font-family: Suisse Intl;
-  src: url(/SuisseIntl-Thin.woff2) format("woff2"),
-    url(/SuisseIntl-Thin.woff) format("woff");
+  src: url(./SuisseIntl-Thin.woff2) format('woff2'),
+    url(./SuisseIntl-Thin.woff) format('woff');
   font-weight: 100;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: Suisse Intl;
-  src: url(/SuisseIntl-Light.woff2) format("woff2"),
-    url(/SuisseIntl-Light.woff) format("woff");
+  src: url(./SuisseIntl-Light.woff2) format('woff2'),
+    url(./SuisseIntl-Light.woff) format('woff');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: Suisse Intl;
-  src: url(/SuisseIntl.woff2) format("woff2"),
-    url(/SuisseIntl.woff) format("woff");
+  src: url(./SuisseIntl.woff2) format('woff2'),
+    url(./SuisseIntl.woff) format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: Suisse Intl;
-  src: url(/SuisseIntl-Italic.woff2) format("woff2"),
-    url(/SuisseIntl-Italic.woff) format("woff");
+  src: url(./SuisseIntl-Italic.woff2) format('woff2'),
+    url(./SuisseIntl-Italic.woff) format('woff');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: Suisse Intl;
-  src: url(/SuisseIntl-Medium.woff2) format("woff2"),
-    url(/SuisseIntl-Medium.woff) format("woff");
+  src: url(./SuisseIntl-Medium.woff2) format('woff2'),
+    url(./SuisseIntl-Medium.woff) format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: Suisse Intl;
-  src: url(/SuisseIntl-SemiBold.woff2) format("woff2"),
-    url(//SuisseIntl-SemiBold.woff) format("woff");
+  src: url(./SuisseIntl-SemiBold.woff2) format('woff2'),
+    url(./SuisseIntl-SemiBold.woff) format('woff');
   font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: Suisse Intl;
-  src: url(/SuisseIntl-Bold.woff2) format("woff2"),
-    url(/SuisseIntl-Bold.woff) format("woff");
+  src: url(./SuisseIntl-Bold.woff2) format('woff2'),
+    url(./SuisseIntl-Bold.woff) format('woff');
   font-weight: 900;
   font-style: normal;
   font-display: swap;

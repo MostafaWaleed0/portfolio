@@ -1,5 +1,5 @@
-@use "../abstracts/" as *;
-@use "../abstracts/tokens/tokens" as *;
+@use '../abstracts/' as *;
+@use '../abstracts/tokens/tokens' as *;
 
 .site-head {
   padding-block: var(--space-300);
@@ -41,7 +41,11 @@
 
   &__toggle-theme {
     user-select: none;
-    #theme-toggle + label {
+
+    #theme-toggle {
+      border: 0;
+      outline: 0;
+      padding: 0;
       display: inline-block;
       cursor: pointer;
       user-select: none;
@@ -50,7 +54,7 @@
       border-radius: $border-radius-rounded-full;
     }
 
-    #theme-toggle + label {
+    #theme-toggle {
       box-shadow: inset -15px -13px 3px -2px $toggle-moon;
       background-color: $toggle-sun;
     }

@@ -49,18 +49,15 @@ export default function Header() {
             </nav>
           </div>
           <div className="site-head__toggle-theme">
-            <input
-              type="checkbox"
+            <button
               id="theme-toggle"
               onClick={toggleTheme}
-              className="visually-hidden"
               aria-label={
                 theme === 'dark'
                   ? 'Switch to light Theme'
                   : 'Switch to dark Theme'
               }
-            />
-            <label htmlFor="theme-toggle"></label>
+            ></button>
           </div>
         </div>
       </div>
