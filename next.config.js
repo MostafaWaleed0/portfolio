@@ -6,6 +6,8 @@ module.exports = {
   swcMinify: true,
   compress: true,
 
+  mergeDuplicateChunks: true,
+
   experimental: {
     legacyBrowsers: false,
     browsersListForSwc: true,

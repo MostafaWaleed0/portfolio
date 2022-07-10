@@ -48,17 +48,16 @@ export default function Header() {
               </ul>
             </nav>
           </div>
-          <div className="site-head__toggle-theme">
-            <button
-              id="theme-toggle"
-              onClick={toggleTheme}
-              aria-label={
-                theme === 'dark'
-                  ? 'Switch to light Theme'
-                  : 'Switch to dark Theme'
-              }
-            ></button>
-          </div>
+          <button
+            id="theme-toggle"
+            onClick={toggleTheme}
+            onChange={toggleTheme}
+            aria-label={
+              theme === 'dark'
+                ? 'Switch to light Theme'
+                : 'Switch to dark Theme'
+            }
+          ></button>
         </div>
       </div>
     </header>

@@ -39,24 +39,21 @@
     }
   }
 
-  &__toggle-theme {
+  #theme-toggle {
+    border: 0;
+    outline: 0;
+    padding: 0;
+    display: inline-block;
+    z-index: 9999;
+    cursor: pointer;
     user-select: none;
+    height: min(15vw, rem(90));
+    aspect-ratio: 1 / 1;
+    border-radius: $border-radius-rounded-full;
+  }
 
-    #theme-toggle {
-      border: 0;
-      outline: 0;
-      padding: 0;
-      display: inline-block;
-      cursor: pointer;
-      user-select: none;
-      height: min(15vw, rem(90));
-      aspect-ratio: 1 / 1;
-      border-radius: $border-radius-rounded-full;
-    }
-
-    #theme-toggle {
-      box-shadow: inset -15px -13px 3px -2px $toggle-moon;
-      background-color: $toggle-sun;
-    }
+  #theme-toggle {
+    box-shadow: inset -15px -13px 3px -2px $toggle-moon;
+    background-color: $toggle-sun;
   }
 }
