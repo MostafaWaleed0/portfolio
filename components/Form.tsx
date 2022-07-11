@@ -3,6 +3,7 @@ import { FC, useRef, useState } from 'react'
 import { validate } from '../utils/validate'
 import Input from './Input'
 import TextArea from './TextArea'
+import { useRouter } from 'next/router'
 
 interface IValues {
   name: string
@@ -26,6 +27,7 @@ const Form: FC = () => {
   })
   const [errors, setErrors] = useState<IErrors>({})
   const [loading, setLoading] = useState(false)
+  const router = useRouter()
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -55,6 +57,7 @@ const Form: FC = () => {
       })
 
     setLoading(false)
+    router.push('/contact-thank-you')
   }
 
   const handleChange = (
@@ -70,7 +73,6 @@ const Form: FC = () => {
 
   return (
     <form
-      action="/contact-thank-you"
       className="flow"
       method="POST"
       name="Enquiry"
