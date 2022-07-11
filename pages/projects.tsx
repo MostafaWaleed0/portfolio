@@ -6,10 +6,7 @@ import { data } from '../data/projects'
 
 export default function Projects() {
   return (
-    <Container
-      title="Projects - MW"
-      description="Ideas about solving software problems, development, and different software resources"
-    >
+    <Container title="Projects - MW">
       <section className="[ wrapper ] [ margin-block-start-700 margin-block-end-800 ]">
         <h1>Projects</h1>
         <div className="[ region ] [ cluster ]" data-layout="projects">

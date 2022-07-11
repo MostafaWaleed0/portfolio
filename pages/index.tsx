@@ -129,7 +129,7 @@ export default function Home() {
                   )
                 })}
                 <li>
-                  <Link href="/tools/">
+                  <Link href="/tools">
                     <a className="[ square ] [ flow ]">
                       <em className="fs-300 weight-medium font-mono">More</em>
                       <svg viewBox="0 0 25 25" width="2em">

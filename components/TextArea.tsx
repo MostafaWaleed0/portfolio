@@ -10,7 +10,7 @@ interface TextAreaProps extends InputHTMLAttributes<HTMLTextAreaElement> {
 
 const TextArea: FC<TextAreaProps> = (
   { id, label, error = false, errorMessage = '', ...props },
-  { variablePropName = `aria-described-by`, variablePropValue = `${id}_error` },
+  { variablePropName = `aria-describedby`, variablePropValue = `${id}_error` },
 ) => {
   const variableAttribute = { [variablePropName]: variablePropValue }
 

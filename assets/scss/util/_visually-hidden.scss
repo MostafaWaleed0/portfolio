@@ -10,3 +10,8 @@
   width: 1px;
   white-space: nowrap;
 }
+
+.skip-link {
+  position: absolute;
+  inset: var(--space-300) auto auto var(--space-300);
+}

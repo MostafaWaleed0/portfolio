@@ -34,7 +34,8 @@
     @include breakpoint-down(small) {
       order: 1;
       width: 100%;
-      padding-block-start: var(--space-200);
+      padding: 0;
+      padding-block-start: var(--space-300);
       padding-inline-start: calc($space * -1);
     }
   }
@@ -42,7 +43,6 @@
   #theme-toggle {
     border: 0;
     outline: 0;
-    padding: 0;
     display: inline-block;
     z-index: 9999;
     cursor: pointer;

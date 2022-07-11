@@ -70,7 +70,7 @@ const Form: FC = () => {
 
   return (
     <form
-      action=""
+      action="/contact-thank-you"
       className="flow"
       method="POST"
       name="Enquiry"

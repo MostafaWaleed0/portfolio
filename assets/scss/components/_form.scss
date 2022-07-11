@@ -1,5 +1,5 @@
-@use "../abstracts/" as *;
-@use "../abstracts/tokens/tokens" as *;
+@use '../abstracts/' as *;
+@use '../abstracts/tokens/tokens' as *;
 
 form {
   --flow-space: var(--space-600);
@@ -14,7 +14,7 @@ form {
     margin-block-end: var(--space-100);
 
     &::after {
-      content: "";
+      content: '';
       white-space: pre;
     }
   }
@@ -23,6 +23,7 @@ form {
   textarea {
     border: 0;
     border-bottom: 2px solid $color-border-primary-600;
+    color: $color-text-body;
     padding: var(--space-100) var(--space-200);
     background-color: transparent;
     line-height: 1;

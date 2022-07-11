@@ -7,14 +7,14 @@ export default function Footer() {
       role="contentinfo"
     >
       <div className="wrapper flow">
-        <div className="site-foot__navigation measure-long margin-inline-auto">
+        <div className="[ site-foot__navigation ] [ margin-inline-auto ]">
           <nav aria-label="secondary" tabIndex={-1}>
             <ul
               className="[ nav ] [ fs-300 weight-medium ] [ flex-wrap ]"
               role="list"
             >
               <li>
-                <Link href="/codeOfConduct">
+                <Link href="/code-of-conduct">
                   <a>Code of Conduct</a>
                 </Link>
               </li>

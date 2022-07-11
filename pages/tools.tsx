@@ -13,45 +13,32 @@ export default function Tools() {
         </div>
         <div>
           <ul className="collection" role="list">
-            {tools.map(
-              (
-                tool: {
-                  id: number
-                  icon: any
-                  functions: string[]
-                  title: string
-                  url: string
-                },
-                index: number,
-              ) => {
-                return (
-                  <>
-                    <li className="collection-item" key={index}>
-                      <div className="collection-item__focusable" tabIndex={0}>
-                        <div className="collection-item__icon">{tool.icon}</div>
-                        <div className="collection-item__title">
-                          {tool.title}
-                        </div>
-                        <div className="cluster">
-                          {tool.functions?.map(
-                            (_function: string, index: number) => {
-                              return (
-                                <>
-                                  <div className="pill" key={index}>
-                                    {_function}
-                                  </div>
-                                </>
-                              )
-                            },
-                          )}
-                          <a href={tool.url}>{tool.url}</a>
-                        </div>
+            {tools.map((tool: any, index: number) => {
+              return (
+                <>
+                  <li className="collection-item" key={index}>
+                    <div className="collection-item__focusable" tabIndex={0}>
+                      <div className="collection-item__icon">{tool.icon}</div>
+                      <div className="collection-item__title">{tool.title}</div>
+                      <div className="cluster">
+                        {tool.functions?.map(
+                          (_function: string, index: number) => {
+                            return (
+                              <>
+                                <div className="pill" key={index}>
+                                  {_function}
+                                </div>
+                              </>
+                            )
+                          },
+                        )}
+                        <a href={tool.url}>{tool.url}</a>
                       </div>
-                    </li>
-                  </>
-                )
-              },
-            )}
+                    </div>
+                  </li>
+                </>
+              )
+            })}
           </ul>
         </div>
       </article>

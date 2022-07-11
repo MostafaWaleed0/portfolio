@@ -1,19 +1,19 @@
-import { FC, InputHTMLAttributes } from "react";
+import { FC, InputHTMLAttributes } from 'react'
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  type: string;
-  id: string;
-  error?: boolean;
-  errorMessage?: string;
-  variablePropName?: any;
-  variablePropValue?: any;
+  type: string
+  id: string
+  error?: boolean
+  errorMessage?: string
+  variablePropName?: any
+  variablePropValue?: any
 }
 
 const Input: FC<InputProps> = (
-  { type, id, error = false, errorMessage = "", ...props },
-  { variablePropName = `aria-described-by`, variablePropValue = `${id}_error` }
+  { type, id, error = false, errorMessage = '', ...props },
+  { variablePropName = `aria-describedby`, variablePropValue = `${id}_error` },
 ) => {
-  const variableAttribute = { [variablePropName]: variablePropValue };
+  const variableAttribute = { [variablePropName]: variablePropValue }
   return (
     <>
       <label htmlFor={id}>{id}</label>
@@ -24,11 +24,12 @@ const Input: FC<InputProps> = (
         id={id}
         autoComplete="off"
         spellCheck="false"
-        {...(error ? variableAttribute : "")}
+        aria-required="true"
+        {...(error ? variableAttribute : '')}
       />
       {error && <p id={`${id}_error`}>*{errorMessage}</p>}
     </>
-  );
-};
+  )
+}
 
-export default Input;
+export default Input

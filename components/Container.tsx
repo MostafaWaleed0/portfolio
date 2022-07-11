@@ -1,11 +1,9 @@
 import Head from 'next/head'
-import { useRouter } from 'next/router'
 import Footer from './Footer'
 import Header from './Header'
 
 export default function Container(props: { [x: string]: any; children: any }) {
   const { children, ...customMeta } = props
-  const router = useRouter()
   const meta = {
     title: 'MW | Frontend Developer',
     description: `Mostafa Waleed, an experienced freelance web developer based in the Egypt`,
@@ -31,8 +29,11 @@ export default function Container(props: { [x: string]: any; children: any }) {
         <meta name="twitter:image" content={meta.image} />
         {'' && <meta property="article:published_time" content="" />}
       </Head>
+      <a className="[ skip-link ] [ button ]" href="#main-content">
+        Skip to content
+      </a>
       <Header />
-      <main id="skip" tabIndex={-1}>
+      <main id="main-content" tabIndex={-1}>
         {children}
       </main>
       <Footer />

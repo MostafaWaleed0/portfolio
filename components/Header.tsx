@@ -6,7 +6,8 @@ export default function Header() {
   const { theme, setTheme } = useTheme()
   const [play] = useSound('https://assets.codepen.io/605876/click.mp3')
 
-  const toggleTheme = () => {
+  const toggleTheme = (e) => {
+    e.preventDefault()
     setTheme(theme === 'light' ? 'dark' : 'light')
     play()
   }
@@ -51,7 +52,7 @@ export default function Header() {
           <button
             id="theme-toggle"
             onClick={toggleTheme}
-            onChange={toggleTheme}
+            onTouchEnd={toggleTheme}
             aria-label={
               theme === 'dark'
                 ? 'Switch to light Theme'

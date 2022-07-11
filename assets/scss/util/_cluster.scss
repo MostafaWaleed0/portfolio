@@ -1,4 +1,4 @@
-@use "../abstracts/breakpoint" as *;
+@use '../abstracts/breakpoint' as *;
 
 .cluster {
   --flow-space: var(--space-700);
@@ -19,7 +19,7 @@
     }
   }
 
-  &[data-align="start"] {
+  &[data-align='start'] {
     justify-content: start;
   }
 }

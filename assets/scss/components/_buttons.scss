@@ -1,8 +1,8 @@
-@use "../abstracts/" as *;
-@use "../abstracts/tokens/tokens" as *;
+@use '../abstracts/' as *;
+@use '../abstracts/tokens/tokens' as *;
 
 .button {
-  display: inline-flex;
+  display: inline-block;
   justify-content: center;
   align-items: center;
   font-size: $button-font-size;
@@ -19,8 +19,7 @@
   border-radius: $button-border-radius;
   text-transform: capitalize;
 
-  &:hover,
-  &:focus {
+  &:where(:hover, :focus):not(.skip-link) {
     position: relative;
     color: $button-text-default;
     background-image: linear-gradient(

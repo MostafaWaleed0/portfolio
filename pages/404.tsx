@@ -8,7 +8,7 @@ export default function NotFound() {
     document.title = '404 - MW'
     setTimeout(() => {
       router.push('/')
-    }, 4000)
+    }, 3000)
   })
 
   return (
