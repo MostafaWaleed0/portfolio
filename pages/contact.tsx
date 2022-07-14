@@ -1,6 +1,5 @@
-import dynamic from 'next/dynamic'
 import Container from '../components/Container'
-const DynamicFrom = dynamic(() => import('../components/Form'))
+import From from '../components/Form'
 
 export default function Contact() {
   return (
@@ -17,7 +16,7 @@ export default function Contact() {
       <section className="[ region ] [ bg-inverse ]">
         <div className="wrapper">
           <h1 className="visually-hidden">for contact with me</h1>
-          <DynamicFrom />
+          <From />
         </div>
       </section>
     </Container>

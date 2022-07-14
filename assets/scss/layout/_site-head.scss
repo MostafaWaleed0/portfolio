@@ -43,10 +43,10 @@
   #theme-toggle {
     border: 0;
     outline: 0;
-    display: inline-block;
+    display: flex;
     z-index: 9999;
     cursor: pointer;
-    user-select: none;
+    -webkit-appearance: button;
     height: min(15vw, rem(90));
     aspect-ratio: 1 / 1;
     border-radius: $border-radius-rounded-full;

@@ -1,7 +1,6 @@
-import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import Container from '../components/Container'
-const Time = dynamic(() => import('../components/Time'))
+import Time from '../components/Time'
 
 export default function CodeOfConduct() {
   return (

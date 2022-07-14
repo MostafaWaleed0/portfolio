@@ -1,10 +1,15 @@
 import { useTheme } from 'next-themes/dist/index'
 import Link from 'next/link'
-// import useSound from 'use-sound'
+import useSound from 'use-sound'
 
 export default function Header() {
   const { theme, setTheme } = useTheme()
-  // const [play] = useSound('https://assets.codepen.io/605876/click.mp3')
+  const [play] = useSound('https://assets.codepen.io/605876/click.mp3')
+
+  const toggleTheme = () => {
+    play()
+    setTheme(theme === 'light' ? 'dark' : 'light')
+  }
 
   return (
     <header role="banner" className="site-head">
@@ -46,10 +51,8 @@ export default function Header() {
           <button
             id="theme-toggle"
             type="button"
-            onClick={() => {
-              setTheme(theme === 'light' ? 'dark' : 'light')
-              // play()
-            }}
+            onClick={toggleTheme}
+            onTouchStart={toggleTheme}
             aria-label={
               theme === 'dark'
                 ? 'Switch to light Theme'
