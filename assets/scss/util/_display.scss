@@ -8,7 +8,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @include breakpoint-down(small) {
+  gap: var(--space-400);
+  @include breakpoint-down(medium) {
     flex-direction: column;
   }
 }

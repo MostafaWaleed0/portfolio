@@ -5,7 +5,7 @@ export default function HomeCards() {
     <section className="region" data-layout="texture">
       <div className="wrapper">
         <h2 className="visually-hidden">what I am doing?</h2>
-        <ol className="auto-grid" role="list">
+        <ol className="flex-space-column-responsive" role="list">
           <li>
             <article className="[ card ] [ flow ] [ bg-default ]">
               <span

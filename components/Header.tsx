@@ -1,4 +1,4 @@
-import { useTheme } from 'next-themes/dist/index'
+import { useTheme } from 'next-themes'
 import Link from 'next/link'
 import useSound from 'use-sound'
 
@@ -52,7 +52,7 @@ export default function Header() {
             id="theme-toggle"
             type="button"
             onClick={toggleTheme}
-            onTouchStart={toggleTheme}
+            // onTouchStart={toggleTheme}
             aria-label={
               theme === 'dark'
                 ? 'Switch to light Theme'
