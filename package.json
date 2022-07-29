@@ -8,7 +8,7 @@
     "lint": "next lint",
     "analyze": "cross-env ANALYZE=true next build",
     "watch:sass": "sass  --no-source-map --watch assets/scss:assets/css --style compressed",
-    "postbuild": "postcss assets/css/*.css -u autoprefixer cssnano -r --no-map"
+    "postcss:build": "postcss assets/css/*.css -u autoprefixer cssnano -r --no-map"
   },
   "dependencies": {
     "@emailjs/browser": "^3.6.2",

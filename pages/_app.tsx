@@ -5,7 +5,7 @@ import type { AppProps } from 'next/app'
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider attribute="data-theme">
+    <ThemeProvider attribute="data-theme" defaultTheme="dark">
       <Component {...pageProps} />
     </ThemeProvider>
   )

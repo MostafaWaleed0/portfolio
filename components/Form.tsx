@@ -1,9 +1,9 @@
 import emailjs from '@emailjs/browser'
-import { FC, useRef, useState } from 'react'
+import { useRouter } from 'next/router'
+import { useRef, useState } from 'react'
 import { validate } from '../utils/validate'
 import Input from './Input'
 import TextArea from './TextArea'
-import { useRouter } from 'next/router'
 
 interface IValues {
   name: string
@@ -15,7 +15,7 @@ interface IValues {
 
 interface IErrors extends Partial<IValues> {}
 
-const Form: FC = () => {
+export default function Form() {
   const form = useRef<any>()
 
   const [values, setValues] = useState<IValues>({
@@ -141,5 +141,3 @@ const Form: FC = () => {
     </form>
   )
 }
-
-export default Form

@@ -1,9 +1,9 @@
+import Image from 'next/image'
 import Link from 'next/link'
+import { Suspense } from 'react'
 import Container from '../components/Container'
 import HomeCards from '../components/HomeCards'
 import { languages, tools } from '../data/skillsAndTools'
-import Image from 'next/image'
-import { Suspense } from 'react'
 
 export default function Home() {
   return (
@@ -87,17 +87,26 @@ export default function Home() {
             <div className="[ flow ] [ text-center font-mono ]">
               <h3>Frontend</h3>
               <ul className="cluster" role="list">
-                {languages.map((lang: any) => {
-                  return (
-                    <li key={lang.id} className="[ square ] [ flow ]">
-                      {lang.icon}
-                      <em className="fs-300 weight-medium font-mono">
-                        {lang.title}
-                      </em>
-                      {lang.arrow}
-                    </li>
-                  )
-                })}
+                {languages.map(
+                  (
+                    lang: {
+                      id: number
+                      icon: JSX.Element
+                      url: string
+                      title: string
+                    },
+                    index: number,
+                  ) => {
+                    return (
+                      <li key={index + 1} className="[ square ] [ flow ]">
+                        {lang.icon}
+                        <em className="fs-300 weight-medium font-mono">
+                          {lang.title}
+                        </em>
+                      </li>
+                    )
+                  },
+                )}
                 <li>
                   <Link href="/frontend">
                     <a className="[ square ] [ flow ]">
@@ -117,17 +126,26 @@ export default function Home() {
             <div className="[ flow ] [ text-center font-mono flow-space-900 ]">
               <h3>Tools</h3>
               <ul className="cluster" role="list">
-                {tools.map((tool: any) => {
-                  return (
-                    <li key={tool.id} className="[ square ] [ flow ]">
-                      {tool.icon}
-                      <em className="fs-300 weight-medium font-mono">
-                        {tool.title}
-                      </em>
-                      {tool.arrow}
-                    </li>
-                  )
-                })}
+                {tools.map(
+                  (
+                    tool: {
+                      id: number
+                      icon: JSX.Element
+                      url: string
+                      title: string
+                    },
+                    index: number,
+                  ) => {
+                    return (
+                      <li key={index + 1} className="[ square ] [ flow ]">
+                        {tool.icon}
+                        <em className="fs-300 weight-medium font-mono">
+                          {tool.title}
+                        </em>
+                      </li>
+                    )
+                  },
+                )}
                 <li>
                   <Link href="/tools">
                     <a className="[ square ] [ flow ]">

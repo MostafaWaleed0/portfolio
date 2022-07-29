@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Fragment } from 'react'
 import Container from '../components/Container'
 import { data } from '../data/projects'
 
@@ -25,21 +24,24 @@ export default function Projects() {
           </strong>
           <ol className="auto-grid" data-layout="projects" role="list">
             {data.map(
-              (project: {
-                id: number
-                logo: any
-                technologies: any[]
-                github_url: string
-                website_design: string
-              }) => {
+              (
+                project: {
+                  id: number
+                  logo: JSX.Element
+                  technologies: any[]
+                  github_url: string
+                  website_design: string
+                },
+                index: number,
+              ) => {
                 return (
-                  <li className="card" key={project.id}>
+                  <li className="card" key={index + 1}>
                     <div className="card__focusable">
                       <ul className="card__technologies" role="list">
-                        {project.technologies?.map((image_url, index) => {
-                          return (
-                            <Fragment key={index}>
-                              <li>
+                        {project.technologies?.map(
+                          (image_url, index: number) => {
+                            return (
+                              <li key={index + 1}>
                                 <Image
                                   src={image_url}
                                   width={37}
@@ -47,9 +49,9 @@ export default function Projects() {
                                   alt=""
                                 />
                               </li>
-                            </Fragment>
-                          )
-                        })}
+                            )
+                          },
+                        )}
                       </ul>
                       <Link href={project.github_url}>
                         <a className="card__github" aria-label="Website Code">

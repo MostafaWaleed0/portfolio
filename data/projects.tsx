@@ -4,6 +4,7 @@ import jsIcon from '../public/js-icon.svg'
 import nextIcon from '../public/next-icon.svg'
 import nunjucksIcon from '../public/nunjucks-icon.svg'
 import reactIcon from '../public/react-icon.svg'
+import reduxIcon from '../public/redux-icon.svg'
 import scssIcon from '../public/scss-icon.svg'
 import styledComponentsIcon from '../public/styled-components-icon.svg'
 import tailwindcssIcon from '../public/tailwindcss-icon.svg'
@@ -136,8 +137,8 @@ export const data = [
         />
       </svg>
     ),
-    technologies: [reactIcon, styledComponentsIcon, nextIcon],
-    github_url: '',
+    technologies: [reactIcon, styledComponentsIcon, nextIcon, reduxIcon],
+    github_url: 'https://github.com/mostafawaleed3/react-store',
     website_design: 'https://www.figma.com/community/file/1054724734485453594',
   },
   {

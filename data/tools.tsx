@@ -39,9 +39,9 @@ export const tools = [
         ></polygon>
       </svg>
     ),
-    functions: ["notes", "docs", "tasks", "graph"],
-    title: "obsidian",
-    url: "https://obsidian.md",
+    functions: ['notes', 'docs', 'tasks', 'graph'],
+    title: 'obsidian',
+    url: 'https://obsidian.md',
   },
   {
     id: 2,
@@ -69,9 +69,9 @@ export const tools = [
         />
       </svg>
     ),
-    functions: ["prototyping", "design"],
-    title: "figma",
-    url: "https://www.figma.com",
+    functions: ['prototyping', 'design'],
+    title: 'figma',
+    url: 'https://www.figma.com',
   },
   {
     id: 3,
@@ -95,9 +95,9 @@ export const tools = [
         />
       </svg>
     ),
-    functions: ["code"],
-    title: "visual studio code",
-    url: "https://code.visualstudio.com",
+    functions: ['code'],
+    title: 'visual studio code',
+    url: 'https://code.visualstudio.com',
   },
   {
     id: 4,
@@ -114,9 +114,9 @@ export const tools = [
         </g>
       </svg>
     ),
-    functions: ["code"],
-    title: "GitHub",
-    url: "https://github.com",
+    functions: ['code'],
+    title: 'GitHub',
+    url: 'https://github.com',
   },
   {
     id: 5,
@@ -136,9 +136,9 @@ export const tools = [
         </g>
       </svg>
     ),
-    functions: ["analytics"],
-    title: "google analytics",
-    url: "https://analytics.google.com",
+    functions: ['analytics'],
+    title: 'google analytics',
+    url: 'https://analytics.google.com',
   },
   {
     id: 6,
@@ -150,9 +150,9 @@ export const tools = [
         ></path>
       </svg>
     ),
-    functions: ["typography"],
-    title: "utopia",
-    url: "https://utopia.fyi",
+    functions: ['typography'],
+    title: 'utopia',
+    url: 'https://utopia.fyi',
   },
   {
     id: 7,
@@ -170,9 +170,9 @@ export const tools = [
         />
       </svg>
     ),
-    functions: ["collaboration", "docs"],
-    title: "google docs",
-    url: "https://docs.google.com",
+    functions: ['collaboration', 'docs'],
+    title: 'google docs',
+    url: 'https://docs.google.com',
   },
   {
     id: 8,
@@ -204,9 +204,9 @@ export const tools = [
         />
       </svg>
     ),
-    functions: ["collaboration", "cloud storage"],
-    title: "google drive",
-    url: "https://drive.google.com",
+    functions: ['collaboration', 'cloud storage'],
+    title: 'google drive',
+    url: 'https://drive.google.com',
   },
   {
     id: 9,
@@ -217,9 +217,9 @@ export const tools = [
         </g>
       </svg>
     ),
-    functions: ["music", "podcasts"],
-    title: "spotify",
-    url: "https://spotify.com",
+    functions: ['music', 'podcasts'],
+    title: 'spotify',
+    url: 'https://spotify.com',
   },
   {
     id: 10,
@@ -234,9 +234,9 @@ export const tools = [
         />
       </svg>
     ),
-    functions: ["analytics"],
-    title: "panelbear",
-    url: "https://app.panelbear.com",
+    functions: ['analytics'],
+    title: 'panelbear',
+    url: 'https://app.panelbear.com',
   },
   {
     id: 11,
@@ -248,9 +248,9 @@ export const tools = [
         />
       </svg>
     ),
-    functions: ["social", "communication"],
-    title: "twitter",
-    url: "https://twitter.com",
+    functions: ['social', 'communication'],
+    title: 'twitter',
+    url: 'https://twitter.com',
   },
   {
     id: 12,
@@ -265,8 +265,8 @@ export const tools = [
         </g>
       </svg>
     ),
-    functions: ["automation", "workflow"],
-    title: "zapier",
-    url: "https://zapier.com",
+    functions: ['automation', 'workflow'],
+    title: 'zapier',
+    url: 'https://zapier.com',
   },
-];
+]

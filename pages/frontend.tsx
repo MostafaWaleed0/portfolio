@@ -12,9 +12,16 @@ export default function Frontend() {
         <div>
           <ul className="collection" role="list">
             {frontend.map(
-              (lang: { id: number; icon: any; title: string }, index) => {
+              (
+                lang: {
+                  id: number
+                  icon: any
+                  title: string
+                },
+                index: number,
+              ) => {
                 return (
-                  <li key={index} className="collection-item">
+                  <li key={index + 1} className="collection-item">
                     <div className="collection-item__focusable" tabIndex={0}>
                       <div className="collection-item__icon">
                         <Image src={lang.icon} width={28} height={28} alt="" />

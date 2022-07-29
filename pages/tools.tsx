@@ -13,10 +13,19 @@ export default function Tools() {
         </div>
         <div>
           <ul className="collection" role="list">
-            {tools.map((tool: any, index: number) => {
-              return (
-                <>
-                  <li className="collection-item" key={index}>
+            {tools.map(
+              (
+                tool: {
+                  id: number
+                  icon: JSX.Element
+                  functions: string[]
+                  title: string
+                  url: string
+                },
+                index: number,
+              ) => {
+                return (
+                  <li className="collection-item" key={index + 1}>
                     <div className="collection-item__focusable" tabIndex={0}>
                       <div className="collection-item__icon">{tool.icon}</div>
                       <div className="collection-item__title">{tool.title}</div>
@@ -24,11 +33,9 @@ export default function Tools() {
                         {tool.functions?.map(
                           (_function: string, index: number) => {
                             return (
-                              <>
-                                <div className="pill" key={index}>
-                                  {_function}
-                                </div>
-                              </>
+                              <div className="pill" key={index + 1}>
+                                {_function}
+                              </div>
                             )
                           },
                         )}
@@ -36,9 +43,9 @@ export default function Tools() {
                       </div>
                     </div>
                   </li>
-                </>
-              )
-            })}
+                )
+              },
+            )}
           </ul>
         </div>
       </article>
