@@ -19,6 +19,7 @@ export default function Container(props: { [x: string]: any; children: any }) {
     <>
       <Head>
         <title>{meta.title}</title>
+        <meta name="robots" content="follow, index" />
         <link
           rel="canonical"
           href={`https://www.mostafawaleed.me${router.asPath}`}
