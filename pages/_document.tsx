@@ -6,7 +6,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-        <link rel="stylesheet" media="all" href="/fonts/fonts.css" />
+        <link rel="preload" href="/fonts/fonts.css" as="style" />
         <link rel="icon" type="image/svg" sizes="32x32" href="/mw-logo.svg" />
         <link rel="apple-touch-icon" sizes="180x180" href="/mw-logo.svg" />
         <meta content="#ffffff" name="theme-color" />
