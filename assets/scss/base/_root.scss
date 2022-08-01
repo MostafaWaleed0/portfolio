@@ -19,11 +19,9 @@
 }
 
 html[data-theme="dark"] {
-  @media (prefers-color-scheme: dark) {
-    @each $color, $shade in $dark-theme {
-      @each $prop, $value in $shade {
-        --clr-#{$color}-#{$prop}: #{$value};
-      }
+  @each $color, $shade in $dark-theme {
+    @each $prop, $value in $shade {
+      --clr-#{$color}-#{$prop}: #{$value};
     }
   }
 }
