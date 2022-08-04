@@ -110,8 +110,8 @@ export default function Home() {
                 <li>
                   <Link href="/frontend">
                     <a className="[ square ] [ flow ]">
-                      More
-                      <svg viewBox="0 0 25 25" width="2em">
+                      More languages
+                      <svg aria-hidden="true" viewBox="0 0 25 25" width="2em">
                         <path
                           className="fill-default"
                           d="m17.5 5.999-.707.707 5.293 5.293H1v1h21.086l-5.294 5.295.707.707L24 12.499l-6.5-6.5z"
@@ -149,8 +149,8 @@ export default function Home() {
                 <li>
                   <Link href="/tools">
                     <a className="[ square ] [ flow ]">
-                      More
-                      <svg viewBox="0 0 25 25" width="2em">
+                      More Tools
+                      <svg aria-hidden="true" viewBox="0 0 25 25" width="2em">
                         <path
                           className="fill-default"
                           d="m17.5 5.999-.707.707 5.293 5.293H1v1h21.086l-5.294 5.295.707.707L24 12.499l-6.5-6.5z"
