@@ -1,7 +1,7 @@
-import Head from 'next/head'
-import { useRouter } from 'next/router'
-import Footer from './Footer'
-import Header from './Header'
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import Footer from './Footer';
+import Header from './Header';
 
 export default function Container(props: { [x: string]: any; children: any }) {
   const router = useRouter()
@@ -18,13 +18,16 @@ export default function Container(props: { [x: string]: any; children: any }) {
   return (
     <>
       <Head>
+        <meta charSet="utf-8"/>
+        <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <title>{meta.title}</title>
-        <meta name="robots" content="follow, index" />
+        <meta content={meta.description} name="description" />
         <link
           rel="canonical"
           href={`https://www.mostafawaleed.me${router.asPath}`}
         />
-        <meta content={meta.description} name="description" />
+        <meta name="robots" content="follow, index" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@mostafa85341305" />
         <meta name="twitter:title" content={meta.title} />

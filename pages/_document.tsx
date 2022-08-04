@@ -5,7 +5,6 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <link
           rel="preload"
           href="/fonts/Noto.woff2"
