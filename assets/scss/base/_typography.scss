@@ -46,9 +46,12 @@ strong {
   --flow-space: var(--space-600);
 }
 
+a:not([class]) {
+  white-space: nowrap;
+}
+
 a {
   color: inherit;
-  white-space: nowrap;
   text-underline-offset: 0.15em;
   text-decoration-color: $primary-400;
 
