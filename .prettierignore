@@ -1,2 +1,4 @@
 .next
 .vercel
+next.config.js
+tsconfig.json
