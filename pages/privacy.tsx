@@ -15,7 +15,7 @@ export default function Privacy() {
           </div>
           <p>
             MW | Frontend (“us”, “we”, or “our”) operates the
-            https://www.mostafawaleed.com website (hereinafter referred to as
+            https://www.mostafawaleed.me website (hereinafter referred to as
             the “Service”).
           </p>
           <p>
@@ -32,7 +32,7 @@ export default function Privacy() {
           <ul>
             <li>
               <strong>Service</strong> Service is the
-              https://www.mostafawaleed.com website operated by MW | Frontend.
+              https://www.mostafawaleed.me website operated by MW | Frontend.
             </li>
             <li>
               <strong>Personal Data</strong> Personal Data means data about a
