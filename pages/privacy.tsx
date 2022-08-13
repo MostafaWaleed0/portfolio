@@ -14,7 +14,7 @@ export default function Privacy() {
             </div>
           </div>
           <p>
-            MW | Frontend (“us”, “we”, or “our”) operates the
+            MW | Frontend developer (“us”, “we”, or “our”) operates the
             https://www.mostafawaleed.me website (hereinafter referred to as
             the “Service”).
           </p>
@@ -32,7 +32,7 @@ export default function Privacy() {
           <ul>
             <li>
               <strong>Service</strong> Service is the
-              https://www.mostafawaleed.me website operated by MW | Frontend.
+              https://www.mostafawaleed.me website operated by MW | Frontend developer.
             </li>
             <li>
               <strong>Personal Data</strong> Personal Data means data about a
@@ -118,7 +118,7 @@ export default function Privacy() {
             </li>
           </ul>
           <h2>Use of Data</h2>
-          <p>MW | Frontend. uses the collected data for various purposes:</p>
+          <p>MW | Frontend developer. uses the collected data for various purposes:</p>
           <ul>
             <li>To provide and maintain our Service</li>
             <li>To notify you about changes to our Service</li>
@@ -144,12 +144,12 @@ export default function Privacy() {
             Protection Regulation (GDPR)
           </h2>
           <p>
-            If you are from the European Economic Area (EEA), MW | Frontend
+            If you are from the European Economic Area (EEA), MW | Frontend developer
             legal basis for collecting and using the personal information
             described in this Privacy Policy depends on the Personal Data we
             collect and the specific context in which we collect it.
           </p>
-          <p> MW | Frontend may process your Personal Data because:</p>
+          <p> MW | Frontend developer may process your Personal Data because:</p>
           <ul>
             <li>We need to perform a contract with you</li>
             <li>You have given us permission to do so</li>
@@ -161,7 +161,7 @@ export default function Privacy() {
           </ul>
           <h2>Retention of Data </h2>
           <p>
-            MW | Frontend will retain your Personal Data only for as long as is
+            MW | Frontend developer will retain your Personal Data only for as long as is
             necessary for the purposes set out in this Privacy Policy. We will
             retain and use your Personal Data to the extent necessary to comply
             with our legal obligations (for example, if we are required to
@@ -169,7 +169,7 @@ export default function Privacy() {
             and enforce our legal agreements and policies.
           </p>
           <p>
-            MW | Frontend will also retain Usage Data for internal analysis
+            MW | Frontend developer will also retain Usage Data for internal analysis
             purposes. Usage Data is generally retained for a shorter period of
             time, except when this data is used to strengthen the security or to
             improve the functionality of our Service, or we are legally
@@ -192,7 +192,7 @@ export default function Privacy() {
             such information represents your agreement to that transfer.
           </p>
           <p>
-            MW | Frontend will take all the steps reasonably necessary to ensure
+            MW | Frontend developer will take all the steps reasonably necessary to ensure
             that your data is treated securely and in accordance with this
             Privacy Policy and no transfer of your Personal Data will take place
             to an organisation or a country unless there are adequate controls
@@ -202,13 +202,13 @@ export default function Privacy() {
           <h2>Disclosure of Data </h2>
           <h3>Legal Requirements</h3>
           <p>
-            MW | Frontend may disclose your Personal Data in the good faith
+            MW | Frontend developer may disclose your Personal Data in the good faith
             belief that such action is necessary to:
           </p>
           <ul>
             <li>To comply with a legal obligation</li>
             <li>
-              To protect and defend the rights or property of MW | Frontend
+              To protect and defend the rights or property of MW | Frontend developer
             </li>
             <li>
               To prevent or investigate possible wrongdoing in connection with
@@ -234,7 +234,7 @@ export default function Privacy() {
           </h2>
           <p>
             If you are a resident of the European Economic Area (EEA), you have
-            certain data protection rights. MW | Frontend aims to take
+            certain data protection rights. MW | Frontend developer aims to take
             reasonable steps to allow you to correct, amend, delete or limit the
             use of your Personal Data.
           </p>
@@ -279,7 +279,7 @@ export default function Privacy() {
             </li>
             <li>
               <strong>The right to withdraw consent.</strong>You also have the
-              right to withdraw your consent at any time where MW | Frontend
+              right to withdraw your consent at any time where MW | Frontend developer
               relied on your consent to process your personal information.
             </li>
           </ul>

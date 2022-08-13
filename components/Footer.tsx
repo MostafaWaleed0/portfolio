@@ -38,7 +38,7 @@ export default function Footer() {
           </nav>
         </div>
         <p className="fs-300 weight-bold margin-inline-auto">
-          © {new Date().getFullYear()} MW | Frontend.
+          © {new Date().getFullYear()} MW | Frontend developer.
         </p>
       </div>
     </footer>

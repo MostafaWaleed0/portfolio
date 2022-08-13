@@ -15,7 +15,7 @@ export default function CodeOfConduct() {
           </div>
           <p>
             <strong>
-              This code of conduct applies to every member of the MW | Frontend
+              This code of conduct applies to every member of the MW | Frontend developer
               community
             </strong>
             . Anyone who violates this code of conduct may be sanctioned or
@@ -81,7 +81,7 @@ export default function CodeOfConduct() {
           </ul>
           <p>
             <strong>
-              The MW | Frontend community prioritises marginalised people’s
+              The MW | Frontend developer community prioritises marginalised people’s
               safety over privileged people’s comfort
             </strong>
             . I will not act on complaints regarding:
@@ -104,7 +104,7 @@ export default function CodeOfConduct() {
           <h2>Reporting</h2>
           <p>
             <strong>
-              If you are being harassed by a member of the MW | Frontend
+              If you are being harassed by a member of the MW | Frontend developer
               community, notice that someone else is being harassed, or have any
               other concerns, you can contact me:
             </strong>
@@ -118,8 +118,8 @@ export default function CodeOfConduct() {
             </li>
           </ul>
           <p>
-            This code of conduct applies to the MW | Frontend community, but if
-            you are being harassed by a member of the MW | Frontend community
+            This code of conduct applies to the MW | Frontend developer community, but if
+            you are being harassed by a member of the MW | Frontend developer community
             outside any community property,{' '}
             <strong>
               I still want to know about it and will do everything in my power
@@ -131,8 +131,8 @@ export default function CodeOfConduct() {
           <p>
             This includes harassment outside any community property and
             harassment that took place at any point in time. I reserve the right
-            to exclude people from the MW | Frontend community based on their
-            past behaviour, including behaviour outside the MW | Frontend
+            to exclude people from the MW | Frontend developer community based on their
+            past behaviour, including behaviour outside the MW | Frontend developer
             community and behaviour towards people who are not in the MW |
             Frontend community.
           </p>
@@ -147,19 +147,19 @@ export default function CodeOfConduct() {
             protecting victims of abuse. At my discretion, I may publicly name a
             person about whom I’ve received harassment complaints, or privately
             warn third parties about them, if I believe that doing so will
-            increase the safety of the MW | Frontend community members or the
+            increase the safety of the MW | Frontend developer community members or the
             general public. I will not name harassment victims without their
             affirmative consent.
           </p>
           <h2>Spam</h2>
           <p>
-            The MW | Frontend community is place for fellow designers and
+            The MW | Frontend developer community is place for fellow designers and
             developers to hang out, help each other out, and build networks.
           </p>
           <h3>What’s Permitted</h3>
           <p>
             I welcome members of this group to share links and resources that
-            they think the MW | Frontend community members will benefit from.{' '}
+            they think the MW | Frontend developer community members will benefit from.{' '}
             <strong>
               Make sure the things you’re promoting are genuinely valuable and
               relevant to the community.
@@ -176,7 +176,7 @@ export default function CodeOfConduct() {
           </p>
           <h2>Etiquette</h2>
           <p>
-            The MW | Frontend community is a friendly community where{' '}
+            The MW | Frontend developer community is a friendly community where{' '}
             <strong>all members should feel safe and welcome</strong>. To ensure
             this, please avoid the following:
           </p>
