@@ -1,2 +1,4 @@
 User-agent: *
-Sitemap: https://www.mostafawaleed.me/sitemap.xml
+Disallow:
+Disallow: /cgi-bin/
+Sitemap: https://mostafawaleed.me/sitemap.xml
