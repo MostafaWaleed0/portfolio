@@ -21,6 +21,7 @@ export default function Container(props: { [x: string]: any; children: any }) {
         <meta charSet="utf-8"/>
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        {router.asPath=== "/" ? <meta name="google-site-verification" content="yNRfmqiqqj1EekI2rFHjrJoFVnx6zJTisszEIeWGf9Y" /> : null }
         <title>{meta.title}</title>
         <meta content={meta.description} name="description" />
         <link
