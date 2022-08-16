@@ -8,7 +8,7 @@ export default function Container(props: { [x: string]: any; children: any }) {
 
   const { children, ...customMeta } = props
   const meta = {
-    title: 'MW | Frontend Developer',
+    title: 'Mostafa Waleed - Frontend developer',
     description: `Mostafa Waleed, an experienced freelance web developer based in the Egypt`,
     image: '/mw-logo.svg"',
     type: 'website',
