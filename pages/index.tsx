@@ -100,9 +100,9 @@ export default function Home() {
                     return (
                       <li key={index + 1} className="[ square ] [ flow ]">
                         {lang.icon}
-                        <em className="fs-300 weight-medium font-mono">
+                        <span className="fs-300 weight-medium font-mono">
                           {lang.title}
-                        </em>
+                        </span>
                       </li>
                     )
                   },
@@ -139,9 +139,9 @@ export default function Home() {
                     return (
                       <li key={index + 1} className="[ square ] [ flow ]">
                         {tool.icon}
-                        <em className="fs-300 weight-medium font-mono">
+                        <span className="fs-300 weight-medium font-mono">
                           {tool.title}
-                        </em>
+                        </span>
                       </li>
                     )
                   },
