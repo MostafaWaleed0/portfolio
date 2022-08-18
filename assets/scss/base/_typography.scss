@@ -55,8 +55,11 @@ a {
   text-underline-offset: 0.15em;
   text-decoration-color: $primary-400;
 
-  &:hover,
-  &:focus {
+  &:is(:focus:not(:focus-visible)) {
+    outline: 0;
+  }
+
+  &:is(:hover,:focus-visible) {
     color: $primary-400;
     text-decoration-color: $color-text-body;
   }
