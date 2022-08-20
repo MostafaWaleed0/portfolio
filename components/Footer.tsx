@@ -14,12 +14,12 @@ export default function Footer() {
               role="list"
             >
               <li>
-                <Link href="/code-of-conduct">
+                <Link href="/blog/code-of-conduct">
                   <a>Code of Conduct</a>
                 </Link>
               </li>
               <li>
-                <Link href="/privacy">
+                <Link href="/blog/privacy-policy">
                   <a>Privacy Policy</a>
                 </Link>
               </li>
