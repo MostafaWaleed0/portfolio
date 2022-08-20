@@ -1,6 +1,5 @@
 ---
 title: Privacy policy
-dateRss: 2022-06-06
 date: 
   day: 6
   month: 7

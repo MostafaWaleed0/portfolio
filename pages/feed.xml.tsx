@@ -25,7 +25,7 @@ export async function getServerSideProps({ res }) {
     feed.item({
       title: post.frontmatter.title,
       url: `https://mostafawaleed.me/blog/${post.slug}`,
-      date: post.frontmatter.dateRss,
+      date: post.frontmatter.date.year + "-" + post.frontmatter.date.month + "-" + post.frontmatter.date.day,
       description: post.frontmatter.description
     });
   });

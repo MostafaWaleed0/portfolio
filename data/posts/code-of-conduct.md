@@ -1,7 +1,6 @@
 ---
 title: Code of conduct
-dateRss: 2022-06-06
-date: 
+date:
   day: 6
   month: 7
   year: 2022
