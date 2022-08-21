@@ -6,13 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "lint": "next lint",
-    "analyze": "cross-env ANALYZE=true next build",
     "watch:sass": "sass  --no-source-map --watch assets/scss:assets/css --style compressed",
     "postcss:build": "postcss assets/css/*.css -u autoprefixer cssnano -r --no-map"
   },
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
-    "@next/bundle-analyzer": "^12.1.6",
     "gray-matter": "^4.0.3",
     "marked": "^4.0.18",
     "next": "12.1.6",
@@ -20,23 +18,14 @@
     "postcss": "^8.4.14",
     "postcss-cli": "^10.0.0",
     "react": "18.1.0",
-    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "18.1.0",
-    "react-syntax-highlighter": "^15.5.0",
-    "reading-time": "^1.5.0",
-    "remark-slug": "^7.0.1",
     "rss": "^1.2.2",
-    "use-sound": "^4.0.1",
-    "webpack": "^5.73.0"
+    "use-sound": "^4.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.10",
-    "@types/cookie": "^0.5.1",
     "@types/marked": "^4.0.5",
     "@types/node": "^18.7.6",
     "@types/react": "18.0.8",
-    "@types/react-copy-to-clipboard": "^5.0.4",
-    "@types/react-syntax-highlighter": "^15.5.4",
     "autoprefixer": "^10.4.7",
     "cross-env": "^7.0.3",
     "cssnano": "^5.1.12",
