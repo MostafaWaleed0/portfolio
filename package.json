@@ -12,6 +12,7 @@
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
     "gray-matter": "^4.0.3",
+    "highlight.js": "^11.6.0",
     "marked": "^4.0.18",
     "next": "12.1.6",
     "next-themes": "^0.2.0",
