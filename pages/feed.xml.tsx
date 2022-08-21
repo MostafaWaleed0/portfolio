@@ -4,11 +4,11 @@ import { join } from 'path';
 import RSS from 'rss';
 
 export async function getServerSideProps({ res }) {
-  const files = readdirSync(join('data/posts'))
+  const files = readdirSync(join(process.cwd(), 'data/posts'))
   const posts = files.map((filename) => {
     // Create slug
-    const slug = filename.replace('.md', '');
-    const markdownWithMeta = readFileSync(join('data/posts', filename),'utf-8');
+    const slug = filename.replace('.mdx', '');
+    const markdownWithMeta = readFileSync(join(process.cwd(), 'data/posts', filename),'utf-8');
     const { data: frontmatter } = matter(markdownWithMeta);
     return {slug, frontmatter};
   })

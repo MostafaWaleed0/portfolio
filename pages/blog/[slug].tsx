@@ -49,13 +49,13 @@ export default function PostPage({
 export async function getStaticPaths() {
   const files = readdirSync(join('data/posts'));
   const paths = files.map((filename) => ({
-    params: {slug: filename.replace('.md', '')},
+    params: {slug: filename.replace('.mdx', '')},
   }))
   return {paths, fallback: false};
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const markdownWithMeta = readFileSync(join('data/posts', slug + '.md'), 'utf-8');
+  const markdownWithMeta = readFileSync(join('data/posts', slug + '.mdx'), 'utf-8');
   const { data: frontmatter, content } = matter(markdownWithMeta);
   return {
     props: {frontmatter, slug, content},
