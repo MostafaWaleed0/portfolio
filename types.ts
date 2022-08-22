@@ -37,5 +37,5 @@ export interface TimeType {
   day: string | number;
   month: number;
   separator?: string | undefined;
-  year: string | number;
+  year: number | string;
 }
