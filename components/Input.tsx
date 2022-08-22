@@ -1,18 +1,14 @@
-import { FC, InputHTMLAttributes } from 'react'
+import { InputType } from '../types'
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  type: string
-  id: string
-  error?: boolean
-  errorMessage?: string
-  variablePropName?: any
-  variablePropValue?: any
-}
-
-const Input: FC<InputProps> = (
-  { type, id, error = false, errorMessage = '', ...props },
-  { variablePropName = `aria-describedby`, variablePropValue = `${id}_error` },
-) => {
+export default function Input({
+  type,
+  id,
+  error = false,
+  errorMessage = '',
+  variablePropName = `aria-describedby`,
+  variablePropValue = `${id}_error`,
+  ...props
+}: InputType) {
   const variableAttribute = { [variablePropName]: variablePropValue }
   return (
     <>
@@ -31,5 +27,3 @@ const Input: FC<InputProps> = (
     </>
   )
 }
-
-export default Input

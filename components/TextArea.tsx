@@ -1,17 +1,14 @@
-import { FC, InputHTMLAttributes } from 'react'
+import { TextAreaType } from '../types'
 
-interface TextAreaProps extends InputHTMLAttributes<HTMLTextAreaElement> {
-  id: string
-  label: string
-  type?: string
-  error?: boolean
-  errorMessage?: string
-}
-
-const TextArea: FC<TextAreaProps> = (
-  { id, label, error = false, errorMessage = '', ...props },
-  { variablePropName = `aria-describedby`, variablePropValue = `${id}_error` },
-) => {
+export default function TextArea({
+  id,
+  label,
+  error = false,
+  errorMessage = '',
+  variablePropName = `aria-describedby`,
+  variablePropValue = `${id}_error` ,
+  ...props
+}: TextAreaType) {
   const variableAttribute = { [variablePropName]: variablePropValue }
 
   return (
@@ -30,5 +27,3 @@ const TextArea: FC<TextAreaProps> = (
     </>
   )
 }
-
-export default TextArea
