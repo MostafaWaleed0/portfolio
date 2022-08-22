@@ -20,8 +20,6 @@ export async function getServerSideProps({ res }) {
   });
 
   posts.map((post) => {
-    console.log(post);
-
     feed.item({
       title: post.frontmatter.title,
       url: `https://mostafawaleed.me/blog/${post.slug}`,

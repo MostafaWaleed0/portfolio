@@ -12,8 +12,6 @@ interface Props {
 }
 
 export default function Blog({ posts }: Props) {
-  console.log(posts);
-
   return (
     <Container title="Blogs - MW">
       <article className="[ wrapper ] [ margin-block-start-700 margin-block-end-800 ]">
@@ -21,7 +19,6 @@ export default function Blog({ posts }: Props) {
         <div className="margin-block-start-700">
           <ol role="list">
             {posts.map((post, index) => {
-              // console.log(post.frontmatter.card);
               return post.frontmatter.card == undefined &&
                 <li className="[ card ] [ flow ]" key={index + 1}>
                   {/* <Image src={post.frontmatter.image} width={200} height={250} alt={post.frontmatter.image_alt}/> */}

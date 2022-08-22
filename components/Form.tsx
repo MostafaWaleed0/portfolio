@@ -45,8 +45,7 @@ export default function Form() {
         form.current,
         '0-QLZgcFoOF2mnD8g',
       )
-      .then((result) => {
-        console.log(result.text)
+      .then(() => {
         setValues({
           name: '',
           email: '',
