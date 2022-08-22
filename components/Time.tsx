@@ -1,17 +1,13 @@
-interface Values {
-  day: any
-  month: any
-  separator: any
-  year: any
-}
+import { TimeType } from '../types'
 
-const Time: React.FC<Values> = ({
+
+export default function Time({
   day = '',
   month,
   separator = ' ',
   year = '',
-}) => {
-  var arrayMonths = [
+}: TimeType) {
+  var arrayMonths: string[] = [
     'January',
     'February',
     'March',
@@ -39,5 +35,3 @@ const Time: React.FC<Values> = ({
     </time>
   )
 }
-
-export default Time

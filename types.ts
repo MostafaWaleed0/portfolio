@@ -32,3 +32,10 @@ export interface TextAreaType extends TextareaHTMLAttributes<HTMLTextAreaElement
   variablePropName?: string;
   variablePropValue?: string;
 }
+
+export interface TimeType {
+  day: string | number;
+  month: number;
+  separator?: string | undefined;
+  year: string | number;
+}
