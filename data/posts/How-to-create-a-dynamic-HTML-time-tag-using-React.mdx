@@ -1,0 +1,173 @@
+---
+title: How to create a dynamic HTML time tag using React?
+description: If you're planning on publishing a lot of posts on your website or blog, then you might want to put the times when it was written using React.js.
+date:
+  day: 6
+  month: 8
+  year: 2022
+---
+
+If you're planning on publishing a lot of posts on your website or blog, then you might want to put
+the times when it was written using **_React.js_** .
+
+## Create a datetime attribute
+
+The first step is to create an array with all the months to get it using the index:
+
+```js
+export default function Time() {
+  var arrayMonths = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+  ];
+
+  return (
+    <time dateTime="" className="text-primary-600 weight-bold">
+      <em></em>
+    </time>
+  );
+}
+```
+
+The next step is to add the day, month, and year in variables **_Time function_**:
+
+```js
+export default function Time({
+  day = '',
+  month,
+  separator = ' ', // not mandatory
+  year = ''
+}) {
+  var arrayMonths = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+  ];
+
+  return (
+    <time dateTime="" className="text-primary-600 weight-bold">
+      <em></em>
+    </time>
+  );
+}
+```
+
+we put the separator if you want to put decoration between the times like `/` `#` `*`.etc
+
+Let’s deal with the data time. Add the following variable named dataTime:
+
+```js
+export default function Time({
+  day = '',
+  month,
+  separator = ' ', // not mandatory
+  year = ''
+}) {
+  var arrayMonths = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+  ];
+
+  const dataTime = `${year}-${month < 10 ? `0${month}` : `${month}`}-${
+    day < 10 ? `0${day}` : `${day}`
+  }`;
+
+  return (
+    <time dateTime={dataTime} className="text-primary-600 weight-bold">
+      <em></em>
+    </time>
+  );
+}
+```
+
+Loads are going on here, so let’s break it down:
+
+1. We put the year to be like this: `dataTime="2022-"`.
+2. Using the Ternary operator to say if the month less than `10` is going to return `06`
+   if the month is bigger than `10` it will return the number you have written like `11`.
+3. The same thing applies to the month applies to the day.
+
+## Create custom date text
+
+Lots covered there, but we’ve still got more things to add.
+Let's concentrate on the text content. Add the following variable named dataText:
+
+```js
+export default function Time({
+  day = '',
+  month,
+  separator = ' ', // not mandatory
+  year = ''
+}) {
+  var arrayMonths = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+  ];
+
+  const dataTime = `${year}-${month < 10 ? `0${month}` : `${month}`}-${
+    day < 10 ? `0${day}` : `${day}`
+  }`;
+
+  const dataText = `${`${
+    arrayMonths[month - 1]
+  }`}${separator}${day},${separator}${year}`;
+
+  return (
+    <time dateTime={dataTime} className="text-primary-600 weight-bold">
+      <em>{dataText}</em>
+    </time>
+  );
+}
+```
+
+We start first with getting the month using the index and putting the separator.
+then getting the day. then getting the year.
+
+## Using it
+
+```js
+import Time from '../components/Time';
+
+export default function Post() {
+  return <Time day={6} month={7} year={2022} separator={undefined} />;
+}
+```
