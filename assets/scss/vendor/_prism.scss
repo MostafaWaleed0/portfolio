@@ -1,0 +1,110 @@
+code,
+pre {
+  position: relative;
+  color: #ccc;
+  background: #2d2d2d;
+  font-family: Cascadia Code;
+  font-size: 1em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  hyphens: none;
+}
+
+pre {
+  display: flex;
+  padding: 2.8em 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  border-radius: 0.7em;
+  box-shadow: 0 0 1em rgb(0 0 0 / 30%);
+
+  &::after {
+    content: attr(class);
+    position: sticky;
+    right: 0;
+    margin-top: -2em;
+    text-transform: uppercase;
+  }
+
+  &[class~='language-js']::after {
+    content: 'javascript';
+  }
+
+  &[class~='language-html']::after {
+    content: 'html';
+  }
+
+  &[class~='language-css']::after {
+    content: 'css';
+  }
+}
+
+code:not([class]) {
+  padding: 0.2em;
+  border-radius: 0.2em;
+}
+
+:not(pre) > code[class*='language-'] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.token {
+  &:is(.comment, .block-comment, .prolog, .doctype, .cdata) {
+    color: #999;
+  }
+
+  &:is(.punctuation) {
+    color: #ccc;
+  }
+
+  &:is(.tag, .attr-name, .namespace, .deleted) {
+    color: #e2777a;
+  }
+
+  &:is(.function-name) {
+    color: #6196cc;
+  }
+
+  &:is(.boolean, .number, .function) {
+    color: #ffa365;
+  }
+
+  &:is(.property, .class-name, .constant, .symbol) {
+    color: #f8c555;
+  }
+
+  &:is(.selector, .important, .atrule, .keyword, .builtin) {
+    color: #f79ff9;
+  }
+
+  &:is(.string, .char, .attr-value, .regex, .variable) {
+    color: #78cf98;
+  }
+
+  &:is(.operator, .entity, .url) {
+    color: #67cdcc;
+  }
+
+  &:is(.important, .bold) {
+    font-weight: bold;
+  }
+
+  &:is(.italic) {
+    font-style: italic;
+  }
+
+  &:is(.entity) {
+    cursor: help;
+  }
+
+  &:is(.inserted) {
+    color: green;
+  }
+}
