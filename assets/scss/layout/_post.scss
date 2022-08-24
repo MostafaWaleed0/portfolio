@@ -1,42 +1,43 @@
-@use "../abstracts/breakpoint" as *;
-@use "../abstracts/tokens/tokens" as *;
+@use '../abstracts/breakpoint' as *;
+@use '../abstracts/tokens/tokens' as *;
 
 .post {
   --flow-space: var(--space-600);
-  max-width: 45rem;
+  max-width: 50rem;
   width: 100%;
   margin-inline: auto;
 
-  :where(p, strong, em, li, figcaption, blockquote) {
+  :is(p, strong, em, li, figcaption, blockquote) {
     max-width: 65ch;
   }
 
-  :where(h2, h3) {
+  :is(h2, h3) {
     --flow-space: var(--space-800);
   }
 
-  :where(& ol, & ul) > li + li {
+  :is(& ol, & ul) > li + li {
     margin-block: var(--space-100);
   }
 
-  :where(h2 + p, h3 + p, h2 + ul, h3 + ul) {
+  :is(h2 + p, h3 + p, h2 + ul, h3 + ul) {
     --flow-space: var(--space-300);
   }
 
-  :where(h4 + p, h4 + ul) {
+  :is(h4 + p, h4 + ul) {
     --flow-space: var(--space-200);
   }
 
-  :where(h2 + h3) {
+  :is(h2 + h3) {
     --flow-space: var(--space-400);
   }
 
-  :where(strong + h3) {
+  :is(em:not([class]), strong:not([class])) {
+    color: $color-text-primary-600;
+  }
+
+  :is(strong + h3) {
     padding-block-end: var(--space-100);
     width: fit-content;
     border-bottom: 0.15em solid $color-border-primary-600;
-  }
-
-  &__head {
   }
 }
