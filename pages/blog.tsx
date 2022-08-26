@@ -4,7 +4,7 @@ import matter from 'gray-matter'
 import Container from '../components/Container'
 import { BlogPostType  } from "../types";
 import Link from "next/link";
-// import Image from "next/image";
+import Image from "next/image";
 import Time from '../components/Time'
 
 interface Props {
@@ -27,14 +27,14 @@ export default function Blog({ posts }: Props) {
                     tabIndex={0}
                   >
                     <article className="flow" style={{ maxWidth: '561px' }}>
-                      {/* <Image
-                        src="https://images.pexels.com/photos/48770/business-time-clock-clocks-48770.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                      <Image
+                        src={post.frontmatter.banner}
                         width={561}
                         height={300}
                         alt=""
                         layout="responsive"
                         className="card__image"
-                      /> */}
+                      />
                       <h3 className="fs-600">{post.frontmatter.title}</h3>
                       <div className="card__data">
                         <Time

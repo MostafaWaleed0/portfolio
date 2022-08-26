@@ -13,7 +13,7 @@ module.exports = {
   },
 
   images: {
-    domains: ['image/png', 'image/webp', 's3-alpha.figma.com'],
+    domains: ['image/png', 'image/webp', 's3-alpha.figma.com', "images.pexels.com"],
   },
 
   async headers() {
