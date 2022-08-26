@@ -19,7 +19,7 @@
   border-radius: $button-border-radius;
   text-transform: capitalize;
 
-  &:where(:hover, :focus):not(.skip-link) {
+  &:where(:hover, :focus-visible):not(.skip-link) {
     position: relative;
     color: $button-text-default;
     background-image: linear-gradient(

@@ -10,7 +10,7 @@
   overflow: hidden;
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     background-color: $color-surface-inverse;
   }
 }
