@@ -6,22 +6,7 @@ import Time from 'components/Time';
 import { mdxToHtml } from 'lib/mdx';
 import { MDXRemote } from 'next-mdx-remote';
 import { useEffect } from 'react';
-
-interface Props {
-  slug: any;
-  frontmatter: {
-    card: boolean;
-    title: string | number | boolean;
-    tag: string | number | boolean;
-    description: string | number | boolean;
-    date: {
-      day: number;
-      month: number;
-      year: number;
-    };
-  };
-  content: any;
-}
+import { PostPageType } from 'types';
 
 export default function PostPage({
   frontmatter: {
@@ -29,7 +14,7 @@ export default function PostPage({
     date: { day, month, year }
   },
   content
-}: Props) {
+}: PostPageType) {
   useEffect(() => {
     try {
       // @ts-ignore

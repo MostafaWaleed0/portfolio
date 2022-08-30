@@ -2,16 +2,12 @@ import { readdirSync, readFileSync } from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
 import Container from '../components/Container';
-import { BlogPostType } from '../types';
 import Link from 'next/link';
 import Image from 'next/image';
 import Time from '../components/Time';
+import { BlogPostType } from 'types';
 
-interface Props {
-  posts: BlogPostType;
-}
-
-export default function Blog({ posts }: Props) {
+export default function Blog({ posts }: BlogPostType) {
   return (
     <Container title="Blogs - MW">
       <article className="[ wrapper ] [ margin-block-start-700 margin-block-end-800 ]">

@@ -1,17 +1,24 @@
 import { InputHTMLAttributes, TextareaHTMLAttributes } from 'react';
-
-export type PostType = {
-  content: string;
-  date: string;
-  description: string;
-  imagePath: string;
+export interface PostPageType {
   slug: string;
-  title: string;
-};
+  frontmatter: {
+    title: string | number;
+    description: string | boolean;
+    banner: string;
+    tag: string | number | boolean;
+    date: {
+      day: number;
+      month: number;
+      year: number;
+    };
+    card: boolean;
+  };
+  content: any;
+}
 
-export type BlogPostType = {
-  [key: string]: any;
-};
+export interface BlogPostType {
+  [key: string]: Array<PostPageType>;
+}
 
 export interface InputType extends InputHTMLAttributes<HTMLInputElement> {
   [x: string]: any;
