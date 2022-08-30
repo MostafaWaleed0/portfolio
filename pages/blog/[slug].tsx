@@ -5,6 +5,7 @@ import Container from 'components/Container';
 import Time from 'components/Time';
 import { mdxToHtml } from 'lib/mdx';
 import { MDXRemote } from 'next-mdx-remote';
+import { useEffect } from 'react';
 
 interface Props {
   slug: any;
@@ -29,9 +30,19 @@ export default function PostPage({
   },
   content
 }: Props) {
+  useEffect(() => {
+    try {
+      // @ts-ignore
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (err) {
+      console.error(err);
+    }
+  }, []);
+
   return (
     <Container>
       <article className="[ wrapper ] [ region ] [ margin-block-start-300 ]">
+        <div className="sidebar">
         <div className="[ post ] [ flow ]">
           <header>
             <h1>{title}</h1>
@@ -41,6 +52,16 @@ export default function PostPage({
           </header>
           <hr />
           <MDXRemote {...content} />
+          </div>
+          <div className="advertisement">
+            <ins
+              className="adsbygoogle"
+              style={{ display: 'block' }}
+              data-ad-format="autorelaxed"
+              data-ad-client="ca-pub-9386151835640137"
+              data-ad-slot="4501655395"
+            ></ins>
+          </div>
         </div>
       </article>
     </Container>

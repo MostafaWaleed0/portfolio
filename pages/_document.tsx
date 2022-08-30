@@ -5,6 +5,11 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9386151835640137"
+          crossOrigin="anonymous"
+        ></script>
         <link rel="preload" href="/fonts/fonts.css" as="style" />
         <link rel="icon" type="image/svg" sizes="32x32" href="/static/favicons/mw-logo.svg" />
         <link rel="apple-touch-icon" sizes="180x180" href="/static/favicons/mw-logo.svg" />
