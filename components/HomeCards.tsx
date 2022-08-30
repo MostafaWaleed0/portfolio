@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
 export default function HomeCards() {
   return (
@@ -39,5 +39,5 @@ export default function HomeCards() {
         </ol>
       </div>
     </section>
-  )
+  );
 }

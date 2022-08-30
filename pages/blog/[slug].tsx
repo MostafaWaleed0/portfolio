@@ -43,15 +43,15 @@ export default function PostPage({
     <Container>
       <article className="[ wrapper ] [ region ] [ margin-block-start-300 ]">
         <div className="sidebar">
-        <div className="[ post ] [ flow ]">
-          <header>
-            <h1>{title}</h1>
-            <div className="cluster" data-align="start">
-              <Time day={day} month={month} year={year} />
-            </div>
-          </header>
-          <hr />
-          <MDXRemote {...content} />
+          <div className="[ post ] [ flow ]">
+            <header>
+              <h1>{title}</h1>
+              <div className="cluster" data-align="start">
+                <Time day={day} month={month} year={year} />
+              </div>
+            </header>
+            <hr />
+            <MDXRemote {...content} />
           </div>
           <div className="advertisement">
             <ins

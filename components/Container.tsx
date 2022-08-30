@@ -4,24 +4,32 @@ import Footer from './Footer';
 import Header from './Header';
 
 export default function Container(props: { [x: string]: any; children: any }) {
-  const router = useRouter()
+  const router = useRouter();
 
-  const { children, ...customMeta } = props
+  const { children, ...customMeta } = props;
   const meta = {
     title: 'Mostafa Waleed - Frontend developer',
     description: `Mostafa Waleed, an experienced freelance web developer based in the Egypt`,
     image: '/mw-logo.svg"',
     type: 'website',
-    ...customMeta,
-  }
+    ...customMeta
+  };
 
   return (
     <>
       <Head>
-        <meta charSet="utf-8"/>
+        <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-        {router.asPath=== "/" ? <meta name="google-site-verification" content="yNRfmqiqqj1EekI2rFHjrJoFVnx6zJTisszEIeWGf9Y" /> : null }
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover"
+        />
+        {router.asPath === '/' ? (
+          <meta
+            name="google-site-verification"
+            content="yNRfmqiqqj1EekI2rFHjrJoFVnx6zJTisszEIeWGf9Y"
+          />
+        ) : null}
         <title>{meta.title}</title>
         <meta content={meta.description} name="description" />
         <link
@@ -44,5 +52,5 @@ export default function Container(props: { [x: string]: any; children: any }) {
       </main>
       <Footer />
     </>
-  )
+  );
 }

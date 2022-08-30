@@ -1,5 +1,5 @@
-import Container from '../components/Container'
-import { tools } from '../data/tools'
+import Container from '../components/Container';
+import { tools } from '../data/tools';
 
 export default function Tools() {
   return (
@@ -16,13 +16,13 @@ export default function Tools() {
             {tools.map(
               (
                 tool: {
-                  id: number
-                  icon: JSX.Element
-                  functions: string[]
-                  title: string
-                  url: string
+                  id: number;
+                  icon: JSX.Element;
+                  functions: string[];
+                  title: string;
+                  url: string;
                 },
-                index: number,
+                index: number
               ) => {
                 return (
                   <li className="collection-item" key={index + 1}>
@@ -36,19 +36,19 @@ export default function Tools() {
                               <div className="pill" key={index + 1}>
                                 {_function}
                               </div>
-                            )
-                          },
+                            );
+                          }
                         )}
                         <a href={tool.url}>{tool.url}</a>
                       </div>
                     </div>
                   </li>
-                )
-              },
+                );
+              }
             )}
           </ul>
         </div>
       </article>
     </Container>
-  )
+  );
 }

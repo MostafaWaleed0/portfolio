@@ -1,11 +1,11 @@
-import { readdirSync, readFileSync } from 'fs'
-import { join }  from 'path'
-import matter from 'gray-matter'
-import Container from '../components/Container'
-import { BlogPostType  } from "../types";
-import Link from "next/link";
-import Image from "next/image";
-import Time from '../components/Time'
+import { readdirSync, readFileSync } from 'fs';
+import { join } from 'path';
+import matter from 'gray-matter';
+import Container from '../components/Container';
+import { BlogPostType } from '../types';
+import Link from 'next/link';
+import Image from 'next/image';
+import Time from '../components/Time';
 
 interface Props {
   posts: BlogPostType;
@@ -61,21 +61,24 @@ export default function Blog({ posts }: Props) {
         </div>
       </article>
     </Container>
-  )
+  );
 }
 
 export async function getStaticProps() {
-  const files = readdirSync(join('data/posts'))
+  const files = readdirSync(join('data/posts'));
   const posts = files.map((filename) => {
     // Create slug
     const slug = filename.replace('.mdx', '');
-    const markdownWithMeta = readFileSync(join('data/posts', filename),'utf-8');
+    const markdownWithMeta = readFileSync(
+      join('data/posts', filename),
+      'utf-8'
+    );
     const { data: frontmatter } = matter(markdownWithMeta);
-    return {slug, frontmatter};
-  })
+    return { slug, frontmatter };
+  });
   return {
     props: {
-      posts: posts,
-    },
-  }
+      posts: posts
+    }
+  };
 }

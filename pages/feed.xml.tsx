@@ -4,14 +4,17 @@ import { join } from 'path';
 import RSS from 'rss';
 
 export async function getServerSideProps({ res }) {
-  const files = readdirSync(join(process.cwd(), 'data/posts'))
+  const files = readdirSync(join(process.cwd(), 'data/posts'));
   const posts = files.map((filename) => {
     // Create slug
     const slug = filename.replace('.mdx', '');
-    const markdownWithMeta = readFileSync(join(process.cwd(), 'data/posts', filename),'utf-8');
+    const markdownWithMeta = readFileSync(
+      join(process.cwd(), 'data/posts', filename),
+      'utf-8'
+    );
     const { data: frontmatter } = matter(markdownWithMeta);
-    return {slug, frontmatter};
-  })
+    return { slug, frontmatter };
+  });
 
   const feed = new RSS({
     title: 'Mostafa Waleed - Frontend developer',
@@ -23,13 +26,21 @@ export async function getServerSideProps({ res }) {
     feed.item({
       title: post.frontmatter.title,
       url: `https://mostafawaleed.me/blog/${post.slug}`,
-      date: post.frontmatter.date.year + "-" + post.frontmatter.date.month + "-" + post.frontmatter.date.day,
+      date:
+        post.frontmatter.date.year +
+        '-' +
+        post.frontmatter.date.month +
+        '-' +
+        post.frontmatter.date.day,
       description: post.frontmatter.description
     });
   });
 
   res.setHeader('Content-Type', 'text/xml');
-  res.setHeader('Cache-Control', 'public, s-maxage=1200, stale-while-revalidate=600');
+  res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=1200, stale-while-revalidate=600'
+  );
   res.write(feed.xml({ indent: true }));
   res.end();
 

@@ -1,4 +1,4 @@
-import { InputType } from '../types'
+import { InputType } from '../types';
 
 export default function Input({
   type,
@@ -9,7 +9,7 @@ export default function Input({
   variablePropValue = `${id}_error`,
   ...props
 }: InputType) {
-  const variableAttribute = { [variablePropName]: variablePropValue }
+  const variableAttribute = { [variablePropName]: variablePropValue };
   return (
     <>
       <label htmlFor={id}>{id}</label>
@@ -25,5 +25,5 @@ export default function Input({
       />
       {error && <p id={`${id}_error`}>*{errorMessage}</p>}
     </>
-  )
+  );
 }

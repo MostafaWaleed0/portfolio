@@ -1,49 +1,49 @@
-import emailjs from '@emailjs/browser'
-import { useRouter } from 'next/router'
-import { useRef, useState } from 'react'
-import { validate } from '../utils/validate'
-import Input from './Input'
-import TextArea from './TextArea'
+import emailjs from '@emailjs/browser';
+import { useRouter } from 'next/router';
+import { useRef, useState } from 'react';
+import { validate } from '../utils/validate';
+import Input from './Input';
+import TextArea from './TextArea';
 
 interface IValues {
-  name: string
-  email: string
-  job: string
-  deadline: string
-  details: string
+  name: string;
+  email: string;
+  job: string;
+  deadline: string;
+  details: string;
 }
 
 interface IErrors extends Partial<IValues> {}
 
 export default function Form() {
-  const form = useRef<any>()
+  const form = useRef<any>();
 
   const [values, setValues] = useState<IValues>({
     name: '',
     email: '',
     job: '',
     deadline: '',
-    details: '',
-  })
-  const [errors, setErrors] = useState<IErrors>({})
-  const [loading, setLoading] = useState(false)
-  const router = useRouter()
+    details: ''
+  });
+  const [errors, setErrors] = useState<IErrors>({});
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    const errors = validate(values)
+    e.preventDefault();
+    const errors = validate(values);
     if (errors && Object.keys(errors).length > 0) {
-      return setErrors(errors)
+      return setErrors(errors);
     }
-    setErrors({})
-    setLoading(true)
+    setErrors({});
+    setLoading(true);
 
     emailjs
       .sendForm(
         'mostafawaleed206',
         'template_83o9y8m',
         form.current,
-        '0-QLZgcFoOF2mnD8g',
+        '0-QLZgcFoOF2mnD8g'
       )
       .then(() => {
         setValues({
@@ -51,24 +51,24 @@ export default function Form() {
           email: '',
           job: '',
           deadline: '',
-          details: '',
-        })
-      })
+          details: ''
+        });
+      });
 
-    setLoading(false)
-    router.push('/contact-thank-you')
-  }
+    setLoading(false);
+    router.push('/contact-thank-you');
+  };
 
   const handleChange = (
     e:
       | React.ChangeEvent<HTMLInputElement>
-      | React.ChangeEvent<HTMLTextAreaElement>,
+      | React.ChangeEvent<HTMLTextAreaElement>
   ) => {
     setValues((prevInput) => ({
       ...prevInput,
-      [e.target.name]: e.target.value,
-    }))
-  }
+      [e.target.name]: e.target.value
+    }));
+  };
 
   return (
     <form
@@ -138,5 +138,5 @@ export default function Form() {
         </button>
       </div>
     </form>
-  )
+  );
 }

@@ -1,4 +1,4 @@
-import Container from '../components/Container'
+import Container from '../components/Container';
 
 export default function contactThankYou() {
   return (
@@ -15,5 +15,5 @@ export default function contactThankYou() {
         </div>
       </article>
     </Container>
-  )
+  );
 }

@@ -1,4 +1,4 @@
-import { InputHTMLAttributes, TextareaHTMLAttributes } from 'react'
+import { InputHTMLAttributes, TextareaHTMLAttributes } from 'react';
 
 export type PostType = {
   content: string;
@@ -23,7 +23,8 @@ export interface InputType extends InputHTMLAttributes<HTMLInputElement> {
   variablePropValue?: string;
 }
 
-export interface TextAreaType extends TextareaHTMLAttributes<HTMLTextAreaElement> {
+export interface TextAreaType
+  extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   [x: string]: any;
   id: string;
   label: string;

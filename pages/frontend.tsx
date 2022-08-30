@@ -1,6 +1,6 @@
-import Image from 'next/image'
-import Container from '../components/Container'
-import { frontend } from '../data/frontend'
+import Image from 'next/image';
+import Container from '../components/Container';
+import { frontend } from '../data/frontend';
 
 export default function Frontend() {
   return (
@@ -14,11 +14,11 @@ export default function Frontend() {
             {frontend.map(
               (
                 lang: {
-                  id: number
-                  icon: any
-                  title: string
+                  id: number;
+                  icon: any;
+                  title: string;
                 },
-                index: number,
+                index: number
               ) => {
                 return (
                   <li key={index + 1} className="collection-item">
@@ -29,12 +29,12 @@ export default function Frontend() {
                       <div className="collection-item__title">{lang.title}</div>
                     </div>
                   </li>
-                )
-              },
+                );
+              }
             )}
           </ul>
         </div>
       </section>
     </Container>
-  )
+  );
 }

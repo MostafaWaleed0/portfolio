@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-css-tags */
-import { Head, Html, Main, NextScript } from 'next/document'
+import { Head, Html, Main, NextScript } from 'next/document';
 
 export default function Document() {
   return (
@@ -11,8 +11,17 @@ export default function Document() {
           crossOrigin="anonymous"
         ></script>
         <link rel="preload" href="/fonts/fonts.css" as="style" />
-        <link rel="icon" type="image/svg" sizes="32x32" href="/static/favicons/mw-logo.svg" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/static/favicons/mw-logo.svg" />
+        <link
+          rel="icon"
+          type="image/svg"
+          sizes="32x32"
+          href="/static/favicons/mw-logo.svg"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/static/favicons/mw-logo.svg"
+        />
         <meta content="#ffffff" name="theme-color" />
         <meta content="#ffffff" name="msapplication-TileColor" />
       </Head>
@@ -21,5 +30,5 @@ export default function Document() {
         <NextScript />
       </body>
     </Html>
-  )
+  );
 }

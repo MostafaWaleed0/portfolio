@@ -1,5 +1,5 @@
-import Container from '../components/Container'
-import From from '../components/Form'
+import Container from '../components/Container';
+import From from '../components/Form';
 
 export default function Contact() {
   return (
@@ -20,5 +20,5 @@ export default function Contact() {
         </div>
       </section>
     </Container>
-  )
+  );
 }

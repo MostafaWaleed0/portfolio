@@ -1,4 +1,4 @@
-import { TextAreaType } from '../types'
+import { TextAreaType } from '../types';
 
 export default function TextArea({
   id,
@@ -6,10 +6,10 @@ export default function TextArea({
   error = false,
   errorMessage = '',
   variablePropName = `aria-describedby`,
-  variablePropValue = `${id}_error` ,
+  variablePropValue = `${id}_error`,
   ...props
 }: TextAreaType) {
-  const variableAttribute = { [variablePropName]: variablePropValue }
+  const variableAttribute = { [variablePropName]: variablePropValue };
 
   return (
     <>
@@ -25,5 +25,5 @@ export default function TextArea({
       ></textarea>
       {error && <p id={`${id}_helper`}>*{errorMessage}</p>}
     </>
-  )
+  );
 }

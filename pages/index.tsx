@@ -1,9 +1,9 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { Suspense } from 'react'
-import Container from '../components/Container'
-import HomeCards from '../components/HomeCards'
-import { languages, tools } from '../data/skillsAndTools'
+import Image from 'next/image';
+import Link from 'next/link';
+import { Suspense } from 'react';
+import Container from '../components/Container';
+import HomeCards from '../components/HomeCards';
+import { languages, tools } from '../data/skillsAndTools';
 
 export default function Home() {
   return (
@@ -90,12 +90,12 @@ export default function Home() {
                 {languages.map(
                   (
                     lang: {
-                      id: number
-                      icon: JSX.Element
-                      url: string
-                      title: string
+                      id: number;
+                      icon: JSX.Element;
+                      url: string;
+                      title: string;
                     },
-                    index: number,
+                    index: number
                   ) => {
                     return (
                       <li key={index + 1} className="[ square ] [ flow ]">
@@ -104,8 +104,8 @@ export default function Home() {
                           {lang.title}
                         </span>
                       </li>
-                    )
-                  },
+                    );
+                  }
                 )}
                 <li>
                   <Link href="/frontend">
@@ -129,12 +129,12 @@ export default function Home() {
                 {tools.map(
                   (
                     tool: {
-                      id: number
-                      icon: JSX.Element
-                      url: string
-                      title: string
+                      id: number;
+                      icon: JSX.Element;
+                      url: string;
+                      title: string;
                     },
-                    index: number,
+                    index: number
                   ) => {
                     return (
                       <li key={index + 1} className="[ square ] [ flow ]">
@@ -143,8 +143,8 @@ export default function Home() {
                           {tool.title}
                         </span>
                       </li>
-                    )
-                  },
+                    );
+                  }
                 )}
                 <li>
                   <Link href="/tools">
@@ -167,5 +167,5 @@ export default function Home() {
         <HomeCards />
       </Container>
     </Suspense>
-  )
+  );
 }
