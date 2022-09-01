@@ -8,7 +8,6 @@ const createSitemap = (slugs) => `<?xml version="1.0" encoding="UTF-8"?>
             return `
                 <url>
                     <loc>${`https://mostafawaleed.me/${slug}`}</loc>
-                    <lastmod>2022-08-20T13:28:54+00:00</lastmod>
                 </url>
             `;
           })
