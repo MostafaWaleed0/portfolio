@@ -4,24 +4,25 @@ pre {
   color: #ccc;
   background: #2d2d2d;
   font-family: Cascadia Code;
-  font-size: 1em;
+  font-size: 0.875em;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
-  line-height: 1.5;
+  line-height: 1.7;
   tab-size: 4;
   hyphens: none;
 }
 
 pre {
   display: flex;
+  justify-content: space-between;
   padding: 2.8em 1em;
   margin: 0.5em 0;
   overflow: auto;
   border-radius: 0.7em;
-  box-shadow: 0 0 1em rgb(0 0 0 / 30%);
+  box-shadow: 0 0 1em rgb(0 0 0 / 20%);
 
   &::after {
     content: attr(class);
@@ -42,11 +43,32 @@ pre {
   &[class~='language-css']::after {
     content: 'css';
   }
+
+  &[class~='language-powershell']::after {
+    content: 'powershell';
+  }
+
+  &[class~='language-tsx']::after {
+    content: 'react-typescript';
+  }
+
+  &[class~='language-text']::after {
+    content: 'text';
+  }
+
+  &[class~='language-md']::after {
+    content: 'markdown';
+  }
+
+  &[class~='language-ts']::after {
+    content: 'typescript';
+  }
 }
 
 code:not([class]) {
   padding: 0.2em;
   border-radius: 0.2em;
+  font-size: 85%;
 }
 
 :not(pre) > code[class*='language-'] {
