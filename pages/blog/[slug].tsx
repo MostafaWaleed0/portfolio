@@ -7,6 +7,7 @@ import { mdxToHtml } from 'lib/mdx';
 import { MDXRemote } from 'next-mdx-remote';
 import { useEffect } from 'react';
 import { PostPageType } from 'types';
+import components from 'components/MDXComponents';
 
 export default function PostPage({
   frontmatter: {
@@ -36,7 +37,12 @@ export default function PostPage({
               </div>
             </header>
             <hr />
-            <MDXRemote {...content} />
+            <MDXRemote
+              {...content}
+              components={{
+                ...components
+              }}
+            />
           </div>
           <div className="advertisement">
             <ins
