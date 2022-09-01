@@ -14,7 +14,14 @@ export async function mdxToHtml(source) {
         rehypeSlug,
         rehypeCodeTitles,
         rehypePrism,
-        rehypeAutolinkHeadings
+        [
+          rehypeAutolinkHeadings,
+          {
+            properties: {
+              className: ['anchor']
+            }
+          }
+        ]
       ],
       format: 'mdx'
     }
