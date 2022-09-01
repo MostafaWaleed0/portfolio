@@ -23,15 +23,19 @@ export async function getServerSideProps({ res }) {
   });
 
   posts.map((post) => {
+    const Time = `${post.frontmatter.date.year}-${
+      post.frontmatter.date.month < 10
+        ? `0${post.frontmatter.date.month}`
+        : `${post.frontmatter.date.month}`
+    }-${
+      post.frontmatter.date.day < 10
+        ? `0${post.frontmatter.date.day}`
+        : `${post.frontmatter.date.day}`
+    }`;
     feed.item({
       title: post.frontmatter.title,
       url: `https://mostafawaleed.me/blog/${post.slug}`,
-      date:
-        post.frontmatter.date.year +
-        '-' +
-        post.frontmatter.date.month +
-        '-' +
-        post.frontmatter.date.day,
+      date: Time,
       description: post.frontmatter.description
     });
   });
