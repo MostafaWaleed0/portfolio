@@ -71,3 +71,8 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: Cascadia Code;
+  src: url(./CascadiaCode.ttf) format('truetype');
+}
