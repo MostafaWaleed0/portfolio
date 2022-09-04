@@ -12,6 +12,7 @@ import components from 'components/MDXComponents';
 export default function PostPage({
   frontmatter: {
     title,
+    description,
     date: { day, month, year }
   },
   content
@@ -26,7 +27,7 @@ export default function PostPage({
   }, []);
 
   return (
-    <Container>
+    <Container title={title + ' - MW'} description={description}>
       <article className="[ wrapper ] [ region ] [ margin-block-start-300 ]">
         <div className="sidebar">
           <div className="[ post ] [ flow ]">
