@@ -17,7 +17,7 @@ export async function getServerSideProps({ res }) {
   });
 
   const feed = new RSS({
-    title: 'Mostafa Waleed - Frontend developer',
+    title: 'MW',
     site_url: 'https://mostafawaleed.me',
     feed_url: 'https://mostafawaleed.me/feed.xml'
   });

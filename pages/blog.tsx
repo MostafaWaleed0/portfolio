@@ -9,7 +9,7 @@ import { BlogPostType } from 'types';
 
 export default function Blog({ posts }: BlogPostType) {
   return (
-    <Container title="Blogs - MW">
+    <Container title="Blog - MW">
       <article className="[ wrapper ] [ margin-block-start-700 margin-block-end-800 ]">
         <h1>Blogs</h1>
         <div className="margin-block-start-700">
