@@ -300,5 +300,32 @@ export const tools = [
     functions: ['automation', 'workflow'],
     title: 'zapier',
     url: 'https://zapier.com'
+  },
+  {
+    id: 13,
+    icon: (
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 510.88 512"
+        fill="#FCA253"
+        width="1.4em"
+        height="1.4em"
+      >
+        <rect
+          x="270.57"
+          width="240.31"
+          height="240.31"
+          rx="24"
+          fill="inherit"
+        ></rect>
+        <path
+          d="M215.12 254.73V68.5a29.16 29.16 0 0 0-8.55-20.64 29.19 29.19 0 0 0-41.28 0L16.18 197a55.27 55.27 0 0 0 0 78.14l220.71 220.68a55.27 55.27 0 0 0 78.14 0l149.11-149.11a29.19 29.19 0 0 0 0-41.28l-1.14-1.12a29.16 29.16 0 0 0-20.64-8.55H256.15a41 41 0 0 1-41.03-41.03z"
+          fill="inherit"
+        ></path>
+      </svg>
+    ),
+    functions: ['code', 'email'],
+    title: 'EmailJS',
+    url: 'https://www.emailjs.com'
   }
 ];
