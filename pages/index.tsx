@@ -64,7 +64,7 @@ export default function Home() {
                   <ul className="text-capitalize">
                     <li>playing guitar</li>
                     <li>music</li>
-                    <li>working in sass</li>
+                    <li>working using sass</li>
                     <li>reading</li>
                   </ul>
                 </div>
