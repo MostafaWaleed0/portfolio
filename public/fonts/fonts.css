@@ -74,5 +74,18 @@
 
 @font-face {
   font-family: Cascadia Code;
-  src: url(./CascadiaCode.ttf) format('truetype');
+  src: url(/fonts/CascadiaCode.ttf) format('truetype'),
+    url(/fonts/CascadiaCode.woff2) format('woff2'),
+    url(/fonts/CascadiaCode.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Cascadia Code;
+  src: url(./CascadiaCode.ttf) format('truetype'),
+    url(./CascadiaCode.woff2) format('woff2'),
+    url(./CascadiaCode.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
