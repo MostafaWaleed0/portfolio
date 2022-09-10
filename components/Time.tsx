@@ -7,18 +7,18 @@ export default function Time({
   year = ''
 }: TimeType) {
   var arrayMonths: string[] = [
-    'January',
-    'February',
-    'March',
-    'April',
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
     'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December'
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec'
   ];
   const dataTime = `${year}-${month < 10 ? `0${month}` : `${month}`}-${
     day < 10 ? `0${day}` : `${day}`
