@@ -31,10 +31,6 @@
     --flow-space: var(--space-400);
   }
 
-  :is(em:not([class]), strong:not([class])) {
-    color: $color-text-primary-600;
-  }
-
   :is(h2, h3, h4, h5) {
     scroll-margin-top: 1rem;
 

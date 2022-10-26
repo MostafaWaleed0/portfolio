@@ -26,14 +26,26 @@ pre {
 
   &::after {
     content: attr(class);
+    display: inline-block;
+    font-size: 1rem;
+    margin-left: -200px;
+    opacity: 0.7;
     position: sticky;
     right: 0;
-    margin-top: -2em;
     text-transform: uppercase;
+    top: 100%;
+    text-align: right;
+    transform: translate(-16px, 40px);
+    width: 200px;
+    height: fit-content;
   }
 
   &[class~='language-js']::after {
-    content: 'javascript';
+    content: 'js';
+  }
+
+  &[class~='language-jsx']::after {
+    content: 'jsx';
   }
 
   &[class~='language-html']::after {
@@ -49,7 +61,7 @@ pre {
   }
 
   &[class~='language-tsx']::after {
-    content: 'react-typescript';
+    content: 'tsx';
   }
 
   &[class~='language-text']::after {
@@ -57,11 +69,11 @@ pre {
   }
 
   &[class~='language-md']::after {
-    content: 'markdown';
+    content: 'md';
   }
 
   &[class~='language-ts']::after {
-    content: 'typescript';
+    content: 'ts';
   }
 }
 
