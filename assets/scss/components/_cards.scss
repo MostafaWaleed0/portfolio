@@ -32,34 +32,26 @@
       transform: translate(0, -50%);
     }
 
-    &__focusable:where(:hover) > .card__technologies > * {
-      transform: translate(0, 150%);
-      transition: all 300ms linear;
+    &__focusable:where(:hover, :focus-visible) > .card__technologies {
+      top: 0;
     }
 
     &__technologies {
       display: flex;
-      @include position(absolute, $top: 0, $right: 50%);
-      transform: translate(50%, -100%);
+      flex-wrap: wrap;
+      @include position(absolute, $top: -50%);
+      transition: all 300ms linear;
 
       & > * {
         display: flex;
         justify-content: center;
         align-items: center;
         padding: var(--space-50);
-        margin: var(--space-50);
-        width: min(13vw, rem(60));
+        margin: 0.3rem;
+        width: min(13vw, rem(64));
         aspect-ratio: 1 / 1;
         border-radius: $border-radius-rounded-full;
         background-color: $color-surface-inverse-2;
-      }
-    }
-
-    @for $i from 1 through 4 {
-      &__focusable:where(:hover, :focus)
-        > .card__technologies
-        > *:nth-of-type(#{$i}) {
-        transition-delay: calc($i * 70ms);
       }
     }
 
