@@ -40,10 +40,10 @@ export default function Form() {
 
     emailjs
       .sendForm(
-        'mostafawaleed206',
-        'template_83o9y8m',
+        process.env.EMAILJS_SERVICE_ID,
+        process.env.EMAILJS_TEMPLATE_ID,
         form.current,
-        '0-QLZgcFoOF2mnD8g'
+        process.env.EMAILJS_PUBLIC_KEY
       )
       .then(() => {
         setValues({
