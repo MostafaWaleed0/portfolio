@@ -5,7 +5,6 @@ import Container from 'components/Container';
 import Time from 'components/Time';
 import { mdxToHtml } from 'lib/mdx';
 import { MDXRemote } from 'next-mdx-remote';
-import { useEffect } from 'react';
 import { PostPageType } from 'types';
 import components from 'components/MDXComponents';
 
@@ -17,43 +16,23 @@ export default function PostPage({
   },
   content
 }: PostPageType) {
-  useEffect(() => {
-    try {
-      // @ts-ignore
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    } catch (err) {
-      console.error(err);
-    }
-  }, []);
-
   return (
     <Container title={title + ' - MW'} description={description}>
       <article className="[ wrapper ] [ region ] [ margin-block-start-300 ]">
-        <div className="sidebar">
-          <div className="[ post ] [ flow ]">
-            <header>
-              <h1>{title}</h1>
-              <div className="cluster" data-align="start">
-                <Time day={day} month={month} year={year} />
-              </div>
-            </header>
-            <hr />
-            <MDXRemote
-              {...content}
-              components={{
-                ...components
-              }}
-            />
-          </div>
-          <div className="advertisement">
-            <ins
-              className="adsbygoogle"
-              style={{ display: 'block' }}
-              data-ad-format="autorelaxed"
-              data-ad-client="ca-pub-9386151835640137"
-              data-ad-slot="4501655395"
-            ></ins>
-          </div>
+        <div className="[ post ] [ flow ]">
+          <header>
+            <h1>{title}</h1>
+            <div className="cluster" data-align="start">
+              <Time day={day} month={month} year={year} />
+            </div>
+          </header>
+          <hr />
+          <MDXRemote
+            {...content}
+            components={{
+              ...components
+            }}
+          />
         </div>
       </article>
     </Container>
