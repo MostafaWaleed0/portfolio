@@ -86,7 +86,6 @@ export default function Home() {
                   className={
                     video === 'light' ? 'object-cover' : 'visually-hidden'
                   }
-                  preload="none"
                 >
                   <source src="/static/video/white.mp4" type="video/mp4" />
                 </video>
@@ -99,7 +98,6 @@ export default function Home() {
                   className={
                     video === 'dark' ? 'object-cover' : 'visually-hidden'
                   }
-                  preload="none"
                 >
                   <source src="/static/video/black.mp4" type="video/mp4" />
                 </video>
