@@ -32,7 +32,7 @@ const ContentSecurityPolicy = `
     child-src *.youtube.com *.google.com *.twitter.com;
     style-src 'self' 'unsafe-inline' *.googleapis.com;
     img-src * blob: data: ;
-    media-src 'none';
+    media-src 'self' data:;
     connect-src *;
     font-src 'self';
 `
