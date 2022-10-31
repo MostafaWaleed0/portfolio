@@ -197,10 +197,10 @@ export async function getStaticProps() {
 
 ## Rendering our blog posts
 
-First, we'll import whoever `matter`, `mdxToHtml` and `MDXRemote` in `[slug].tsx` page, and use `getStaticPaths` in Next.js twice.
+First, we'll import whoever `matter`, `mdxToHtml` and `MDXRemote` in `[slug].tsx` page, and use `getStaticPaths` and `getStaticProps`.
 
-- In the first `getStaticPaths` function we'll fetch the post file paths
-- We'll retrieve `slug` as a property in the second `getStaticPaths` function to get post file paths for use in `matter` to bring `frontmatter` and `content`
+- In the `getStaticPaths` function we'll fetch the post file paths
+- We'll retrieve `slug` as a property in the `getStaticProps` function to get post file paths for use in `matter` to bring `frontmatter` and `content`
 
 The following code will now be pasted:
 
