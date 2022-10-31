@@ -108,16 +108,17 @@ Put the following code inside the file:
 
 ```ts
 // types.ts
+import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 export interface PostPageType {
   slug: string;
   frontmatter: {
-    title: string | number;
-    description: string | boolean;
-    tag: string | number | boolean;
-    date: number;
+    title: string;
+    description: string;
+    tag: string;
+    date: string;
   };
-  content: any;
+  content: MDXRemoteSerializeResult;
 }
 
 export interface BlogPostType {
