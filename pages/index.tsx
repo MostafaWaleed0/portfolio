@@ -1,11 +1,20 @@
-import Image from 'next/image';
+import { useTheme } from 'next-themes';
 import Link from 'next/link';
-import { Suspense } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import Container from '../components/Container';
 import HomeCards from '../components/HomeCards';
 import { languages, tools } from '../data/skillsAndTools';
 
 export default function Home() {
+  const { theme } = useTheme();
+  const [video, setVideo] = useState<string>();
+
+  useEffect(() => {
+    setVideo(
+      theme === 'light' ? '/static/video/white.mp4' : '/static/video/black.mp4'
+    );
+  });
+
   return (
     <Suspense fallback={null}>
       <Container>
@@ -69,13 +78,15 @@ export default function Home() {
                   </ul>
                 </div>
               </article>
-              <div className="box-reflect">
-                <Image
-                  alt=""
-                  src="/home-img1.webp"
-                  width={410}
-                  height={500}
-                  priority
+              <div>
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  width={450}
+                  height={450}
+                  className="object-cover"
+                  src={video}
                 />
               </div>
             </div>
