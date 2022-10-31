@@ -10,9 +10,7 @@ export default function Home() {
   const [video, setVideo] = useState<string>();
 
   useEffect(() => {
-    setVideo(
-      theme === 'light' ? '/static/video/white.mp4' : '/static/video/black.mp4'
-    );
+    setVideo(theme === 'light' ? 'light' : 'dark');
   });
 
   return (
@@ -85,9 +83,26 @@ export default function Home() {
                   muted
                   width={450}
                   height={450}
-                  className="object-cover"
-                  src={video}
-                />
+                  className={
+                    video === 'light' ? 'object-cover' : 'visually-hidden'
+                  }
+                  preload="none"
+                >
+                  <source src="/static/video/white.mp4" type="video/mp4" />
+                </video>
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  width={450}
+                  height={450}
+                  className={
+                    video === 'dark' ? 'object-cover' : 'visually-hidden'
+                  }
+                  preload="none"
+                >
+                  <source src="/static/video/black.mp4" type="video/mp4" />
+                </video>
               </div>
             </div>
           </div>
