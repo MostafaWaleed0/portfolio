@@ -1,9 +1,12 @@
+@use '../abstracts/tokens/tokens' as *;
+
 code,
 pre {
   position: relative;
   color: #ccc;
   background: #2d2d2d;
-  font-family: Cascadia Code;
+  font-family: 'Cascadia Code', $font-family-body;
+  font-weight: 600;
   font-size: 0.875em;
   text-align: left;
   white-space: pre;
@@ -20,7 +23,8 @@ pre {
   justify-content: space-between;
   padding: 2.8em 1em;
   margin: 0.5em 0;
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
   border-radius: 0.7em;
   box-shadow: 0 0 1em rgb(0 0 0 / 20%);
 
@@ -28,14 +32,13 @@ pre {
     content: attr(class);
     display: inline-block;
     font-size: 1rem;
-    margin-left: -200px;
     opacity: 0.7;
     position: sticky;
     right: 0;
     text-transform: uppercase;
     top: 100%;
     text-align: right;
-    transform: translate(-16px, 40px);
+    transform: translate(-16px, 10px);
     width: 200px;
     height: fit-content;
   }
