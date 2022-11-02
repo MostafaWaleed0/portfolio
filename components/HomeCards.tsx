@@ -16,8 +16,8 @@ export default function HomeCards() {
               </span>
               <h3 className="fs-600">Written articles</h3>
               <p>About resources, development, advice, learning and life</p>
-              <Link href="/blog">
-                <a className="button">Read my articles</a>
+              <Link href="/blog" className="button">
+                Read my articles
               </Link>
             </article>
           </li>
@@ -31,8 +31,8 @@ export default function HomeCards() {
               </span>
               <h3 className="fs-600">Built projects</h3>
               <p>website, projects, experience, my experiments</p>
-              <Link href="/projects">
-                <a className="button">show my work</a>
+              <Link href="/projects" className="button">
+                show my work
               </Link>
             </article>
           </li>

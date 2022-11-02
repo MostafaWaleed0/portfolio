@@ -19,10 +19,7 @@ export default function Home() {
             <p>
               I am currently working as a freelancer. I am passionate about
               building high-quality codes, so if you have a project or questions
-              in mind,{' '}
-              <Link href="/contact">
-                <a> within reach of you now.</a>
-              </Link>
+              in mind, <Link href="/contact">within reach of you now.</Link>
             </p>
           </div>
         </section>
@@ -108,17 +105,15 @@ export default function Home() {
                   }
                 )}
                 <li>
-                  <Link href="/frontend">
-                    <a className="[ square ] [ flow ]">
-                      More languages
-                      <svg aria-hidden="true" viewBox="0 0 25 25" width="2em">
-                        <path
-                          className="fill-default"
-                          d="m17.5 5.999-.707.707 5.293 5.293H1v1h21.086l-5.294 5.295.707.707L24 12.499l-6.5-6.5z"
-                          data-name="Right"
-                        />
-                      </svg>
-                    </a>
+                  <Link href="/frontend" className="[ square ] [ flow ]">
+                    More languages
+                    <svg aria-hidden="true" viewBox="0 0 25 25" width="2em">
+                      <path
+                        className="fill-default"
+                        d="m17.5 5.999-.707.707 5.293 5.293H1v1h21.086l-5.294 5.295.707.707L24 12.499l-6.5-6.5z"
+                        data-name="Right"
+                      />
+                    </svg>
                   </Link>
                 </li>
               </ul>
@@ -147,17 +142,15 @@ export default function Home() {
                   }
                 )}
                 <li>
-                  <Link href="/tools">
-                    <a className="[ square ] [ flow ]">
-                      More Tools
-                      <svg aria-hidden="true" viewBox="0 0 25 25" width="2em">
-                        <path
-                          className="fill-default"
-                          d="m17.5 5.999-.707.707 5.293 5.293H1v1h21.086l-5.294 5.295.707.707L24 12.499l-6.5-6.5z"
-                          data-name="Right"
-                        />
-                      </svg>
-                    </a>
+                  <Link href="/tools" className="[ square ] [ flow ]">
+                    More Tools
+                    <svg aria-hidden="true" viewBox="0 0 25 25" width="2em">
+                      <path
+                        className="fill-default"
+                        d="m17.5 5.999-.707.707 5.293 5.293H1v1h21.086l-5.294 5.295.707.707L24 12.499l-6.5-6.5z"
+                        data-name="Right"
+                      />
+                    </svg>
                   </Link>
                 </li>
               </ul>

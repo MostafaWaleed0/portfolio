@@ -14,19 +14,13 @@ export default function Footer() {
               role="list"
             >
               <li>
-                <Link href="/blog/code-of-conduct">
-                  <a>Code of Conduct</a>
-                </Link>
+                <Link href="/blog/code-of-conduct">Code of Conduct</Link>
               </li>
               <li>
-                <Link href="/blog/privacy-policy">
-                  <a>Privacy Policy</a>
-                </Link>
+                <Link href="/blog/privacy-policy">Privacy Policy</Link>
               </li>
               <li>
-                <Link href="/contact">
-                  <a>contact</a>
-                </Link>
+                <Link href="/contact">contact</Link>
               </li>
               <li>
                 <a href="https://codepen.io/mostafawaleed3">codePen</a>

@@ -15,27 +15,22 @@ export default function Header() {
     <header role="banner" className="site-head">
       <div className="wrapper">
         <div className="site-head__inner">
-          <Link href="/">
-            <a
-              aria-label="MW - home"
-              className="[ site-head__brand ] [ fs-600 weight-bold ]"
-            >
-              <em className="text-primary-600">M</em>
-              <em>W</em>
-            </a>
+          <Link
+            href="/"
+            aria-label="MW - home"
+            className="[ site-head__brand ] [ fs-600 weight-bold ]"
+          >
+            <em className="text-primary-600">M</em>
+            <em>W</em>
           </Link>
           <div className="site-head__navigation">
             <nav aria-label="primary" id="primary-navigation" tabIndex={-1}>
               <ul className="[ nav ] [ fs-300 weight-medium ]" role="list">
                 <li>
-                  <Link href="/blog">
-                    <a>blog</a>
-                  </Link>
+                  <Link href="/blog">blog</Link>
                 </li>
                 <li>
-                  <Link href="/contact">
-                    <a>contact</a>
-                  </Link>
+                  <Link href="/contact">contact</Link>
                 </li>
                 <li>
                   <a href="https://github.com/mostafawaleed3">gitHub</a>

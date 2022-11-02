@@ -28,7 +28,6 @@ export default function Blog({ posts }: BlogPostType) {
                         width={561}
                         height={300}
                         alt=""
-                        layout="responsive"
                         className="card__image"
                       />
                       <h3 className="fs-600">{post.frontmatter.title}</h3>
@@ -45,8 +44,8 @@ export default function Blog({ posts }: BlogPostType) {
                         </div>
                       </div>
                       <p className="fs-300">{post.frontmatter.description}</p>
-                      <Link href={`/blog/${post.slug}`}>
-                        <a className="button">Read More</a>
+                      <Link href={`/blog/${post.slug}`} className="button">
+                        Read More
                       </Link>
                     </article>
                   </li>

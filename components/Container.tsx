@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Footer from './Footer';
 import Header from './Header';
 
-export default function Container(props: { [x: string]: any; children: any }) {
+export default function Container(props) {
   const router = useRouter();
 
   const { children, ...customMeta } = props;
