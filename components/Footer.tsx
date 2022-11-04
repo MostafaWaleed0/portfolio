@@ -26,7 +26,7 @@ export default function Footer() {
                 <a href="https://codepen.io/mostafawaleed3">codePen</a>
               </li>
               <li>
-                <a href="https://codepen.io/mostafawaleed3">twitter</a>
+                <a href="https://twitter.com/mostafa85341305">twitter</a>
               </li>
             </ul>
           </nav>
