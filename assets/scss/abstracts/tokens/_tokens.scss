@@ -27,8 +27,11 @@ $font-family-serif: Iowan Old Style, Apple Garamond, Baskerville,
 $font-family-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
   monospace;
 
+$font-family-code: 'Cascadia Code', $font-family-sans;
+
 $font-weight-400: 400;
 $font-weight-500: 500;
+$font-weight-600: 600;
 $font-weight-700: 700;
 
 // font size tokens
@@ -63,6 +66,7 @@ $font-family-logo: $font-family-sans;
 $font-weight-body: $font-weight-400;
 $font-weight-heading: $font-weight-700;
 $font-weight-regular: $font-weight-400;
+$font-weight-semibold: $font-weight-600;
 $font-weight-medium: $font-weight-500;
 $font-weight-bold: $font-weight-700;
 
@@ -95,3 +99,15 @@ $button-border-radius: $border-radius-1;
 $button-font-size: $font-size-300;
 $button-font-weight: $font-weight-bold;
 $button-padding-default: 0.8em 2em !default;
+$button-padding-icon: 1em 1em !default;
+
+// Code
+$code-surface-default: #2d2d2d;
+$code-text-default: #ccc;
+$code-border-default: #ccc;
+$code-border-radius: $border-radius-1;
+$code-font-size: $font-size-200;
+$code-font-weight: $font-weight-semibold;
+$code-font-family: $font-family-code;
+$code-padding-default: 2.4em 1em;
+$code-title-padding-default: 2em 1em 2.4em 1em;

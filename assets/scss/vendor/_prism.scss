@@ -1,19 +1,31 @@
 @use '../abstracts/tokens/tokens' as *;
 
+.rehype-code-title {
+  font-size: $font-size-200;
+  font-family: $code-font-family;
+  color: $code-text-default;
+  background-color: $code-surface-default;
+  padding: $code-padding-default;
+  border-radius: $code-border-radius $code-border-radius 0 0;
+  border-bottom: 1px solid $code-border-default;
+
+  & + pre {
+    margin: 0 !important;
+    border-radius: 0 0 $code-border-radius $code-border-radius;
+  }
+}
+
 code,
 pre {
   position: relative;
-  color: #ccc;
-  background: #2d2d2d;
-  font-family: 'Cascadia Code', $font-family-body;
-  font-weight: 600;
-  font-size: 0.875em;
+  color: $code-text-default;
+  background-color: $code-surface-default;
+  font: $code-font-weight $code-font-size/1.7 $code-font-family;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
-  line-height: 1.7;
   tab-size: 4;
   hyphens: none;
 }
@@ -21,24 +33,24 @@ pre {
 pre {
   display: flex;
   justify-content: space-between;
-  padding: 2.8em 1em;
+  padding: $code-padding-default;
   margin: 0.5em 0;
   overflow-x: auto;
   overflow-y: hidden;
-  border-radius: 0.7em;
-  box-shadow: 0 0 1em rgb(0 0 0 / 20%);
+  border-radius: $code-border-radius;
+  box-shadow: 0 0.1em 1em rgb(0 0 0 / 50%);
 
   &::after {
     content: attr(class);
     display: inline-block;
-    font-size: 1rem;
+    font-size: $font-size-200;
     opacity: 0.7;
     position: sticky;
     right: 0;
-    text-transform: uppercase;
     top: 100%;
+    text-transform: uppercase;
     text-align: right;
-    transform: translate(-16px, 10px);
+    transform: translate(-7px, 5px);
     width: 200px;
     height: fit-content;
   }

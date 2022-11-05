@@ -1,11 +1,13 @@
 import { InputHTMLAttributes, TextareaHTMLAttributes } from 'react';
+import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 export interface PostPageType {
   slug: string;
+  readingTime: string;
   frontmatter: {
-    title: string | number;
-    description: string | boolean;
+    title: string;
+    description: string;
     banner: string;
-    tag: string | number | boolean;
+    tag: string;
     date: {
       day: number;
       month: number;
@@ -13,7 +15,7 @@ export interface PostPageType {
     };
     card: boolean;
   };
-  content: any;
+  content: MDXRemoteSerializeResult;
 }
 
 export interface BlogPostType {

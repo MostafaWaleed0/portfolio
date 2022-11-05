@@ -2,7 +2,7 @@
 
 module.exports = {
   unstable_runtimeJS: false,
-  reactStrictMode   : true,
+  reactStrictMode   : false,
   swcMinify         : true,
   compress          : true,
 

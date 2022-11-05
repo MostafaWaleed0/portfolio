@@ -7,6 +7,8 @@ import { mdxToHtml } from 'lib/mdx';
 import { MDXRemote } from 'next-mdx-remote';
 import { PostPageType } from 'types';
 import components from 'components/MDXComponents';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 export default function PostPage({
   frontmatter: {
@@ -14,16 +16,39 @@ export default function PostPage({
     description,
     date: { day, month, year }
   },
-  content
+  content,
+  readingTime
 }: PostPageType) {
+  const [view, setView] = useState<number>();
+  const router = useRouter();
+  const { slug } = router.query;
+
+  useEffect(() => {
+    if (slug) {
+      fetch(`https://api.countapi.xyz/hit/${slug}/visits/?amount=0`)
+        .then((res) => res.json())
+        .then((res) => {
+          return setView(res.value);
+        });
+    }
+  }, [slug]);
+
   return (
     <Container title={title + ' - MW'} description={description}>
       <article className="[ wrapper ] [ region ] [ margin-block-start-300 ]">
         <div className="[ post ] [ flow ]">
           <header>
             <h1>{title}</h1>
-            <div className="cluster" data-align="start">
+            <div
+              className="[ cluster ] [ margin-block-start-100 ]"
+              data-align="between"
+            >
               <Time day={day} month={month} year={year} />
+              <p className="[ flex-row ] [ margin-inline-auto ]">
+                <span className="margin-inline-end-100">{readingTime}</span>
+                {` • `}
+                <span className="margin-inline-start-100">{view} views</span>
+              </p>
             </div>
           </header>
           <hr />

@@ -22,4 +22,8 @@
   &[data-align='start'] {
     justify-content: start;
   }
+
+  &[data-align='between'] {
+    justify-content: space-between;
+  }
 }
