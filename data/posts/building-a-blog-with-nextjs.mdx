@@ -47,9 +47,7 @@ npm i --save-dev @types/node gray-matter next-mdx-remote reading-time rehype reh
 
 we'll write the code for the `mdx.ts` file.
 
-```ts
-// lib/mdx.ts;
-
+```ts:lib/mdx.ts
 import { serialize } from 'next-mdx-remote/serialize';
 import readingTime from 'reading-time';
 import remarkGfm from 'remark-gfm';
@@ -106,8 +104,7 @@ A brief description of what's happening inside this file and what each function 
 we'll create a `types.ts` file inside of our `site` folder, where we'll construct all of our TypeScript interfaces and types.
 Put the following code inside the file:
 
-```ts
-// types.ts
+```ts:types.ts
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 export interface PostPageType {
@@ -130,7 +127,7 @@ export interface BlogPostType {
 
 First, we'll write data into the `posts/🎉.mdx` file:
 
-```md
+```md:posts/🎉.mdx
 ---
 title: party
 description: We'll celebrate now.
@@ -141,9 +138,7 @@ date: 2022-08-31
 The `getStaticProps` function in Next.js will be used to retrieve all of our blog posts and inside the function, `matter` will be used to parse front-matter from a string or
 file into the `blog.tsx` page. The following code will now be pasted into our `blog.tsx` file:
 
-```tsx
-// pages/blog.tsx
-
+```tsx:pages/blog.tsx
 import { readdirSync, readFileSync } from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
@@ -205,9 +200,7 @@ First, we'll import whoever `matter`, `mdxToHtml` and `MDXRemote` in `[slug].tsx
 
 The following code will now be pasted:
 
-```tsx
-// pages/blog/[slug].tsx
-
+```tsx:pages/blog/[slug].tsx
 import { readdirSync, readFileSync } from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
