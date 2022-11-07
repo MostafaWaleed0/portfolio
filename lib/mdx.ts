@@ -13,7 +13,12 @@ export async function mdxToHtml(source) {
       rehypePlugins: [
         rehypeSlug,
         rehypeCodeTitles,
-        rehypePrism,
+        [
+          rehypePrism,
+          {
+            showLineNumbers: true
+          }
+        ],
         [
           rehypeAutolinkHeadings,
           {
