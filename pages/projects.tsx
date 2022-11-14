@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import Container from '../components/Container';
 import { data } from '../data/projects';
@@ -14,32 +13,25 @@ export default function Projects() {
               (project: {
                 id: number;
                 logo: JSX.Element;
-                technologies: string[];
-                github_url: string | undefined;
-                website_design: string | undefined;
+                technologies: JSX.Element[];
+                github_url?: string;
+                website_url?: string;
               }) => {
                 return (
                   <li className="card" key={project.id}>
                     <div className="card__focusable" tabIndex={0}>
                       <ul className="card__technologies" role="list">
-                        {project.technologies.map((image_url, index) => {
-                          return (
-                            <li key={index + 1}>
-                              <Image
-                                src={image_url}
-                                width={37}
-                                height={37}
-                                alt=""
-                              />
-                            </li>
-                          );
-                        })}
+                        {project.technologies.map((icon) => (
+                          <li>{icon}</li>
+                        ))}
                       </ul>
                       {project.github_url && (
-                        <a
+                        <Link
                           href={project.github_url}
                           className="card__github"
                           aria-label="Website Code"
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
                           <svg
                             aria-hidden="true"
@@ -56,27 +48,27 @@ export default function Projects() {
                               className="fill-default"
                             />
                           </svg>
-                        </a>
+                        </Link>
                       )}
                       <div className="card__logo">{project.logo}</div>
-                      {project.website_design && (
-                        <Link href={project.website_design}>
-                          <a
-                            className="card__designer"
-                            aria-label="Website Design"
+                      {project.website_url && (
+                        <Link
+                          href={project.website_url}
+                          className="card__designer"
+                          aria-label="Website Link"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="1.6em"
+                            height="1.6em"
+                            fill="currentColor"
+                            viewBox="0 0 16 16"
                           >
-                            <svg
-                              aria-hidden="true"
-                              viewBox="0 0 50 50"
-                              width="1.7em"
-                              height="1.7em"
-                            >
-                              <path
-                                className="fill-default"
-                                d="M 2.8125 4 A 1.0001 1.0001 0 0 0 2 5 L 2 15 A 1.0001 1.0001 0 0 0 3 16 L 47 16 A 1.0001 1.0001 0 0 0 48 15 L 48 5 A 1.0001 1.0001 0 0 0 47 4 L 3 4 A 1.0001 1.0001 0 0 0 2.90625 4 A 1.0001 1.0001 0 0 0 2.8125 4 z M 4 6 L 46 6 L 46 14 L 4 14 L 4 6 z M 8 9 C 7.4477153 9 7 9.4477153 7 10 C 7 10.552285 7.4477153 11 8 11 C 8.5522847 11 9 10.552285 9 10 C 9 9.4477153 8.5522847 9 8 9 z M 12 9 C 11.447715 9 11 9.4477153 11 10 C 11 10.552285 11.447715 11 12 11 C 12.552285 11 13 10.552285 13 10 C 13 9.4477153 12.552285 9 12 9 z M 16 9 C 15.447715 9 15 9.4477153 15 10 C 15 10.552285 15.447715 11 16 11 C 16.552285 11 17 10.552285 17 10 C 17 9.4477153 16.552285 9 16 9 z M 2 19 L 2 45 A 1.0001 1.0001 0 0 0 3 46 L 47 46 A 1.0001 1.0001 0 0 0 48 45 L 48 19 L 46 19 L 46 44 L 4 44 L 4 19 L 2 19 z M 7.8125 19 A 1.0001 1.0001 0 0 0 7 20 L 7 40 A 1.0001 1.0001 0 0 0 8 41 L 23 41 A 1.0001 1.0001 0 0 0 24 40 L 24 20 A 1.0001 1.0001 0 0 0 23 19 L 8 19 A 1.0001 1.0001 0 0 0 7.90625 19 A 1.0001 1.0001 0 0 0 7.8125 19 z M 27 19 L 27 21 L 43 21 L 43 19 L 27 19 z M 9 21 L 22 21 L 22 39 L 9 39 L 9 21 z M 27 24 L 27 26 L 43 26 L 43 24 L 27 24 z M 27 29 L 27 31 L 43 31 L 43 29 L 27 29 z M 27 34 L 27 36 L 43 36 L 43 34 L 27 34 z M 27 39 L 27 41 L 43 41 L 43 39 L 27 39 z"
-                              />
-                            </svg>
-                          </a>
+                            <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
+                            <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
+                          </svg>
                         </Link>
                       )}
                     </div>

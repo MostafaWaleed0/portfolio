@@ -1,105 +1,107 @@
-import bootstraptIcon from '../public/static/images/programming-lang/bootstrap-icon.svg';
-import cssIcon from '../public/static/images/programming-lang/css-icon.svg';
-import eleventyIcon from '../public/static/images/programming-lang/eleventy-icon.svg';
-import htmlIcon from '../public/static/images/programming-lang/html-icon.svg';
-import jestIcon from '../public/static/images/programming-lang/jest-icon.svg';
-import jsIcon from '../public/static/images/programming-lang/js-icon.svg';
-import materialUiIcon from '../public/static/images/programming-lang/materialUi-icon.svg';
-import nextIcon from '../public/static/images/programming-lang/next-icon.svg';
-import nunjucksIcon from '../public/static/images/programming-lang/nunjucks-icon.svg';
-import pugIcon from '../public/static/images/programming-lang/pug-icon.svg';
-import reactIcon from '../public/static/images/programming-lang/react-icon.svg';
-import reduxIcon from '../public/static/images/programming-lang/redux-icon.svg';
-import scssIcon from '../public/static/images/programming-lang/scss-icon.svg';
-import styledComponentsIcon from '../public/static/images/programming-lang/styled-components-icon.svg';
-import tailwindcssIcon from '../public/static/images/programming-lang/tailwindcss-icon.svg';
-import typescriptIcon from '../public/static/images/programming-lang/typescript-icon.svg';
-import webpackIcon from '../public/static/images/programming-lang/webpack-icon.svg';
+import {
+  React,
+  Redux,
+  Next,
+  Scss,
+  Tailwindcss,
+  StyledComponents,
+  Nunjucks,
+  MaterialUi,
+  Js,
+  Html,
+  Eleventy,
+  Bootstrap,
+  Css,
+  Typescript,
+  Webpack,
+  Jest,
+  Pug
+} from 'components/icons';
 
 export const frontend = [
   {
     id: 1,
-    icon: htmlIcon,
+    icon: <Html />,
     title: 'HTML'
   },
   {
     id: 2,
-    icon: cssIcon,
+    icon: <Css />,
     title: 'CSS3'
   },
   {
     id: 3,
-    icon: jsIcon,
+    icon: <Js />,
     title: 'JavaScript'
   },
   {
     id: 4,
-    icon: typescriptIcon,
+    icon: <Typescript />,
     title: 'TypeScript'
   },
   {
     id: 5,
-    icon: bootstraptIcon,
+    icon: <Bootstrap />,
     title: 'Bootstrap'
   },
   {
     id: 6,
-    icon: tailwindcssIcon,
+    icon: <Tailwindcss width={28} height={28} />,
     title: 'tailwindCSS'
   },
   {
     id: 7,
-    icon: webpackIcon,
+    icon: <Webpack />,
     title: 'webpack'
   },
   {
     id: 8,
-    icon: jestIcon,
+    icon: <Jest />,
     title: 'jest'
   },
   {
     id: 9,
-    icon: pugIcon,
+    icon: <Pug />,
     title: 'pug'
   },
   {
     id: 10,
-    icon: styledComponentsIcon,
+    icon: <StyledComponents />,
     title: 'styled components'
   },
   {
     id: 11,
-    icon: reactIcon,
+    icon: <React width={28} height={28} />,
     title: 'react'
   },
   {
     id: 12,
-    icon: reduxIcon,
+    icon: <Redux width={28} height={28} />,
     title: 'redux'
   },
   {
     id: 13,
-    icon: scssIcon,
+    icon: <Scss width={28} height={28} />,
     title: 'sass'
   },
   {
     id: 14,
-    icon: materialUiIcon,
+    icon: <MaterialUi />,
     title: 'Material Ui'
   },
   {
     id: 15,
-    icon: nextIcon,
+    icon: <Next width={30} height={30} />,
     title: 'next'
   },
   {
     id: 16,
-    icon: eleventyIcon,
+    icon: <Eleventy />,
     title: 'eleventy'
   },
   {
     id: 17,
-    icon: nunjucksIcon,
+    icon: <Nunjucks />,
     title: 'nunjucks'
   }
 ];

@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Container from '../components/Container';
 import { frontend } from '../data/frontend';
 
@@ -23,9 +22,7 @@ export default function Frontend() {
                 return (
                   <li key={index + 1} className="collection-item">
                     <div className="collection-item__focusable" tabIndex={0}>
-                      <div className="collection-item__icon">
-                        <Image src={lang.icon} width={28} height={28} alt="" />
-                      </div>
+                      <div className="collection-item__icon">{lang.icon}</div>
                       <div className="collection-item__title">{lang.title}</div>
                     </div>
                   </li>
