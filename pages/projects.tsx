@@ -21,8 +21,8 @@ export default function Projects() {
                   <li className="card" key={project.id}>
                     <div className="card__focusable" tabIndex={0}>
                       <ul className="card__technologies" role="list">
-                        {project.technologies.map((icon) => (
-                          <li>{icon}</li>
+                        {project.technologies.map((icon, i) => (
+                          <li key={i + 1}>{icon}</li>
                         ))}
                       </ul>
                       {project.github_url && (
