@@ -92,6 +92,7 @@
 
     &__image {
       border-radius: $border-radius-2;
+      object-fit: cover;
     }
   }
 }
