@@ -1,0 +1,65 @@
+---
+title: focus-within vs focus-visible
+banner: https://images.pexels.com/photos/2251798/pexels-photo-2251798.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
+description: Today, we'll look at focusable pseudo-classes that are supported by current browsers, but first, let's define focusable and tabbable in the context of CSS.
+date:
+  day: 21
+  month: 11
+  year: 2022
+---
+
+Today, we'll look at focusable pseudo-classes that are supported by current browsers,
+but first, let's define focusable and tabbable in the context of CSS.
+
+## Focusable
+
+The keyboard will not focus the element; instead, the script `(element.focus())`
+and it is can the mouse or pointer will do so.
+
+## Tabbable
+
+Since it is a component of the document's sequential focus navigation order,
+the element will be keyboard focusable. Script and mouse can also be focusable as well as the cursor.
+
+## `:focus-within`
+
+> The `:focus-within` CSS pseudo-class represents an element that has received focus or contains an element that has received focus. In other words, it represents an element that is itself matched by
+> the `:focus` pseudo-class or has a descendant that is matched by :focus.
+
+The most common example is changing the `background-color`,
+or `border`, of a form when someone goes inside it:
+
+```css
+form:focus-within {
+  background: pink;
+}
+```
+
+Here if any of that input children receive focus that this selector will get applied.
+
+## `:focus-visible`
+
+> The `:focus-visible` pseudo-class applies while an element matches the [`:focus`](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus) pseudo-class and the UA ([User Agent](https://developer.mozilla.org/en-US/docs/Glossary/User_agent)) determines via heuristics that the focus should be made evident on the element. (Many browsers show a "focus ring" by default in this case.)
+
+`:focus-visible` is used in the same way as `:focus` to draw attention to the element that is now in focus.
+
+```css
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+button:focus-within {
+  outline: 1px solid pink;
+  outline-offset: 0.15em;
+}
+```
+
+The `:focus-visible` When the device/browser (user agent) determines that an outline (or user-defined style) is required, the pseudo-class will show it. This usually implies that it will
+appear for keyboard users when they press the `tab` key, but not for mouse users.
+
+## Resources
+
+- [`:focus-visible` MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible)
+- [`:focus-within` MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within)
+- [`:focus-visible` support ](https://caniuse.com/css-focus-visible)
+- [`:focus-within` support](https://caniuse.com/css-focus-within)
