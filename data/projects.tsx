@@ -18,7 +18,12 @@ export const data = [
         <em className="style-normal">W</em>
       </h3>
     ),
-    technologies: [<React />, <Next />, <Scss />],
+    technologies: [
+      <React />,
+      <Typescript width={40} height={40} />,
+      <Next />,
+      <Scss />
+    ],
     github_url: 'https://github.com/mostafawaleed3/mostafawaleed.me',
     website_url: 'https://mostafawaleed.me/'
   },
@@ -41,6 +46,7 @@ export const data = [
     ),
     technologies: [
       <React />,
+      <Typescript width={40} height={40} />,
       <Next />,
       <Tailwindcss />,
       <Algolia />,
