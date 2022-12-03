@@ -9,10 +9,11 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.9.0",
+    "@vercel/analytics": "^0.1.5",
     "gray-matter": "^4.0.3",
     "next": "13.0.1",
-    "next-themes": "^0.2.1",
     "next-mdx-remote": "^4.1.0",
+    "next-themes": "^0.2.1",
     "postcss": "^8.4.18",
     "postcss-cli": "^10.0.0",
     "react": "18.2.0",
@@ -28,6 +29,9 @@
     "cross-env": "^7.0.3",
     "cssnano": "^5.1.14",
     "eslint": "8.26.0",
+    "eslint-config-next": "13.0.1",
+    "eslint-import-resolver-typescript": "^3.5.2",
+    "eslint-plugin-import": "^2.26.0",
     "reading-time": "^1.5.0",
     "rehype": "12.0.1",
     "rehype-autolink-headings": "6.1.1",
@@ -35,9 +39,6 @@
     "rehype-prism-plus": "^1.5.0",
     "rehype-slug": "5.1.0",
     "remark-gfm": "^3.0.1",
-    "eslint-config-next": "13.0.1",
-    "eslint-import-resolver-typescript": "^3.5.2",
-    "eslint-plugin-import": "^2.26.0",
     "typescript": "4.8.4"
   },
   "browserslist": {
