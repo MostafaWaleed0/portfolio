@@ -46,7 +46,7 @@ export default function Home() {
                     websites and applications, and I saw that the most specialty
                     that caught my attention was the{' '}
                     <em className="text-primary-600 weight-bold style-normal">
-                      Fronted
+                      Fronted development
                     </em>
                     .
                   </p>
