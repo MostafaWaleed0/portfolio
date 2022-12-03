@@ -43,7 +43,9 @@ export default function Blog({ posts }: BlogPostType) {
                             : post.frontmatter.tag}
                         </div>
                       </div>
-                      <p className="fs-300">{post.frontmatter.description}</p>
+                      <p className="fs-300 line-clamp">
+                        {post.frontmatter.description}
+                      </p>
                       <Link href={`/blog/${post.slug}`} className="button">
                         Read More
                       </Link>
