@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Rss } from 'components/icons';
 
 export default function Footer() {
   return (
@@ -10,7 +11,7 @@ export default function Footer() {
         <div className="[ site-foot__navigation ] [ margin-inline-auto ]">
           <nav aria-label="secondary" tabIndex={-1}>
             <ul
-              className="[ nav ] [ fs-300 weight-medium ] [ flex-wrap ]"
+              className="[ nav ] [ fs-300 weight-medium measure-long margin-inline-auto gap-200 ] [ flex-wrap ]"
               role="list"
             >
               <li>
@@ -27,6 +28,12 @@ export default function Footer() {
               </li>
               <li>
                 <a href="https://twitter.com/mostafa85341305">twitter</a>
+              </li>
+              <li>
+                <Link href="/feed.xml" className="flex-row">
+                  RSS
+                  <Rss className="margin-inline-start-100" />
+                </Link>
               </li>
             </ul>
           </nav>
