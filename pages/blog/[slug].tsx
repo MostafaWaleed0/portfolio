@@ -11,11 +11,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
 export default function PostPage({
-  frontmatter: {
-    title,
-    description,
-    date: { day, month, year }
-  },
+  frontmatter: { title, description, date },
   content,
   readingTime
 }: PostPageType) {
@@ -43,7 +39,7 @@ export default function PostPage({
               className="[ cluster ] [ margin-block-start-100 ]"
               data-align="between"
             >
-              <Time day={day} month={month} year={year} />
+              <Time time={date} />
               <p className="[ flex-row ] [ margin-inline-auto ]">
                 <span className="margin-inline-end-100">{readingTime}</span>
                 {` • `}
@@ -65,7 +61,7 @@ export default function PostPage({
 }
 
 export async function getStaticPaths() {
-  const files = readdirSync(join('data/posts'));
+  const files = readdirSync('data/posts');
   const paths = files.map((filename) => ({
     params: { slug: filename.replace('.mdx', '') }
   }));
@@ -80,6 +76,8 @@ export async function getStaticProps({ params: { slug } }) {
   const { data: frontmatter, content } = matter(markdownWithMeta);
   const { html, readingTime } = await mdxToHtml(content);
   return {
-    props: { frontmatter, slug, content: html, readingTime }
+    props: JSON.parse(
+      JSON.stringify({ frontmatter, slug, content: html, readingTime })
+    )
   };
 }

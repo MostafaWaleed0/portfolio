@@ -8,11 +8,7 @@ export interface PostPageType {
     description: string;
     banner: string;
     tag: string;
-    date: {
-      day: number;
-      month: number;
-      year: number;
-    };
+    date?: string;
     card: boolean;
   };
   content: MDXRemoteSerializeResult;
@@ -44,8 +40,5 @@ export interface TextAreaType
 }
 
 export interface TimeType {
-  day: string | number;
-  month: number;
-  separator?: string | undefined;
-  year: number | string;
+  time: string;
 }

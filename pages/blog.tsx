@@ -32,11 +32,7 @@ export default function Blog({ posts }: BlogPostType) {
                       />
                       <h3 className="fs-600">{post.frontmatter.title}</h3>
                       <div className="card__data">
-                        <Time
-                          day={post.frontmatter.date.day}
-                          month={post.frontmatter.date.month}
-                          year={post.frontmatter.date.year}
-                        />
+                        <Time time={post.frontmatter.date} />
                         <div className="pill">
                           {post.frontmatter.tag === undefined
                             ? 'Programming'
@@ -62,7 +58,7 @@ export default function Blog({ posts }: BlogPostType) {
 }
 
 export async function getStaticProps() {
-  const files = readdirSync(join('data/posts'));
+  const files = readdirSync('data/posts');
   const posts = files.map((filename) => {
     // Create slug
     const slug = filename.replace('.mdx', '');
@@ -75,7 +71,7 @@ export async function getStaticProps() {
   });
   return {
     props: {
-      posts: posts
+      posts: JSON.parse(JSON.stringify(posts))
     }
   };
 }

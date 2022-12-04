@@ -1,12 +1,11 @@
 import { TimeType } from '../types';
 
-export default function Time({
-  day = '',
-  month,
-  separator = ' ',
-  year = ''
-}: TimeType) {
-  var arrayMonths: string[] = [
+export default function Time({ time }: TimeType) {
+  const year = Number(time.substring(0, 4));
+  const month = Number(time.substring(5, 7));
+  const day = Number(time.substring(8, 10));
+
+  const arrayMonths: string[] = [
     'Jan',
     'Feb',
     'Mar',
@@ -20,16 +19,11 @@ export default function Time({
     'Nov',
     'Dec'
   ];
-  const dataTime = `${year}-${month < 10 ? `0${month}` : `${month}`}-${
-    day < 10 ? `0${day}` : `${day}`
-  }`;
 
-  const data = `${`${
-    arrayMonths[month - 1]
-  }`}${separator}${day},${separator}${year}`;
+  const data = `${`${arrayMonths[month - 1]}`} ${day}, ${year}`;
 
   return (
-    <time dateTime={dataTime} className="text-primary-600 weight-bold">
+    <time dateTime={time} className="text-primary-600 weight-bold">
       <em>{data}</em>
     </time>
   );
