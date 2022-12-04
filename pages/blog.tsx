@@ -11,7 +11,7 @@ export default function Blog({ posts }: BlogPostType) {
   return (
     <Container title="Blog - MW">
       <article className="[ wrapper ] [ margin-block-start-700 margin-block-end-800 ]">
-        <h1>Blogs</h1>
+        <h1>Blog</h1>
         <div className="margin-block-start-700">
           <ol className="auto-grid" role="list" data-layout="blog">
             {posts.map((post, index) => {
