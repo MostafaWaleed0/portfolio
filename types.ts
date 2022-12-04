@@ -7,7 +7,7 @@ export interface PostPageType {
     title: string;
     description: string;
     banner: string;
-    tag: string;
+    tags?: Array<string>;
     date?: string;
     card: boolean;
   };

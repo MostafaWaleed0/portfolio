@@ -31,12 +31,14 @@ export default function Blog({ posts }: BlogPostType) {
                         className="card__image"
                       />
                       <h3 className="fs-600">{post.frontmatter.title}</h3>
-                      <div className="card__data">
+                      <div className="[ card__data ] [ flex-wrap ] [ gap-200 ]">
                         <Time time={post.frontmatter.date} />
-                        <div className="pill">
-                          {post.frontmatter.tag === undefined
-                            ? 'Programming'
-                            : post.frontmatter.tag}
+                        <div className="flex-row gap-100">
+                          {post.frontmatter.tags.map((tag) => (
+                            <div key={tag} className="pill">
+                              {tag}
+                            </div>
+                          ))}
                         </div>
                       </div>
                       <p className="fs-300 line-clamp">
