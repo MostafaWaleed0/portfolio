@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import Link from 'next/link';
 import { Rss } from 'components/icons';
 
@@ -30,10 +31,10 @@ export default function Footer() {
                 <a href="https://twitter.com/mostafa85341305">twitter</a>
               </li>
               <li>
-                <Link href="/feed.xml" className="flex-row">
+                <a href="/feed.xml" className="flex-row">
                   RSS
                   <Rss className="margin-inline-start-100" />
-                </Link>
+                </a>
               </li>
             </ul>
           </nav>
