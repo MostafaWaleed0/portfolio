@@ -11,7 +11,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
 export default function PostPage({
-  frontmatter: { title, description, date },
+  frontmatter: { title, description, date, banner },
   content,
   readingTime
 }: PostPageType) {
@@ -30,7 +30,13 @@ export default function PostPage({
   }, [slug]);
 
   return (
-    <Container title={title + ' - MW'} description={description}>
+    <Container
+      title={title + ' - MW'}
+      description={description}
+      date={date}
+      image={banner}
+      type="article"
+    >
       <article className="[ wrapper ] [ region ] [ margin-block-start-300 ]">
         <div className="[ post ] [ flow ]">
           <header>

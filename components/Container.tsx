@@ -10,7 +10,7 @@ export default function Container(props) {
   const meta = {
     title: 'Mostafa Waleed - Frontend developer',
     description: `Mostafa Waleed, an experienced freelance web developer based in the Egypt`,
-    image: '/mw-logo.svg"',
+    image: '/static/favicons/android-chrome-256x256.png',
     type: 'website',
     ...customMeta
   };
@@ -24,12 +24,6 @@ export default function Container(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, viewport-fit=cover"
         />
-        {router.asPath === '/' ? (
-          <meta
-            name="google-site-verification"
-            content="yNRfmqiqqj1EekI2rFHjrJoFVnx6zJTisszEIeWGf9Y"
-          />
-        ) : null}
         <title>{meta.title}</title>
         <meta content={meta.description} name="description" />
         <link
@@ -42,6 +36,9 @@ export default function Container(props) {
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
+        {meta.date && (
+          <meta property="article:published_time" content={meta.date} />
+        )}
       </Head>
       <a className="[ skip-link ] [ button ]" href="#main-content">
         Skip to content
