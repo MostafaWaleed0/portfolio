@@ -1,0 +1,28 @@
+@use '../abstracts/base/spacing' as *;
+@use 'sass:list';
+@use 'sass:map';
+
+$aspects: left, right, top, center, bottom;
+$positions: (
+  '20-50': 20% 50%
+);
+
+.object-cover {
+  object-fit: cover;
+}
+
+.object-contain {
+  object-fit: contain;
+}
+
+@each $aspect in $aspects {
+  .object-position-#{$aspect} {
+    object-position: $aspect;
+  }
+}
+
+@each $position, $position-value in $positions {
+  .object-position-#{$position} {
+    object-position: $position-value;
+  }
+}
