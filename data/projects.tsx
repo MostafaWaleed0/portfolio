@@ -82,6 +82,7 @@ export const data = [
       <Next />,
       <Tailwindcss />
     ],
-    github_url: 'https://github.com/mostafawaleed3/obsidian'
+    github_url: 'https://github.com/mostafawaleed3/obsidian',
+    website_url: 'https://obsidian-mw.vercel.app/'
   }
 ];
