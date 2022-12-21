@@ -72,7 +72,8 @@ export default function Home() {
                   src="/home-img1.webp"
                   width={410}
                   height={500}
-                  priority
+                  quality={100}
+                  className="object-cover"
                 />
               </div>
             </div>
