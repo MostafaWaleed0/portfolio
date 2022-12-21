@@ -5,7 +5,7 @@ import Container from 'components/Container';
 import Time from 'components/Time';
 import { mdxToHtml } from 'lib/mdx';
 import { MDXRemote } from 'next-mdx-remote';
-import { PostPageType } from 'types';
+import { PostPageType } from 'lib/types';
 import components from 'components/MDXComponents';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';

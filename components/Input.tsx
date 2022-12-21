@@ -1,4 +1,4 @@
-import { InputType } from '../types';
+import { InputType } from 'lib/types';
 
 export default function Input({
   type,

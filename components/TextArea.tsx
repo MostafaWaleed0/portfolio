@@ -1,4 +1,4 @@
-import { TextAreaType } from '../types';
+import { TextAreaType } from 'lib/types';
 
 export default function TextArea({
   id,

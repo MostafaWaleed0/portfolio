@@ -5,7 +5,7 @@ import Container from '../components/Container';
 import Link from 'next/link';
 import Image from 'next/image';
 import Time from '../components/Time';
-import { BlogPostType } from 'types';
+import { BlogPostType } from 'lib/types';
 
 export default function Blog({ posts }: BlogPostType) {
   return (

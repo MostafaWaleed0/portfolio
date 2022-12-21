@@ -1,4 +1,4 @@
-import { TimeType } from '../types';
+import { TimeType } from 'lib/types';
 
 export default function Time({ time }: TimeType) {
   const year = Number(time.substring(0, 4));
