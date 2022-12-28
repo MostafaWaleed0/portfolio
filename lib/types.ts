@@ -42,3 +42,7 @@ export interface TextAreaType
 export interface TimeType {
   time: string;
 }
+
+export type FooterProps = {
+  type?: string;
+};

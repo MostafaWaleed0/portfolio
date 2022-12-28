@@ -1,11 +1,14 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 import Link from 'next/link';
 import { Rss } from 'components/icons';
+import { FooterProps } from 'lib/types';
 
-export default function Footer() {
+export default function Footer({ type }: FooterProps) {
   return (
     <footer
-      className="[ site-foot ] [ region ] [ text-center ]"
+      className={`[ site-foot ] [ region ] [ text-center ${
+        type === 'article' ? 'bg-inverse' : ''
+      } ]`}
       role="contentinfo"
     >
       <div className="wrapper flow">
