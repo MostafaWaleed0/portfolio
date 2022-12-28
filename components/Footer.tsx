@@ -16,12 +16,6 @@ export default function Footer() {
               role="list"
             >
               <li>
-                <Link href="/blog/code-of-conduct">Code of Conduct</Link>
-              </li>
-              <li>
-                <Link href="/blog/privacy-policy">Privacy Policy</Link>
-              </li>
-              <li>
                 <Link href="/contact">contact</Link>
               </li>
               <li>
