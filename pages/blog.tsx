@@ -14,9 +14,15 @@ export default function Blog({ posts }: BlogPostType) {
         <h1>Blog</h1>
         <div className="margin-block-start-700">
           <ol className="auto-grid" role="list" data-layout="blog">
-            {posts.map((post, index) => {
-              return (
-                post.frontmatter.card == undefined && (
+            {posts.map(
+              (
+                {
+                  slug,
+                  frontmatter: { banner, title, date, tags, description }
+                },
+                index
+              ) => {
+                return (
                   <li
                     className="[ card ] [ focusable ]"
                     key={index + 1}
@@ -24,34 +30,32 @@ export default function Blog({ posts }: BlogPostType) {
                   >
                     <article className="flow" style={{ maxWidth: '561px' }}>
                       <Image
-                        src={post.frontmatter.banner}
+                        src={banner}
                         width={561}
                         height={300}
                         alt=""
                         className="card__image"
                       />
-                      <h3 className="fs-600">{post.frontmatter.title}</h3>
+                      <h3 className="fs-600">{title}</h3>
                       <div className="[ card__data ] [ flex-wrap ] [ gap-200 ]">
-                        <Time time={post.frontmatter.date} />
+                        <Time time={date} />
                         <div className="flex-row gap-100">
-                          {post.frontmatter.tags.map((tag) => (
+                          {tags.map((tag) => (
                             <div key={tag} className="pill">
                               {tag}
                             </div>
                           ))}
                         </div>
                       </div>
-                      <p className="fs-300 line-clamp">
-                        {post.frontmatter.description}
-                      </p>
-                      <Link href={`/blog/${post.slug}`} className="button">
+                      <p className="fs-300 line-clamp">{description}</p>
+                      <Link href={`/blog/${slug}`} className="button">
                         Read More
                       </Link>
                     </article>
                   </li>
-                )
-              );
-            })}
+                );
+              }
+            )}
           </ol>
         </div>
       </article>
