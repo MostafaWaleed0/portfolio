@@ -17,7 +17,15 @@ const CustomLink = (props) => {
 };
 
 function CustomImage(props) {
-  return <Image alt={props.alt} {...props} />;
+  return (
+    <Image
+      width={400}
+      height={400}
+      alt={props.alt.length !== 0 ? `Illustration of ${props.alt}` : props.alt}
+      className="object-cover"
+      {...props}
+    />
+  );
 }
 
 const MDXComponents = {
