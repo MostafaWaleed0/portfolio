@@ -16,6 +16,10 @@
     --flow-space: var(--space-800);
   }
 
+  :is(ol, ul) {
+    margin-block: var(--space-300);
+  }
+
   :is(& ol, & ul) > li + li {
     margin-block: var(--space-100);
   }
