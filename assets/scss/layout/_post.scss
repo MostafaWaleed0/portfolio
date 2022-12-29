@@ -1,5 +1,6 @@
 @use '../abstracts/breakpoint' as *;
 @use '../abstracts/tokens/tokens' as *;
+@use '../abstracts/function' as *;
 
 .post {
   --flow-space: var(--space-600);
@@ -53,6 +54,12 @@
         content: '#';
       }
     }
+  }
+
+  :is(img) {
+    block-size: rem(330);
+    inline-size: 100%;
+    object-position: 34% 0;
   }
 
   :is(strong + h3) {
