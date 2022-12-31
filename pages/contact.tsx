@@ -5,7 +5,7 @@ export default function Contact() {
   return (
     <Container
       title="Contact - MW"
-      description="If you have any questions or want to work together?"
+      description="If you want to know more about me or my work, I'll be happy to answer questions and share what I'm up to. You can contact me directly through the contact form on my website."
     >
       <section className="[ wrapper ] [ margin-block-start-700 margin-block-end-800 ]">
         <div className="[ headline ] [ flow ]">

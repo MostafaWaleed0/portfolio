@@ -4,7 +4,10 @@ import type { FrontendType } from 'lib/types';
 
 export default function Frontend() {
   return (
-    <Container title="Language and technologies - MW">
+    <Container
+      title="Language and technologies - MW"
+      description="I use a lot of languages for my work as a front-end developer such as React, Next.js, and TypeScript. This is a list of development languages and technologies that I use."
+    >
       <section className="[ wrapper-md flow ] [ margin-block-start-700 margin-block-end-800 ]">
         <div className="headline" data-headline-style="wide">
           <h1>Language and technologies</h1>
