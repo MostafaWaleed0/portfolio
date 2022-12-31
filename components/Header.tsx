@@ -4,7 +4,7 @@ import useSound from 'use-sound';
 
 export default function Header() {
   const { theme, setTheme } = useTheme();
-  const [play] = useSound('https://assets.codepen.io/605876/click.mp3');
+  const [play] = useSound('/audio/click.mp3');
 
   const toggleTheme = () => {
     play();
