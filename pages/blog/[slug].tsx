@@ -31,7 +31,7 @@ export default function PostPage({
 
   return (
     <Container
-      title={title + ' - MW'}
+      title={`${title} - MW`}
       description={description}
       date={date}
       image={banner}
@@ -76,7 +76,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { slug } }) {
   const markdownWithMeta = readFileSync(
-    join('data/posts', slug + '.mdx'),
+    join('data/posts', `${slug}.mdx`),
     'utf-8'
   );
   const { data: frontmatter, content } = matter(markdownWithMeta);
