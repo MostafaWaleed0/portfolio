@@ -75,6 +75,11 @@ export async function getStaticProps() {
     const { data: frontmatter } = matter(markdownWithMeta);
     return { slug, frontmatter };
   });
+
+  posts.sort((a, b) => {
+    return b.frontmatter.date - a.frontmatter.date;
+  });
+
   return {
     props: {
       posts: JSON.parse(JSON.stringify(posts))
