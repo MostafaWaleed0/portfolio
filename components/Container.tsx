@@ -9,7 +9,7 @@ export default function Container(props) {
   const { children, ...customMeta } = props;
   const meta = {
     title: 'Mostafa Waleed - Frontend developer',
-    description: `Mostafa Waleed, an experienced freelance web developer based in the Egypt`,
+    description: `Mostafa Waleed, an experienced freelance web developer based in Egypt`,
     image:
       'https://mostafawaleed.me/static/favicons/android-chrome-256x256.png',
     type: 'website',
