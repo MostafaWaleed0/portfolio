@@ -5,7 +5,13 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <link rel="preload" href="/fonts/fonts.css" as="style" />
+        <link
+          rel="preload"
+          href="/fonts/CascadiaCode.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
         <link href="/static/favicons/favicon.ico" rel="shortcut icon" />
         <link
           rel="apple-touch-icon"
