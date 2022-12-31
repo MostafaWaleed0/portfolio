@@ -19,7 +19,10 @@ export async function getServerSideProps({ res }) {
   const feed = new RSS({
     title: 'MW',
     site_url: 'https://mostafawaleed.me',
-    feed_url: 'https://mostafawaleed.me/feed.xml'
+    feed_url: 'https://mostafawaleed.me/feed.xml',
+    language: 'en',
+    image_url:
+      'https://mostafawaleed.me/static/favicons/android-chrome-256x256.png'
   });
 
   posts.map((post) => {
@@ -27,7 +30,9 @@ export async function getServerSideProps({ res }) {
       title: post.frontmatter.title,
       url: `https://mostafawaleed.me/blog/${post.slug}`,
       date: post.frontmatter.date,
-      description: post.frontmatter.description
+      description: post.frontmatter.description,
+      author: post.frontmatter.author ?? 'Mostafa Waleed',
+      categories: [...post.frontmatter.tags] // array of item categories
     });
   });
 
