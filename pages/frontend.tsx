@@ -1,5 +1,6 @@
 import Container from '../components/Container';
 import { frontend } from '../data/frontend';
+import type { FrontendType } from 'lib/types';
 
 export default function Frontend() {
   return (
@@ -10,25 +11,16 @@ export default function Frontend() {
         </div>
         <div>
           <ul className="collection" role="list">
-            {frontend.map(
-              (
-                lang: {
-                  id: number;
-                  icon: any;
-                  title: string;
-                },
-                index: number
-              ) => {
-                return (
-                  <li key={index + 1} className="collection-item">
-                    <div className="collection-item__focusable" tabIndex={0}>
-                      <div className="collection-item__icon">{lang.icon}</div>
-                      <div className="collection-item__title">{lang.title}</div>
-                    </div>
-                  </li>
-                );
-              }
-            )}
+            {frontend.map(({ id, icon, title }: FrontendType) => {
+              return (
+                <li key={id} className="collection-item">
+                  <div className="collection-item__focusable" tabIndex={0}>
+                    <div className="collection-item__icon">{icon}</div>
+                    <div className="collection-item__title">{title}</div>
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </section>

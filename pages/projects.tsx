@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Container from '../components/Container';
 import { data } from '../data/projects';
+import type { ProjectsType } from 'lib/types';
 
 export default function Projects() {
   return (
@@ -10,24 +11,24 @@ export default function Projects() {
         <div className="region" data-layout="projects">
           <ol className="auto-grid" data-layout="projects" role="list">
             {data.map(
-              (project: {
-                id: number;
-                logo: JSX.Element;
-                technologies: JSX.Element[];
-                github_url?: string;
-                website_url?: string;
-              }) => {
+              ({
+                id,
+                logo,
+                technologies,
+                github_url,
+                website_url
+              }: ProjectsType) => {
                 return (
-                  <li className="card" key={project.id}>
+                  <li className="card" key={id}>
                     <div className="card__focusable" tabIndex={0}>
                       <ul className="card__technologies" role="list">
-                        {project.technologies.map((icon, i) => (
+                        {technologies.map((icon, i) => (
                           <li key={i + 1}>{icon}</li>
                         ))}
                       </ul>
-                      {project.github_url && (
+                      {github_url && (
                         <Link
-                          href={project.github_url}
+                          href={github_url}
                           className="card__github"
                           aria-label="Website Code"
                           target="_blank"
@@ -50,10 +51,10 @@ export default function Projects() {
                           </svg>
                         </Link>
                       )}
-                      <div className="card__logo">{project.logo}</div>
-                      {project.website_url && (
+                      <div className="card__logo">{logo}</div>
+                      {website_url && (
                         <Link
-                          href={project.website_url}
+                          href={website_url}
                           className="card__designer"
                           aria-label="Website Link"
                           target="_blank"

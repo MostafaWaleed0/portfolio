@@ -4,6 +4,7 @@ import { Suspense } from 'react';
 import Container from '../components/Container';
 import HomeCards from '../components/HomeCards';
 import { languages, tools } from '../data/skillsAndTools';
+import type { FrontendType, ToolsType } from 'lib/types';
 
 export default function Home() {
   return (
@@ -85,26 +86,16 @@ export default function Home() {
             <div className="[ flow ] [ text-center font-mono ]">
               <h3>Frontend</h3>
               <ul className="cluster" role="list">
-                {languages.map(
-                  (
-                    lang: {
-                      id: number;
-                      icon: JSX.Element;
-                      url: string;
-                      title: string;
-                    },
-                    index: number
-                  ) => {
-                    return (
-                      <li key={index + 1} className="[ square ] [ flow ]">
-                        {lang.icon}
-                        <span className="fs-300 weight-medium font-mono">
-                          {lang.title}
-                        </span>
-                      </li>
-                    );
-                  }
-                )}
+                {languages.map(({ id, icon, title }: FrontendType) => {
+                  return (
+                    <li key={id} className="[ square ] [ flow ]">
+                      {icon}
+                      <span className="fs-300 weight-medium font-mono">
+                        {title}
+                      </span>
+                    </li>
+                  );
+                })}
                 <li>
                   <Link href="/frontend" className="[ square ] [ flow ]">
                     More languages
@@ -122,26 +113,16 @@ export default function Home() {
             <div className="[ flow ] [ text-center font-mono flow-space-900 ]">
               <h3>Tools</h3>
               <ul className="cluster" role="list">
-                {tools.map(
-                  (
-                    tool: {
-                      id: number;
-                      icon: JSX.Element;
-                      url: string;
-                      title: string;
-                    },
-                    index: number
-                  ) => {
-                    return (
-                      <li key={index + 1} className="[ square ] [ flow ]">
-                        {tool.icon}
-                        <span className="fs-300 weight-medium font-mono">
-                          {tool.title}
-                        </span>
-                      </li>
-                    );
-                  }
-                )}
+                {tools.map(({ id, icon, title }: ToolsType) => {
+                  return (
+                    <li key={id} className="[ square ] [ flow ]">
+                      {icon}
+                      <span className="fs-300 weight-medium font-mono">
+                        {title}
+                      </span>
+                    </li>
+                  );
+                })}
                 <li>
                   <Link href="/tools" className="[ square ] [ flow ]">
                     More Tools

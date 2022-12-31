@@ -46,3 +46,25 @@ export interface TimeType {
 export type FooterProps = {
   type?: string;
 };
+
+export type FrontendType = {
+  id: number;
+  icon: JSX.Element;
+  title: string;
+};
+
+export type ToolsType = {
+  id: number;
+  icon: JSX.Element;
+  functions?: string[];
+  title: string;
+  url: string;
+};
+
+export type ProjectsType = {
+  id: number;
+  logo: JSX.Element;
+  technologies: JSX.Element[];
+  github_url?: string;
+  website_url?: string;
+};

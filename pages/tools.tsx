@@ -1,5 +1,6 @@
 import Container from '../components/Container';
 import { tools } from '../data/tools';
+import type { ToolsType } from 'lib/types';
 
 export default function Tools() {
   return (
@@ -13,39 +14,26 @@ export default function Tools() {
         </div>
         <div>
           <ul className="collection" role="list">
-            {tools.map(
-              (
-                tool: {
-                  id: number;
-                  icon: JSX.Element;
-                  functions: string[];
-                  title: string;
-                  url: string;
-                },
-                index: number
-              ) => {
-                return (
-                  <li className="collection-item" key={index + 1}>
-                    <div className="collection-item__focusable" tabIndex={0}>
-                      <div className="collection-item__icon">{tool.icon}</div>
-                      <div className="collection-item__title">{tool.title}</div>
-                      <div className="cluster">
-                        {tool.functions?.map(
-                          (_function: string, index: number) => {
-                            return (
-                              <div className="pill" key={index + 1}>
-                                {_function}
-                              </div>
-                            );
-                          }
-                        )}
-                        <a href={tool.url}>{tool.url}</a>
-                      </div>
+            {tools.map(({ id, icon, functions, title, url }: ToolsType) => {
+              return (
+                <li className="collection-item" key={id}>
+                  <div className="collection-item__focusable" tabIndex={0}>
+                    <div className="collection-item__icon">{icon}</div>
+                    <div className="collection-item__title">{title}</div>
+                    <div className="cluster">
+                      {functions?.map((_function) => {
+                        return (
+                          <div className="pill" key={_function}>
+                            {_function}
+                          </div>
+                        );
+                      })}
+                      <a href={url}>{url}</a>
                     </div>
-                  </li>
-                );
-              }
-            )}
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </article>
