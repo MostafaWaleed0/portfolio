@@ -54,6 +54,7 @@ a {
   color: inherit;
   text-underline-offset: 0.15em;
   text-decoration-color: $primary-400;
+  font-family: $font-family-links;
 
   &:is(:focus:not(:focus-visible)) {
     outline: 0;

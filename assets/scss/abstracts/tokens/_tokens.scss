@@ -62,6 +62,7 @@ $color-outline-global: $neutral-900;
 $font-family-body: $font-family-sans;
 $font-family-heading: $font-family-sans;
 $font-family-logo: $font-family-sans;
+$font-family-links: $font-family-code;
 
 $font-weight-body: $font-weight-400;
 $font-weight-heading: $font-weight-700;
@@ -98,6 +99,7 @@ $button-text-default: $neutral-100;
 $button-border-radius: $border-radius-1;
 $button-font-size: $font-size-300;
 $button-font-weight: $font-weight-bold;
+$button-font-family: $font-family-code;
 $button-padding-default: 0.8em 2em !default;
 $button-padding-icon: 1em 1em !default;
 
