@@ -21,7 +21,7 @@ export default function Blog({ posts }: BlogPostType) {
               (
                 {
                   slug,
-                  frontmatter: { banner, title, date, tags, description }
+                  frontmatter: { banner, title, date, tags, description, alt }
                 },
                 index
               ) => {
@@ -36,7 +36,7 @@ export default function Blog({ posts }: BlogPostType) {
                         src={banner}
                         width={561}
                         height={300}
-                        alt=""
+                        alt={`Illustration of ${alt} `}
                         className="card__image"
                       />
                       <h3 className="fs-600">{title}</h3>

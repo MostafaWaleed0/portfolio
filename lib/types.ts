@@ -10,6 +10,7 @@ export interface PostPageType {
     tags?: Array<string>;
     date?: string;
     card: boolean;
+    alt: string;
   };
   content: MDXRemoteSerializeResult;
 }
