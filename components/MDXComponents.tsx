@@ -21,9 +21,9 @@ function CustomImage(props) {
     <Image
       width={400}
       height={400}
-      alt={props.alt.length !== 0 ? `Illustration of ${props.alt}` : props.alt}
       className="object-cover"
       {...props}
+      alt={props.alt.length !== 0 ? `Illustration of ${props.alt}` : props.alt}
     />
   );
 }
