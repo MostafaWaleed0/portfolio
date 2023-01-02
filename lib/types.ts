@@ -7,8 +7,8 @@ export interface PostPageType {
     title: string;
     description: string;
     banner: string;
-    tags?: Array<string>;
-    date?: string;
+    tags: Array<string>;
+    date: string;
     card: boolean;
     alt: string;
   };
