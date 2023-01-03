@@ -69,7 +69,7 @@ export default function Home() {
               </article>
               <div className="box-reflect">
                 <Image
-                  alt=""
+                  alt="Modern conceptual art poster with three colorful ancient statues. contemporary art collage. concept of retro wave-style posters."
                   src="/home-img1.webp"
                   width={410}
                   height={500}
