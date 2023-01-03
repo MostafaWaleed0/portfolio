@@ -10,7 +10,7 @@ import { BlogPostType } from 'lib/types';
 export default function Blog({ posts }: BlogPostType) {
   return (
     <Container
-      title="Blog - MW"
+      title="Blog - Mostafa Waleed"
       description="My blog is a site where I share ideas, tips, and other random and interesting things about web development."
     >
       <article className="[ wrapper ] [ margin-block-start-700 margin-block-end-800 ]">

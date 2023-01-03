@@ -5,7 +5,7 @@ import type { ProjectsType } from 'lib/types';
 
 export default function Projects() {
   return (
-    <Container title="Projects - MW">
+    <Container title="Projects - Mostafa Waleed">
       <section className="[ wrapper ] [ margin-block-start-700 margin-block-end-800 ]">
         <h1>Projects</h1>
         <div className="region" data-layout="projects">

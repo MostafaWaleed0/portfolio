@@ -5,7 +5,7 @@ import type { ToolsType } from 'lib/types';
 export default function Tools() {
   return (
     <Container
-      title="Tools - MW"
+      title="Tools - Mostafa Waleed"
       description="I use a lot of tools for my work as a front-end developer such as Obsidian, Figma, and GitHub. This is a list of all the tools I use."
     >
       <article className="[ wrapper-md flow ] [ margin-block-start-700 margin-block-end-800 ]">

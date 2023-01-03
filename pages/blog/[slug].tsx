@@ -31,7 +31,7 @@ export default function PostPage({
 
   return (
     <Container
-      title={`${title} - MW`}
+      title={`${title} - Mostafa Waleed`}
       description={description}
       date={date}
       image={banner}

@@ -2,7 +2,7 @@ import Container from '../components/Container';
 
 export default function contactThankYou() {
   return (
-    <Container title="Thank you! - MW">
+    <Container title="Thank you! - Mostafa Waleed">
       <article
         className="[ wrapper flow ] [ flex-row ]"
         style={{ height: '67vh' }}
