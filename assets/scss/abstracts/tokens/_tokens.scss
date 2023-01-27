@@ -16,18 +16,18 @@ $red-300: --clr-red-300;
 $red-800: --clr-red-800;
 
 // type tokens
-$font-family-sans: -apple-system, BlinkMacSystemFont, avenir next, avenir,
-  segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
-  sans-serif;
+$font-family-sans: var(--font-body), -apple-system, BlinkMacSystemFont,
+  avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu,
+  roboto, noto, arial, sans-serif;
 
 $font-family-serif: Iowan Old Style, Apple Garamond, Baskerville,
   Times New Roman, Droid Serif, Times, Source Serif Pro, serif,
   Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 
-$font-family-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
-  monospace;
+$font-family-mono: var(--font-mono), Menlo, Consolas, Monaco, Liberation Mono,
+  Lucida Console, monospace;
 
-$font-family-code: 'Cascadia Code', $font-family-sans;
+$font-family-code: var(--font-mono), $font-family-sans;
 
 $font-weight-400: 400;
 $font-weight-500: 500;
