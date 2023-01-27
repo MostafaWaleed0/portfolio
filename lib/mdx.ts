@@ -28,8 +28,7 @@ export async function mdxToHtml(source) {
           }
         ]
       ],
-      format: 'mdx',
-      development: false
+      format: 'mdx'
     }
   });
 
