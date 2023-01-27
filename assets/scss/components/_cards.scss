@@ -49,6 +49,7 @@
         padding: var(--space-50);
         margin: 0.3rem;
         width: min(13vw, rem(64));
+        height: min(13vw, rem(64));
         aspect-ratio: 1 / 1;
         border-radius: $border-radius-rounded-full;
         background-color: $color-surface-inverse-2;
