@@ -1,7 +1,8 @@
 @use "../abstracts/" as *;
 @use "../abstracts/tokens/tokens" as *;
 
-body {
+body,
+.body {
   font-family: $font-family-body;
   font-size: $font-size-body;
   font-weight: $font-weight-body;
@@ -18,7 +19,7 @@ h4 {
 
 h1 {
   font-size: $font-size-900;
-  max-width: 22.5ch;
+  max-width: 20ch;
   line-height: 1;
 }
 
