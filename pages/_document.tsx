@@ -43,6 +43,11 @@ export default function Document() {
           content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"
           name="robots"
         />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          href="https://mostafawaleed.me/feed.xml"
+        />
       </Head>
       <body>
         <Main />

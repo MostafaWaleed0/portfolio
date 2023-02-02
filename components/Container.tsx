@@ -20,7 +20,6 @@ export default function Container(props) {
     <>
       <Head>
         <meta charSet="utf-8" />
-        <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, viewport-fit=cover"
@@ -32,6 +31,7 @@ export default function Container(props) {
           href={`https://www.mostafawaleed.me${router.asPath}`}
         />
         <meta name="robots" content="follow, index" />
+        <meta name="googlebot" content="follow, index" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@MostafaAmr206" />
         <meta name="twitter:title" content={meta.title} />
