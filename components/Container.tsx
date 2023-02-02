@@ -20,7 +20,6 @@ export default function Container(props) {
     <>
       <Head>
         <meta charSet="utf-8" />
-        <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, viewport-fit=cover"
