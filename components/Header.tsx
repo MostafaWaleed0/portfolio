@@ -33,7 +33,7 @@ export default function Header() {
                   <Link href="/contact">contact</Link>
                 </li>
                 <li>
-                  <a href="https://github.com/mostafawaleed3">gitHub</a>
+                  <a href="https://github.com/mostafa-mw">gitHub</a>
                 </li>
                 <li>
                   <a href="https://www.linkedin.com/in/mostafa-waleed-b06034217/">
