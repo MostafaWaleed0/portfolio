@@ -1,15 +1,16 @@
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
+import { useCallback } from 'react';
 import useSound from 'use-sound';
 
 export default function Header() {
   const { theme, setTheme } = useTheme();
   const [play] = useSound('/audio/click.mp3');
 
-  const toggleTheme = () => {
-    play();
+  const toggleTheme = useCallback(() => {
     setTheme(theme === 'light' ? 'dark' : 'light');
-  };
+    play();
+  }, [play, setTheme, theme]);
 
   return (
     <header role="banner" className="site-head">
