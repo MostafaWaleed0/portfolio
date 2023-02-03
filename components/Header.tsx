@@ -1,15 +1,16 @@
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
+import { useCallback } from 'react';
 import useSound from 'use-sound';
 
 export default function Header() {
   const { theme, setTheme } = useTheme();
   const [play] = useSound('/audio/click.mp3');
 
-  const toggleTheme = () => {
-    play();
+  const toggleTheme = useCallback(() => {
     setTheme(theme === 'light' ? 'dark' : 'light');
-  };
+    play();
+  }, [play, setTheme, theme]);
 
   return (
     <header role="banner" className="site-head">
@@ -33,7 +34,7 @@ export default function Header() {
                   <Link href="/contact">contact</Link>
                 </li>
                 <li>
-                  <a href="https://github.com/mostafawaleed3">gitHub</a>
+                  <a href="https://github.com/mostafa-mw">gitHub</a>
                 </li>
                 <li>
                   <a href="https://www.linkedin.com/in/mostafa-waleed-b06034217/">

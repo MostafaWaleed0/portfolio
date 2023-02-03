@@ -18,17 +18,14 @@ export default function Blog({ posts }: BlogPostType) {
         <div className="margin-block-start-700">
           <ol className="auto-grid" role="list" data-layout="blog">
             {posts.map(
-              (
-                {
-                  slug,
-                  frontmatter: { banner, title, date, tags, description, alt }
-                },
-                index
-              ) => {
+              ({
+                slug,
+                frontmatter: { banner, title, date, tags, description, alt }
+              }) => {
                 return (
                   <li
                     className="[ card ] [ focusable ]"
-                    key={index + 1}
+                    key={slug}
                     tabIndex={0}
                   >
                     <article className="flow" style={{ maxWidth: '561px' }}>

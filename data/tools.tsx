@@ -76,7 +76,7 @@ export const tools = [
     ),
     functions: ['prototyping', 'design'],
     title: 'figma',
-    url: 'https://www.figma.com'
+    url: 'https://figma.com'
   },
   {
     id: 3,
@@ -263,7 +263,7 @@ export const tools = [
     ),
     functions: ['analytics'],
     title: 'panelbear',
-    url: 'https://app.panelbear.com'
+    url: 'https://panelbear.com'
   },
   {
     id: 11,
@@ -326,7 +326,7 @@ export const tools = [
     ),
     functions: ['code', 'email'],
     title: 'EmailJS',
-    url: 'https://www.emailjs.com'
+    url: 'https://emailjs.com'
   },
   {
     id: 14,
@@ -391,6 +391,6 @@ export const tools = [
     ),
     functions: ['code', 'payments', 'APIs'],
     title: 'stripe',
-    url: 'https://www.stripe.com/en-gb-us'
+    url: 'https://stripe.com'
   }
 ];

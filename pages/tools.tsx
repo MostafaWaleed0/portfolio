@@ -31,7 +31,9 @@ export default function Tools() {
                           </div>
                         );
                       })}
-                      <a href={url}>{url}</a>
+                      <a target="_blank" rel="noopener noreferrer" href={url}>
+                        {url}
+                      </a>
                     </div>
                   </div>
                 </li>
