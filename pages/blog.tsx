@@ -64,12 +64,12 @@ export default function Blog({ posts }: BlogPostType) {
 }
 
 export async function getStaticProps() {
-  const files = readdirSync('data/posts');
+  const files = readdirSync(join(process.cwd(), 'content'));
   const posts = files.map((filename) => {
     // Create slug
     const slug = filename.replace('.mdx', '');
     const markdownWithMeta = readFileSync(
-      join('data/posts', filename),
+      join(process.cwd(), 'content', filename),
       'utf-8'
     );
     const { data: frontmatter } = matter(markdownWithMeta);
