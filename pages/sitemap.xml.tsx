@@ -16,7 +16,7 @@ const createSitemap = (slugs) => `<?xml version="1.0" encoding="UTF-8"?>
 `;
 
 export async function getServerSideProps({ res }) {
-  const allPosts = readdirSync(join(process.cwd(), 'data/posts'));
+  const allPosts = readdirSync(join(process.cwd(), 'content'));
   const allPages = [
     ...allPosts.map((slug) => `blog/${slug.replace('.mdx', '')}`),
     ...['', 'blog', 'contact', 'frontend', 'projects', 'tools']
