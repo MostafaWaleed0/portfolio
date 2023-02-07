@@ -1,18 +1,23 @@
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import useSound from 'use-sound';
-import { Logo } from 'components/icons';
+import { Logo, List } from 'components/icons';
 import click from '/public/audio/click.mp3';
 
 export default function Header() {
   const { resolvedTheme, setTheme } = useTheme();
   const [play] = useSound(click);
+  const [visible, setVisible] = useState(false);
 
   const toggleTheme = useCallback(() => {
     setTheme(resolvedTheme === 'light' ? 'dark' : 'light');
     play();
   }, [play, setTheme, resolvedTheme]);
+
+  const toggleNav = useCallback(() => {
+    setVisible((x) => !x);
+  }, []);
 
   return (
     <header role="banner" className="site-head">
@@ -26,7 +31,12 @@ export default function Header() {
             <span>Mostafa Waleed</span>
           </Link>
           <div className="site-head__navigation">
-            <nav aria-label="primary" id="primary-navigation" tabIndex={-1}>
+            <nav
+              aria-label="primary"
+              id="primary-navigation"
+              data-visible={visible}
+              tabIndex={-1}
+            >
               <ul className="[ nav ] [ fs-300 weight-medium ]" role="list">
                 <li>
                   <Link href="/blog">blog</Link>
@@ -45,9 +55,18 @@ export default function Header() {
               </ul>
             </nav>
             <button
+              type="button"
+              aria-controls="primary-navigation"
+              aria-expanded={visible}
+              className="[ site-head__nav-toggle ] [ margin-inline-start-100 ]"
+              onClick={toggleNav}
+            >
+              <List />
+            </button>
+            <button
               id="theme-toggle"
               type="button"
-              className="[ site-head__theme-toggle ] [ margin-inline-start-500 ]"
+              className="[ site-head__theme-toggle ] [ margin-inline-start-400 ]"
               onClick={toggleTheme}
               aria-label={
                 resolvedTheme === 'dark'

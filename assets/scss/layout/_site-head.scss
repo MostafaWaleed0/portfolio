@@ -14,22 +14,50 @@
     display: flex;
     align-items: center;
     text-decoration: none;
-    white-space: nowrap;
   }
 
   &__navigation {
-    $space: var(--space-100);
     display: flex;
     align-items: center;
-    padding: $space;
-    overflow: auto;
+    padding: var(--space-100);
 
-    @include breakpoint-down(small) {
-      order: 1;
-      width: 100%;
-      padding: 0;
-      padding-block-start: var(--space-300);
-      padding-inline-start: calc($space * -1);
+    > nav {
+      @include breakpoint-down(medium) {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 9998;
+        background-color: $color-page-background;
+        padding: var(--space-300);
+
+        &[data-visible='false'] {
+          display: none;
+        }
+
+        ul {
+          font-size: $font-size-600;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    }
+  }
+
+  &__nav-toggle {
+    display: grid;
+    place-items: center;
+    border: 0;
+    outline: 0;
+    background-color: $color-surface-inverse;
+    border-radius: $border-radius-rounded-full;
+    padding: var(--space-100);
+    z-index: 9999;
+
+    @include breakpoint(large) {
+      display: none;
     }
   }
 
