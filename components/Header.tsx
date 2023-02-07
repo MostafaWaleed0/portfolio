@@ -2,6 +2,7 @@ import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import { useCallback } from 'react';
 import useSound from 'use-sound';
+import { Logo } from 'components/icons';
 
 export default function Header() {
   const { theme, setTheme } = useTheme();
@@ -18,11 +19,10 @@ export default function Header() {
         <div className="site-head__inner">
           <Link
             href="/"
-            aria-label="MW - home"
-            className="[ site-head__brand ] [ fs-600 weight-bold ]"
+            className="[ site-head__brand ] [ font-base fs-300 weight-bold ]"
           >
-            <em className="text-primary-600">M</em>
-            <em>W</em>
+            <Logo className="margin-inline-end-200" width={48} height={48} />
+            <span>Mostafa Waleed</span>
           </Link>
           <div className="site-head__navigation">
             <nav aria-label="primary" id="primary-navigation" tabIndex={-1}>
@@ -43,18 +43,18 @@ export default function Header() {
                 </li>
               </ul>
             </nav>
+            <button
+              id="theme-toggle"
+              type="button"
+              className="[ site-head__theme-toggle ] [ margin-inline-start-500 ]"
+              onClick={toggleTheme}
+              aria-label={
+                theme === 'dark'
+                  ? 'Switch to light Theme'
+                  : 'Switch to dark Theme'
+              }
+            ></button>
           </div>
-          <button
-            id="theme-toggle"
-            type="button"
-            onClick={toggleTheme}
-            // onTouchStart={toggleTheme}
-            aria-label={
-              theme === 'dark'
-                ? 'Switch to light Theme'
-                : 'Switch to dark Theme'
-            }
-          ></button>
         </div>
       </div>
     </header>

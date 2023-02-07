@@ -19,3 +19,4 @@ export { default as Tailwindcss } from './Tailwindcss';
 export { default as Typescript } from './Typescript';
 export { default as Webpack } from './Webpack';
 export { default as Rss } from './Rss';
+export { default as Logo } from './Logo';
