@@ -8,52 +8,69 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
   }
 
   &__brand {
-    font-family: $font-family-logo;
-    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
     text-decoration: none;
-
-    em {
-      font-style: normal;
-    }
-
-    &:hover,
-    &:focus {
-      color: unset;
-    }
   }
 
   &__navigation {
-    $space: var(--space-100);
     display: flex;
-    padding: $space;
-    overflow: auto;
+    align-items: center;
+    padding: var(--space-100);
 
-    @include breakpoint-down(small) {
-      order: 1;
-      width: 100%;
-      padding: 0;
-      padding-block-start: var(--space-300);
-      padding-inline-start: calc($space * -1);
+    > nav {
+      @include breakpoint-down(medium) {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 9998;
+        background-color: $color-page-background;
+        padding: var(--space-300);
+
+        &[data-visible='false'] {
+          display: none;
+        }
+
+        ul {
+          font-size: $font-size-600;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
     }
   }
 
-  #theme-toggle {
+  &__nav-toggle {
+    display: grid;
+    place-items: center;
+    border: 0;
+    outline: 0;
+    background-color: $color-surface-inverse;
+    border-radius: $border-radius-rounded-full;
+    padding: var(--space-100);
+    z-index: 9999;
+
+    @include breakpoint(large) {
+      display: none;
+    }
+  }
+
+  &__theme-toggle {
     border: 0;
     outline: 0;
     display: flex;
     z-index: 9999;
     cursor: pointer;
     -webkit-appearance: button;
-    height: min(15vw, rem(90));
+    height: min(15vw, rem(65));
     aspect-ratio: 1 / 1;
     border-radius: $border-radius-rounded-full;
-  }
-
-  #theme-toggle {
     box-shadow: inset -15px -13px 3px -2px $toggle-moon;
     background-color: $toggle-sun;
   }
