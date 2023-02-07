@@ -6,13 +6,13 @@ import { Logo } from 'components/icons';
 import click from '/public/audio/click.mp3';
 
 export default function Header() {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [play] = useSound(click);
 
   const toggleTheme = useCallback(() => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
+    setTheme(resolvedTheme === 'light' ? 'dark' : 'light');
     play();
-  }, [play, setTheme, theme]);
+  }, [play, setTheme, resolvedTheme]);
 
   return (
     <header role="banner" className="site-head">
@@ -50,7 +50,7 @@ export default function Header() {
               className="[ site-head__theme-toggle ] [ margin-inline-start-500 ]"
               onClick={toggleTheme}
               aria-label={
-                theme === 'dark'
+                resolvedTheme === 'dark'
                   ? 'Switch to light Theme'
                   : 'Switch to dark Theme'
               }
