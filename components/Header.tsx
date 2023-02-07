@@ -3,10 +3,11 @@ import Link from 'next/link';
 import { useCallback } from 'react';
 import useSound from 'use-sound';
 import { Logo } from 'components/icons';
+import click from '/public/audio/click.mp3';
 
 export default function Header() {
   const { theme, setTheme } = useTheme();
-  const [play] = useSound('/audio/click.mp3');
+  const [play] = useSound(click);
 
   const toggleTheme = useCallback(() => {
     setTheme(theme === 'light' ? 'dark' : 'light');
