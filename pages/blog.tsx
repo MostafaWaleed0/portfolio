@@ -73,16 +73,9 @@ export async function getStaticProps() {
     };
   }
 
-  const sortPosts = posts.sort((a, b) => {
-    return (
-      Number(new Date(b.frontmatter.date)) -
-      Number(new Date(a.frontmatter.date))
-    );
-  });
-
   return {
     props: {
-      posts: sortPosts
+      posts: posts
     }
   };
 }
