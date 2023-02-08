@@ -1,13 +1,14 @@
-import { readdirSync, readFileSync } from 'fs';
-import { join } from 'path';
-import matter from 'gray-matter';
-import Container from '../components/Container';
-import Link from 'next/link';
+import blog from 'lib/blog';
+import { PostType } from 'lib/types';
 import Image from 'next/image';
+import Link from 'next/link';
+import { InferGetStaticPropsType } from 'next/types';
+import Container from '../components/Container';
 import Time from '../components/Time';
-import { BlogPostType } from 'lib/types';
 
-export default function Blog({ posts }: BlogPostType) {
+export default function Blog({
+  posts
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Container
       title="Blog - Mostafa Waleed"
@@ -64,25 +65,24 @@ export default function Blog({ posts }: BlogPostType) {
 }
 
 export async function getStaticProps() {
-  const files = readdirSync(join(process.cwd(), 'content'));
-  const posts = files.map((filename) => {
-    // Create slug
-    const slug = filename.replace('.mdx', '');
-    const markdownWithMeta = readFileSync(
-      join(process.cwd(), 'content', filename),
-      'utf-8'
-    );
-    const { data: frontmatter } = matter(markdownWithMeta);
-    return { slug, frontmatter };
-  });
+  const posts: PostType[] = await blog();
 
-  posts.sort((a, b) => {
-    return b.frontmatter.date - a.frontmatter.date;
+  if (!posts) {
+    return {
+      notFound: true
+    };
+  }
+
+  const sortPosts = posts.sort((a, b) => {
+    return (
+      Number(new Date(b.frontmatter.date)) -
+      Number(new Date(a.frontmatter.date))
+    );
   });
 
   return {
     props: {
-      posts: JSON.parse(JSON.stringify(posts))
+      posts: sortPosts
     }
   };
 }

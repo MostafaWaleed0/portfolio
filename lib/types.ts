@@ -1,6 +1,6 @@
 import { InputHTMLAttributes, TextareaHTMLAttributes } from 'react';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
-export interface PostPageType {
+export interface PostType {
   slug: string;
   readingTime: string;
   frontmatter: {
@@ -13,10 +13,6 @@ export interface PostPageType {
     alt: string;
   };
   content: MDXRemoteSerializeResult;
-}
-
-export interface BlogPostType {
-  [key: string]: Array<PostPageType>;
 }
 
 export interface InputType extends InputHTMLAttributes<HTMLInputElement> {
