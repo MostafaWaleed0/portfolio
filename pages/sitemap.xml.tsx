@@ -19,7 +19,7 @@ export async function getServerSideProps({ res }) {
   const allPosts = readdirSync(join(process.cwd(), 'content'));
   const allPages = [
     ...allPosts.map((slug) => `blog/${slug.replace('.mdx', '')}`),
-    ...['', 'blog', 'contact', 'frontend', 'projects', 'tools']
+    ...['', 'blog', 'contact', 'frontend', 'tools']
   ];
 
   res.setHeader('Content-Type', 'text/xml');

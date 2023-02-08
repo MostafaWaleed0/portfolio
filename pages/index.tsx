@@ -1,16 +1,23 @@
+import { FrontendType, GithubReposType, ToolsType } from 'lib/types';
+import { InferGetStaticPropsType } from 'next';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Suspense } from 'react';
 import Container from '../components/Container';
-import HomeCards from '../components/HomeCards';
 import { languages, tools } from '../data/skillsAndTools';
-import type { FrontendType, ToolsType } from 'lib/types';
 
-export default function Home() {
+const GitHubCards = dynamic(() => import('components/metrics/GitHubCards'), {
+  ssr: false
+});
+
+export default function Home({
+  repos
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Suspense fallback={null}>
       <Container>
-        <section className="[ wrapper ] [ region ] [ margin-block-end-900 ]">
+        <section className="[ wrapper ] [ region ]">
           <div className="[ headline ] [ flow ]" data-align="center">
             <h1>
               Hi👋. I&rsquo;m Mostafa, and I&rsquo;m a{' '}
@@ -22,6 +29,14 @@ export default function Home() {
               building high-quality codes, so if you have a project or questions
               in mind, <Link href="/contact">within reach of you now.</Link>
             </p>
+          </div>
+        </section>
+        <section className="[ projects ] [ region ]">
+          <div className="[ wrapper ]">
+            <h2 className="fs-700">Featured Projects</h2>
+            <div className="padding-block-start-200">
+              <GitHubCards repos={repos} />
+            </div>
           </div>
         </section>
         <section className="[ region ] [ bg-inverse ]">
@@ -139,8 +154,28 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <HomeCards />
       </Container>
     </Suspense>
   );
+}
+export async function getStaticProps() {
+  const res = await fetch(
+    'https://api.github.com/users/mostafa-mw/repos?type=owner&sort=pushed',
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.GITHUB_ACCESS_TOKEN}`
+      }
+    }
+  );
+  const data: GithubReposType = await res.json();
+
+  if (!data) {
+    return {
+      notFound: true
+    };
+  }
+
+  return {
+    props: { repos: data }
+  };
 }

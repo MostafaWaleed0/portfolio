@@ -62,10 +62,23 @@ export type ToolsType = {
   url: string;
 };
 
-export type ProjectsType = {
-  id: number;
-  logo: JSX.Element;
-  technologies: JSX.Element[];
-  github_url?: string;
-  website_url?: string;
+export type PinnedReposType = {
+  repos: {
+    id: string;
+    name: string;
+    stargazers: { __typename: string; totalCount: number };
+    url: string;
+    __typename: string;
+  }[];
 };
+
+export type GithubReposType = {
+  node_id: string;
+  name: string;
+  html_url: string;
+  homepage: string;
+  description: string;
+  stargazers_count: number;
+  language: string;
+  topics: string[];
+}[];
