@@ -1,7 +1,7 @@
-import useSWR from 'swr';
-import fetcher from 'lib/fetcher';
+import { useQuery } from '@apollo/client';
 import { Star } from 'components/icons';
-import { PinnedReposType, GithubReposType } from 'lib/types';
+import { GET_PINNED_REPOS } from 'lib/apolloClient';
+import { GithubReposType, PinnedReposType } from 'lib/types';
 
 const langColors = {
   typescript: '#3178c6',
@@ -12,12 +12,33 @@ const langColors = {
   scss: '#c6538c'
 };
 
-export default function GitHubCards({ repos }: { repos: GithubReposType }) {
-  const { data } = useSWR<PinnedReposType>('/api/github', fetcher);
+type Props = {
+  repos: GithubReposType;
+  username: string;
+};
 
-  return data ? (
+export default function GitHubCards({ repos, username }: Props) {
+  const { loading, error, data } = useQuery<PinnedReposType>(GET_PINNED_REPOS, {
+    variables: { username }
+  });
+
+  if (loading)
+    return (
+      <div className="flex-row" style={{ height: '300px' }}>
+        <h3 className="margin-auto">Loading...</h3>
+      </div>
+    );
+
+  if (error)
+    return (
+      <div className="flex-row" style={{ height: '300px' }}>
+        <h3 className="text-warring margin-auto">{error.message}</h3>
+      </div>
+    );
+
+  return (
     <ol className="auto-grid" role="list">
-      {data.repos.map((pinnedRepos) => {
+      {data.user.pinnedItems.nodes.map((pinnedRepos) => {
         return repos.map(
           ({
             node_id,
@@ -84,9 +105,5 @@ export default function GitHubCards({ repos }: { repos: GithubReposType }) {
         );
       })}
     </ol>
-  ) : (
-    <div className="flex-row" style={{ height: '300px' }}>
-      <h3 className="margin-auto">Loading...</h3>
-    </div>
   );
 }

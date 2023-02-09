@@ -1,30 +1,14 @@
-/** @type {import('next').NextConfig} */
+// @ts-check
 
-module.exports = {
-  unstable_runtimeJS: false,
-  reactStrictMode   : false,
-  swcMinify         : true,
-  compress          : true,
+/**
+ * @type {import('next').NextConfig}
+ **/
 
-  experimental: {
-    legacyBrowsers    : false,
-    browsersListForSwc: true,
-    images            : { allowFutureImage: true },
-  },
-
+const nextConfig = {
   images: {
     domains: ['image/png', 'image/webp', 's3-alpha.figma.com', "images.pexels.com"],
   },
 
-  async headers() {
-    return [
-      {
-        source : '/(.*)',
-        headers: securityHeaders,
-      },
-    ]
-  },
-  
   webpack(config, options) {
     const { isServer } = options;
     config.module.rules.push({
@@ -47,18 +31,26 @@ module.exports = {
 
     return config;
   },
+
+  async headers() {
+    return [
+      {
+        source : '/(.*)',
+        headers: securityHeaders,
+      },
+    ]
+  },
 }
 
 const ContentSecurityPolicy = `
-    default-src 'self';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.twitter.com;
-    child-src *.youtube.com *.google.com *.twitter.com;
-    style-src 'self' 'unsafe-inline' *.googleapis.com;
-    img-src * blob: data: ;
+    default-src 'self' vercel.live;
+    script-src 'self' 'unsafe-eval' 'unsafe-inline' cdn.vercel-insights.com vercel.live;
+    style-src 'self' 'unsafe-inline';
+    img-src * blob: data:;
     media-src 'none';
     connect-src *;
     font-src 'self';
-`
+`;
 
 const securityHeaders = [
   {
@@ -90,3 +82,5 @@ const securityHeaders = [
     value: 'camera=(), microphone=(), geolocation=()',
   },
 ]
+
+module.exports = nextConfig

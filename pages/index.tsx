@@ -86,7 +86,7 @@ export default function Home({
             <h2 className="fs-700">Featured Projects</h2>
             <div className="padding-block-start-200">
               <Suspense fallback={null}>
-                <GitHubCards repos={repos} />
+                <GitHubCards repos={repos} username="mostafa-mw" />
               </Suspense>
             </div>
           </div>
@@ -102,7 +102,7 @@ export async function getStaticProps() {
     'https://api.github.com/users/mostafa-mw/repos?type=owner&sort=pushed',
     {
       headers: {
-        Authorization: `Bearer ${process.env.GITHUB_ACCESS_TOKEN}`
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_ACCESS_TOKEN}`
       }
     }
   );
