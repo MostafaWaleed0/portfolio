@@ -2,7 +2,7 @@
 @use '../abstracts/tokens/tokens' as *;
 
 .projects {
-  --auto-grid-min-size: min(54vw, 23rem);
+  --auto-grid-min-size: min(54vw, 24rem);
   --region-padding: var(--space-700);
 
   .card {
@@ -58,7 +58,7 @@
 }
 
 [data-layout='blog'] {
-  --auto-grid-min-size: min(54vw, 23rem);
+  --auto-grid-min-size: min(54vw, 24rem);
 
   .card {
     padding: var(--space-300);
