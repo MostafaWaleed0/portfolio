@@ -25,7 +25,7 @@ export default function StyledComponents() {
         <use
           mask="url(#prefix__b)"
           stroke="#d900b5"
-          stroke-width="8"
+          strokeWidth="8"
           xlinkHref="#prefix__a"
         />
         <path
