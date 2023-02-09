@@ -1,4 +1,6 @@
-import { FrontendType, GithubReposType, ToolsType } from 'lib/types';
+import Time from 'components/Time';
+import blog from 'lib/blog';
+import { FrontendType, GithubReposType, PostType, ToolsType } from 'lib/types';
 import { InferGetStaticPropsType } from 'next';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
@@ -12,7 +14,8 @@ const GitHubCards = dynamic(() => import('components/metrics/GitHubCards'), {
 });
 
 export default function Home({
-  repos
+  repos,
+  posts
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Suspense fallback={null}>
@@ -29,6 +32,54 @@ export default function Home({
               building high-quality codes, so if you have a project or questions
               in mind, <Link href="/contact">within reach of you now.</Link>
             </p>
+          </div>
+        </section>
+        <section className="[ posts ] [ region ]">
+          <div className="[ wrapper ]">
+            <h2 className="fs-700">Recent Posts</h2>
+            <div className="padding-block-start-200">
+              <ol className="auto-grid" role="list">
+                {posts.map(
+                  (
+                    {
+                      slug,
+                      frontmatter: { title, description, date, banner, alt }
+                    },
+                    index
+                  ) => {
+                    return index < 4 ? (
+                      <li className="card" key={slug}>
+                        <div className="card__item">
+                          <Image
+                            src={banner}
+                            width={500}
+                            height={500}
+                            className="card__image"
+                            alt={alt}
+                          />
+                          <div className="card__inner">
+                            <Link href={`blog/${slug}`} className="card__link">
+                              <h3 className="weight-medium fs-500 margin-block-end-100">
+                                {title}
+                              </h3>
+                            </Link>
+                            <p
+                              className="[ card__description ] [ line-clamp fs-300 ]"
+                              data-line="4"
+                            >
+                              {description}
+                            </p>
+                            <p className="card__date">
+                              <Time time={date} />
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                    ) : null;
+                  }
+                )}
+              </ol>
+            </div>
           </div>
         </section>
         <section className="[ projects ] [ region ]">
@@ -158,8 +209,10 @@ export default function Home({
     </Suspense>
   );
 }
+
 export async function getStaticProps() {
-  const res = await fetch(
+  const posts: PostType[] = await blog();
+  const resRepos = await fetch(
     'https://api.github.com/users/mostafa-mw/repos?type=owner&sort=pushed',
     {
       headers: {
@@ -167,15 +220,15 @@ export async function getStaticProps() {
       }
     }
   );
-  const data: GithubReposType = await res.json();
+  const repos: GithubReposType = await resRepos.json();
 
-  if (!data) {
+  if (!repos || !posts) {
     return {
       notFound: true
     };
   }
 
   return {
-    props: { repos: data }
+    props: { repos: repos, posts: posts }
   };
 }
