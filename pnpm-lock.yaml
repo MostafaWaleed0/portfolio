@@ -34,7 +34,6 @@ specifiers:
   remark-gfm: ^3.0.1
   rss: ^1.2.2
   sass: ^1.57.1
-  swr: ^2.0.3
   typescript: 4.9.4
   url-loader: ^4.1.1
   use-sound: ^4.0.1
@@ -54,7 +53,6 @@ dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   rss: 1.2.2
-  swr: 2.0.3_react@18.2.0
   use-sound: 4.0.1_react@18.2.0
 
 devDependencies:
@@ -4165,16 +4163,6 @@ packages:
       stable: 0.1.8
     dev: true
 
-  /swr/2.0.3_react@18.2.0:
-    resolution: {integrity: sha512-sGvQDok/AHEWTPfhUWXEHBVEXmgGnuahyhmRQbjl9XBYxT/MSlAzvXEKQpyM++bMPaI52vcWS2HiKNaW7+9OFw==}
-    engines: {pnpm: '7'}
-    peerDependencies:
-      react: ^16.11.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      react: 18.2.0
-      use-sync-external-store: 1.2.0_react@18.2.0
-    dev: false
-
   /symbol-observable/4.0.0:
     resolution: {integrity: sha512-b19dMThMV4HVFynSAM1++gBHAbk2Tc/osgLIBZMKsyqh34jb2e8Os7T6ZW/Bt3pJFdBTd2JwAnAAEQV7rSNvcQ==}
     engines: {node: '>=0.10'}
@@ -4401,14 +4389,6 @@ packages:
       react: '>=16.8'
     dependencies:
       howler: 2.2.3
-      react: 18.2.0
-    dev: false
-
-  /use-sync-external-store/1.2.0_react@18.2.0:
-    resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    dependencies:
       react: 18.2.0
     dev: false
 

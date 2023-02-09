@@ -59,13 +59,11 @@ export type ToolsType = {
 };
 
 export type PinnedReposType = {
-  repos: {
-    id: string;
-    name: string;
-    stargazers: { __typename: string; totalCount: number };
-    url: string;
-    __typename: string;
-  }[];
+  user: {
+    pinnedItems: {
+      nodes: Array<{ name: string }>;
+    };
+  };
 };
 
 export type GithubReposType = {

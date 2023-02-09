@@ -1,9 +1,11 @@
 import '../assets/scss/style.scss';
 
+import { ApolloProvider } from '@apollo/client';
+import localFont from '@next/font/local';
+import { Analytics } from '@vercel/analytics/react';
+import { client } from 'lib/apolloClient';
 import { ThemeProvider } from 'next-themes';
 import type { AppProps } from 'next/app';
-import { Analytics } from '@vercel/analytics/react';
-import localFont from '@next/font/local';
 
 const montserrat = localFont({
   src: [
@@ -51,7 +53,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div className={`${montserrat.variable} ${cascadiaCode.variable} body`}>
       <ThemeProvider attribute="data-theme">
-        <Component {...pageProps} />
+        <ApolloProvider client={client}>
+          <Component {...pageProps} />
+        </ApolloProvider>
         <Analytics />
       </ThemeProvider>
     </div>
