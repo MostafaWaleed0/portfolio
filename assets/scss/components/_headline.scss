@@ -4,10 +4,10 @@
   }
 
   p {
-    max-width: 68ch;
+    max-width: 45ch;
   }
 
-  &[data-align="center"] {
+  &[data-align='center'] {
     text-align: center;
 
     h1,
@@ -20,7 +20,7 @@
     }
   }
 
-  &[data-headline-style="wide"] :where(h1, h2) {
+  &[data-headline-style='wide'] :where(h1, h2) {
     max-width: 25ch;
   }
 }

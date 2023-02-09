@@ -21,17 +21,21 @@ export default function Home({
     <Suspense fallback={null}>
       <Container>
         <section className="[ wrapper ] [ region ]">
-          <div className="[ headline ] [ flow ]" data-align="center">
-            <h1>
-              Hi👋. I&rsquo;m Mostafa, and I&rsquo;m a{' '}
-              <strong className="text-primary-600">Frontend Developer </strong>
-              based in Egypt
-            </h1>
+          <div className="[ headline ] [ flow ]">
+            <h1>Hi👋, I&rsquo;m Mostafa.</h1>
             <p>
-              I am currently working as a freelancer. I am passionate about
-              building high-quality codes, so if you have a project or questions
-              in mind, <Link href="/contact">within reach of you now.</Link>
+              I'm a
+              <strong className="text-primary-600">
+                {' '}
+                front-end developer{' '}
+              </strong>
+              living in Egypt. I take pleasure in finding solutions and
+              constructing web-based projects. I also write about the web on my{' '}
+              <Link href="/blog">blog</Link>.
             </p>
+            <Link href="/contact" className="button">
+              Collaborate with me
+            </Link>
           </div>
         </section>
         <section className="[ posts ] [ region ]">
@@ -133,16 +137,7 @@ export default function Home({
                   </ul>
                 </div>
               </article>
-              <div className="box-reflect">
-                <Image
-                  alt="Modern conceptual art poster with three colorful ancient statues. contemporary art collage. concept of retro wave-style posters."
-                  src="/home-img1.webp"
-                  width={410}
-                  height={500}
-                  quality={100}
-                  className="object-cover"
-                />
-              </div>
+              <div className="box-reflect"></div>
             </div>
           </div>
         </section>
