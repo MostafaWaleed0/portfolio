@@ -85,7 +85,9 @@ export default function Home({
           <div className="[ wrapper ]">
             <h2 className="fs-700">Featured Projects</h2>
             <div className="padding-block-start-200">
-              <GitHubCards repos={repos} />
+              <Suspense fallback={null}>
+                <GitHubCards repos={repos} />
+              </Suspense>
             </div>
           </div>
         </section>

@@ -15,9 +15,9 @@ const langColors = {
 export default function GitHubCards({ repos }: { repos: GithubReposType }) {
   const { data } = useSWR<PinnedReposType>('/api/github', fetcher);
 
-  return (
+  return data ? (
     <ol className="auto-grid" role="list">
-      {(data?.repos || []).map((pinnedRepos) => {
+      {data.repos.map((pinnedRepos) => {
         return repos.map(
           ({
             node_id,
@@ -84,5 +84,9 @@ export default function GitHubCards({ repos }: { repos: GithubReposType }) {
         );
       })}
     </ol>
+  ) : (
+    <div className="flex-row" style={{ height: '300px' }}>
+      <h3 className="margin-auto">Loading...</h3>
+    </div>
   );
 }
