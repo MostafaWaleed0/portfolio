@@ -11,6 +11,12 @@ export const config = {
   runtime: 'experimental-edge'
 };
 
+if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+  global.__DEV__ = true;
+} else {
+  global.__DEV__ = false;
+}
+
 export default async function handler(req: NextRequest, res) {
   const httpLink = createHttpLink({
     uri: 'https://api.github.com/graphql'
@@ -27,7 +33,8 @@ export default async function handler(req: NextRequest, res) {
 
   const client = new ApolloClient({
     link: authLink.concat(httpLink),
-    cache: new InMemoryCache()
+    cache: new InMemoryCache(),
+    connectToDevTools: true
   });
 
   const { data } = await client.query({
