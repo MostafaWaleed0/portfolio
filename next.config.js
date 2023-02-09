@@ -1,17 +1,10 @@
-/** @type {import('next').NextConfig} */
+// @ts-check
 
-module.exports = {
-  unstable_runtimeJS: false,
-  reactStrictMode   : false,
-  swcMinify         : true,
-  compress          : true,
+/**
+ * @type {import('next').NextConfig}
+ **/
 
-  experimental: {
-    legacyBrowsers    : false,
-    browsersListForSwc: true,
-    images            : { allowFutureImage: true },
-  },
-
+const nextConfig = {
   images: {
     domains: ['image/png', 'image/webp', 's3-alpha.figma.com', "images.pexels.com"],
   },
@@ -90,3 +83,5 @@ const securityHeaders = [
     value: 'camera=(), microphone=(), geolocation=()',
   },
 ]
+
+module.exports = nextConfig
