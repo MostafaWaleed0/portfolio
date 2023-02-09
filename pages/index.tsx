@@ -1,17 +1,12 @@
 import Time from 'components/Time';
+import GitHubCards from 'components/metrics/GitHubCards';
 import blog from 'lib/blog';
-import { FrontendType, GithubReposType, PostType, ToolsType } from 'lib/types';
+import { GithubReposType, PostType } from 'lib/types';
 import { InferGetStaticPropsType } from 'next';
-import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Suspense } from 'react';
 import Container from '../components/Container';
-import { languages, tools } from '../data/skillsAndTools';
-
-const GitHubCards = dynamic(() => import('components/metrics/GitHubCards'), {
-  ssr: false
-});
 
 export default function Home({
   repos,
