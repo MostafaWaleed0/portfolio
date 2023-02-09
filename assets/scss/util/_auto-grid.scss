@@ -18,7 +18,7 @@
         auto-fill,
         minmax(var(--auto-grid-min-size, 19rem), 1fr)
       );
-      grid-gap: var(--space-400);
+      grid-gap: var(--auto-grid-gap, var(--space-400));
     }
 
     & > * {

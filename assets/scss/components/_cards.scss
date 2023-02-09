@@ -1,83 +1,171 @@
 @use '../abstracts/' as *;
 @use '../abstracts/tokens/tokens' as *;
 
-[data-layout='texture'] {
-  .card {
-    --flow-space: var(--space-500);
-    padding: var(--space-700);
-    max-width: rem(420);
-    border-radius: $border-radius-2;
-    box-shadow: 0 0 2em -0.25em $primary-400;
-  }
-}
+.projects {
+  --auto-grid-min-size: min(54vw, 24rem);
+  --region-padding: var(--space-700);
 
-[data-layout='projects'] {
   .card {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: rem(350);
-    width: 100%;
-    max-width: rem(350);
-    border-radius: $border-radius-1;
-    border: 2px solid $color-border-primary-600;
+    display: grid;
     overflow: hidden;
+    padding: var(--space-200);
+    max-width: 100%;
+    width: 100%;
+    border-radius: $border-radius-0-5;
+    border: 1px solid $color-border-default;
 
-    &__focusable:where(:hover) > .card__github,
-    .card__github:where(:focus),
-    &__focusable:where(:hover) > .card__designer,
-    .card__designer:where(:focus) {
-      transition: all 300ms linear;
-      transform: translate(0, -50%);
+    p {
+      margin-block-end: var(--space-300);
     }
 
-    &__focusable:where(:hover, :focus-visible) > .card__technologies {
-      top: 0;
-    }
-
-    &__technologies {
+    &-head {
       display: flex;
-      flex-wrap: wrap;
-      @include position(absolute, $top: -50%);
-      transition: all 300ms linear;
+      align-items: center;
+      justify-content: space-between;
 
-      & > * {
+      &__star {
         display: flex;
-        justify-content: center;
         align-items: center;
-        padding: var(--space-50);
-        margin: 0.3rem;
-        width: min(13vw, rem(64));
-        height: min(13vw, rem(64));
-        aspect-ratio: 1 / 1;
-        border-radius: $border-radius-rounded-full;
-        background-color: $color-surface-inverse-2;
+        gap: 0.2em;
+        text-decoration: 0;
+
+        &::after {
+          all: unset;
+        }
       }
     }
 
-    &__logo {
+    &-foot {
+      &__language {
+        display: flex;
+        align-items: center;
+        gap: 0.4em;
+
+        &-color {
+          display: block;
+          width: 14px;
+          height: 14px;
+          border-radius: $border-radius-rounded-full;
+        }
+      }
+
+      &__topics {
+        display: flex;
+        gap: 0.2em;
+      }
+    }
+  }
+}
+
+.posts {
+  --auto-grid-min-size: min(54vw, 14rem);
+  --auto-grid-gap: var(--space-600);
+  --region-padding: var(--space-700);
+
+  .card {
+    --gradient-bottom: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.15) 50%,
+      rgba(0, 0, 0, 0.4) 100%
+    );
+    --gradient-full: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.4) 100%
+    );
+  }
+
+  .card {
+    --card-text-color: #fff;
+    height: rem(300);
+    position: relative;
+    border-radius: $border-radius-1;
+    overflow: hidden;
+    box-shadow: rem(14) rem(14) rem(60) rem(-10) rgba(0, 0, 0, 0.3);
+
+    &__image {
+      object-fit: cover;
+    }
+
+    &__inner {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      border-radius: $border-radius-1;
+      padding: var(--space-200);
+      color: var(--card-text-color);
+      background-image: var(--gradient-full);
+    }
+
+    &__link {
+      text-decoration: 0;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      hyphens: auto;
+
+      &:hover {
+        color: var(--card-text-color);
+      }
+    }
+
+    &__link::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    &__date {
       display: flex;
       align-items: center;
-      justify-content: center;
+      position: absolute;
+      bottom: var(--space-200);
+      left: var(--space-200);
     }
 
-    &__github {
-      @include position(absolute, $left: 0, $top: 50%);
-      transform: translate(-100%, -50%);
-      padding: var(--space-100);
-    }
+    @media (pointer: fine) {
+      &__inner {
+        background-image: var(--gradient-bottom);
+      }
 
-    &__designer {
-      @include position(absolute, $right: 0, $top: 50%);
-      transform: translate(100%, -50%);
-      padding: var(--space-100);
+      &:where(:focus-within, :hover) .card__inner {
+        background-image: var(--gradient-full);
+      }
+
+      &__description {
+        pointer-events: none;
+        opacity: 0;
+        transform: translateY(rem(10));
+        transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+          transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      &:hover .card__description,
+      &__link:focus + .card__description {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      &:hover .card__date {
+        display: none;
+      }
+
+      &:hover .card__description,
+      &__link:focus + .card__description {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      &__image {
+        object-position: center top;
+      }
     }
   }
 }
 
 [data-layout='blog'] {
-  --auto-grid-min-size: min(54vw, 23rem);
+  --auto-grid-min-size: min(54vw, 24rem);
 
   .card {
     padding: var(--space-300);

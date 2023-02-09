@@ -5,7 +5,7 @@ import Container from 'components/Container';
 import Time from 'components/Time';
 import { mdxToHtml } from 'lib/mdx';
 import { MDXRemote } from 'next-mdx-remote';
-import { PostPageType } from 'lib/types';
+import { PostType } from 'lib/types';
 import components from 'components/MDXComponents';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
@@ -14,7 +14,7 @@ export default function PostPage({
   frontmatter: { title, description, date, banner },
   content,
   readingTime
-}: PostPageType) {
+}: PostType) {
   const [view, setView] = useState<number>();
   const router = useRouter();
   const { slug } = router.query;

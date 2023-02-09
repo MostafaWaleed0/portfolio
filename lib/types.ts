@@ -1,6 +1,6 @@
 import { InputHTMLAttributes, TextareaHTMLAttributes } from 'react';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
-export interface PostPageType {
+export interface PostType {
   slug: string;
   readingTime: string;
   frontmatter: {
@@ -13,10 +13,6 @@ export interface PostPageType {
     alt: string;
   };
   content: MDXRemoteSerializeResult;
-}
-
-export interface BlogPostType {
-  [key: string]: Array<PostPageType>;
 }
 
 export interface InputType extends InputHTMLAttributes<HTMLInputElement> {
@@ -62,10 +58,23 @@ export type ToolsType = {
   url: string;
 };
 
-export type ProjectsType = {
-  id: number;
-  logo: JSX.Element;
-  technologies: JSX.Element[];
-  github_url?: string;
-  website_url?: string;
+export type PinnedReposType = {
+  repos: {
+    id: string;
+    name: string;
+    stargazers: { __typename: string; totalCount: number };
+    url: string;
+    __typename: string;
+  }[];
 };
+
+export type GithubReposType = {
+  node_id: string;
+  name: string;
+  html_url: string;
+  homepage: string;
+  description: string;
+  stargazers_count: number;
+  language: string;
+  topics: string[];
+}[];
