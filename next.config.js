@@ -9,15 +9,6 @@ const nextConfig = {
     domains: ['image/png', 'image/webp', 's3-alpha.figma.com', "images.pexels.com"],
   },
 
-  async headers() {
-    return [
-      {
-        source : '/(.*)',
-        headers: securityHeaders,
-      },
-    ]
-  },
-  
   webpack(config, options) {
     const { isServer } = options;
     config.module.rules.push({
@@ -40,18 +31,26 @@ const nextConfig = {
 
     return config;
   },
+
+  async headers() {
+    return [
+      {
+        source : '/(.*)',
+        headers: securityHeaders,
+      },
+    ]
+  },
 }
 
 const ContentSecurityPolicy = `
-    default-src 'self';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.twitter.com;
-    child-src *.youtube.com *.google.com *.twitter.com;
-    style-src 'self' 'unsafe-inline' *.googleapis.com;
-    img-src * blob: data: ;
+    default-src 'self' vercel.live;
+    script-src 'self' 'unsafe-eval' 'unsafe-inline' cdn.vercel-insights.com vercel.live;
+    style-src 'self' 'unsafe-inline';
+    img-src * blob: data:;
     media-src 'none';
     connect-src *;
     font-src 'self';
-`
+`;
 
 const securityHeaders = [
   {
