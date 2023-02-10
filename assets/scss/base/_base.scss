@@ -1,13 +1,20 @@
-@use "../abstracts/tokens/tokens" as *;
+@use '../abstracts/tokens/tokens' as *;
 
-body {
+.body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background-color: $color-page-background;
   transition: background-color 400ms linear 0s;
-  grid-template-rows: auto 1fr auto;
 }
 
-main:focus {
-  outline: 0;
+main {
+  display: grid;
+  flex: 1;
+
+  &:focus {
+    outline: 0;
+  }
 }
 
 :focus {
@@ -15,12 +22,12 @@ main:focus {
   outline-offset: 0.2rem;
 }
 
-[tabindex="-1"] {
+[tabindex='-1'] {
   outline: 0;
 }
 
-ul[role="list"],
-ol[role="list"] {
+ul[role='list'],
+ol[role='list'] {
   padding: 0;
   margin-bottom: 0;
 }
