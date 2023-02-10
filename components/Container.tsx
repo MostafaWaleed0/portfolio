@@ -48,7 +48,7 @@ export default function Container(props) {
       <main id="main-content" tabIndex={-1}>
         {children}
       </main>
-      <Footer type={meta.type} />
+      <Footer />
     </>
   );
 }
