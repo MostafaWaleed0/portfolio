@@ -87,7 +87,7 @@ export default function GitHubCards({ repos, username }: Props) {
                     {language}
                   </div>
                   <ul className="card-foot__topics" role="list">
-                    {topics.map((topic: string, index) => {
+                    {topics.map((topic, index) => {
                       return index < 4 ? (
                         <li
                           key={topic}
