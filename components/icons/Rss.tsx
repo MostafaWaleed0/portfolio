@@ -1,8 +1,8 @@
 export default function Rss({ ...props }) {
   return (
     <svg
-      width={20}
-      height={20}
+      height="1.3em"
+      width="1.3em"
       aria-hidden="true"
       viewBox="0 0 24 24"
       fill="none"

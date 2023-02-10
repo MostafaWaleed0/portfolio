@@ -3,11 +3,12 @@
 .nav {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: var(--space-400);
   margin: 0;
 
   > li {
+    display: flex;
+    flex-direction: column;
     margin: rem(2.5) rem(8);
     text-transform: capitalize;
 

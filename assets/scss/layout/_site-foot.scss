@@ -2,12 +2,25 @@
 @use '../abstracts/tokens/tokens' as *;
 
 .site-foot {
-  --region-padding: var(--space-600);
+  --region-padding: var(--space-400);
+  border-top: 1px solid $color-border-inverse;
 
   &__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-inline: auto;
+  }
+
+  &__navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  a:has(svg) {
+    &::after {
+      all: unset;
+    }
   }
 }

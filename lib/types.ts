@@ -40,10 +40,6 @@ export interface TimeType {
   time: string;
 }
 
-export type FooterProps = {
-  type?: string;
-};
-
 export type FrontendType = {
   id: number;
   icon: JSX.Element;
