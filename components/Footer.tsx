@@ -1,44 +1,59 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 import Link from 'next/link';
 import { Rss } from 'components/icons';
-import { FooterProps } from 'lib/types';
+import { Github } from 'components/icons';
 
-export default function Footer({ type }: FooterProps) {
+export default function Footer() {
   return (
-    <footer
-      className={`[ site-foot ] [ region ] [ text-center ${
-        type === 'article' ? 'bg-inverse' : ''
-      } ]`}
-      role="contentinfo"
-    >
-      <div className="wrapper flow">
-        <div className="[ site-foot__navigation ] [ margin-inline-auto ]">
-          <nav aria-label="secondary" tabIndex={-1}>
-            <ul
-              className="[ nav ] [ fs-300 weight-medium measure-long margin-inline-auto gap-200 ] [ flex-wrap ]"
-              role="list"
-            >
-              <li>
-                <Link href="/contact">contact</Link>
-              </li>
-              <li>
-                <a href="https://codepen.io/mostafawaleed3">codePen</a>
-              </li>
-              <li>
-                <a href="https://twitter.com/mostafa85341305">twitter</a>
-              </li>
-              <li>
-                <a href="/feed.xml" className="flex-row">
-                  RSS
-                  <Rss className="margin-inline-start-100" />
+    <footer className="[ site-foot ] [ region ]" role="contentinfo">
+      <div className="wrapper">
+        <nav
+          className="[ site-foot__navigation ] [ flex-wrap ]"
+          aria-label="secondary"
+          tabIndex={-1}
+        >
+          <ul
+            className="[ nav ] [ fs-200 weight-medium gap-600 capitalize ] [ flex-wrap ]"
+            role="list"
+          >
+            <li>
+              <strong>© 2022 – {new Date().getFullYear()}</strong>
+              <Link href="/">Mostafa Waleed</Link>
+            </li>
+            <li>
+              <strong>contact</strong>
+              <Link href="/contact">contact</Link>
+            </li>
+            <li>
+              <strong>social</strong>
+              <p>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://www.linkedin.com/in/mostafa-waleed-b06034217/"
+                >
+                  linkedin
+                </a>{' '}
+                {' / '}
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://twitter.com/MostafaAmr206"
+                >
+                  twitter
                 </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <p className="fs-300 weight-bold margin-inline-auto">
-          © {new Date().getFullYear()} MW | Frontend developer.
-        </p>
+              </p>
+            </li>
+          </ul>
+          <div className="[ margin-block-start-100 ] [ flex-row ]">
+            <a href="https://github.com/Mostafa-MW" className="flex-row">
+              <Github />
+            </a>
+            <a href="/feed.xml" className="flex-row">
+              <Rss className="margin-inline-start-100" />
+            </a>
+          </div>
+        </nav>
       </div>
     </footer>
   );
