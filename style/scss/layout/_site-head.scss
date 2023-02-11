@@ -16,6 +16,7 @@
     text-decoration: none;
 
     > svg {
+      height: fit-content;
       border: 1px solid #dddddd;
       border-radius: $border-radius-rounded-full;
     }
@@ -46,6 +47,7 @@
           font-size: $font-size-600;
           flex-direction: column;
           align-items: flex-start;
+          justify-content: center;
         }
       }
     }
