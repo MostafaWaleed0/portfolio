@@ -71,4 +71,14 @@
     width: fit-content;
     border-bottom: 0.15em solid $color-border-primary-600;
   }
+
+  &-list {
+    --flow-space: var(--space-800);
+
+    h2 {
+      a:not(:hover) {
+        text-decoration-color: transparent;
+      }
+    }
+  }
 }

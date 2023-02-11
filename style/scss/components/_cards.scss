@@ -163,25 +163,3 @@
     }
   }
 }
-
-[data-layout='blog'] {
-  --auto-grid-min-size: min(54vw, 24rem);
-
-  .card {
-    padding: var(--space-300);
-    transition: 200ms;
-    border-radius: $border-radius-2;
-    width: fit-content;
-
-    &__data {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    &__image {
-      border-radius: $border-radius-2;
-      object-fit: cover;
-    }
-  }
-}
