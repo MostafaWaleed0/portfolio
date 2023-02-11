@@ -1,5 +1,6 @@
 import { InputHTMLAttributes, TextareaHTMLAttributes } from 'react';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
+
 export interface PostType {
   slug: string;
   readingTime: string;
@@ -39,20 +40,6 @@ export interface TextAreaType
 export interface TimeType {
   time: string;
 }
-
-export type FrontendType = {
-  id: number;
-  icon: JSX.Element;
-  title: string;
-};
-
-export type ToolsType = {
-  id: number;
-  icon: JSX.Element;
-  functions?: string[];
-  title: string;
-  url: string;
-};
 
 export type PinnedReposType = {
   user: {

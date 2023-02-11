@@ -1,4 +1,4 @@
-import '../assets/scss/style.scss';
+import '../style/scss/style.scss';
 
 import { ApolloProvider } from '@apollo/client';
 import localFont from '@next/font/local';
