@@ -37,22 +37,24 @@ export default function PostPage({
       image={banner}
       type="article"
     >
-      <article className="[ wrapper ] [ region ] [ margin-block-start-300 ]">
-        <div className="[ post ] [ flow ]">
-          <header>
-            <h1>{title}</h1>
+      <article className="[ wrapper flow ] [ region ]">
+        <header className="headline" data-align="center">
+          <h1>{title}</h1>
+          <div className="measure-short margin-inline-auto">
             <div
-              className="[ cluster ] [ margin-block-start-100 ]"
+              className="[ cluster ] [ margin-block-start-500 ]"
               data-align="between"
             >
               <Time time={date} />
-              <p className="[ flex-row ] [ margin-inline-auto ]">
+              <div className="flex-row">
                 <span className="margin-inline-end-100">{readingTime}</span>
                 {` • `}
                 <span className="margin-inline-start-100">{view} views</span>
-              </p>
+              </div>
             </div>
-          </header>
+          </div>
+        </header>
+        <div className="[ post ] [ flow ]">
           <hr />
           <MDXRemote
             {...content}
