@@ -52,7 +52,7 @@ export default function Home({
                           <Image
                             src={banner}
                             width={500}
-                            height={500}
+                            height={300}
                             className="card__image"
                             alt={alt}
                           />
