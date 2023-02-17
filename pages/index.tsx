@@ -34,8 +34,15 @@ export default function Home({
           </div>
         </section>
         <section className="[ posts ] [ region ]">
-          <div className="[ wrapper ]">
-            <h2 className="fs-700">Recent Posts</h2>
+          <div className="wrapper">
+            <header className="cluster" data-align="between">
+              <h2 className="fs-700">Recent Posts</h2>
+              <div>
+                <Link href="/blog" className="text-capitalize">
+                  see all posts
+                </Link>
+              </div>
+            </header>
             <div className="padding-block-start-200">
               <ol className="auto-grid" role="list">
                 {posts.map(
@@ -83,7 +90,17 @@ export default function Home({
         </section>
         <section className="[ projects ] [ region ]">
           <div className="[ wrapper ]">
-            <h2 className="fs-700">Featured Projects</h2>
+            <header className="cluster" data-align="between">
+              <h2 className="fs-700">Featured Projects</h2>
+              <div>
+                <Link
+                  href="https://github.com/mostafa-mw"
+                  className="text-capitalize "
+                >
+                  see all projects
+                </Link>
+              </div>
+            </header>
             <div className="padding-block-start-200">
               <Suspense fallback={null}>
                 <GitHubCards repos={repos} username="mostafa-mw" />
