@@ -1,0 +1,67 @@
+---
+title: CSS :has selector
+banner: https://images.pexels.com/photos/3800363/pexels-photo-3800363.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
+description: Learn about the powerful :has CSS pseudo-class for selecting elements based on the existence of other elements within them.
+date: 2023-02-17
+tags: [CSS]
+alt: Vase with fresh delicate roses placed on table
+---
+
+The `:has` pseudo-class, which enables you to select items based on the existence of other elements within them, is one of the most recent additions to CSS. The `:has` pseudo-class will be used instead of the `:contains`, which may be computationally costly and is not commonly supported, as we study the advanced features of the `:has` pseudo-class in this article.
+
+## The basics of the `:has` pseudo-class
+
+To select items based on the existence of other elements within them, use the `:has` pseudo-class. For instance, the CSS rule that follows selects all `div` elements that include a `a` element:
+
+```css
+div:has(a) {
+  background-color: red;
+}
+```
+
+No matter what the content of the `a` element is, this selects all `div` components that include it.
+
+The `:has` pseudo-class can also be used to select components depending on the attributes or properties of their children. For instance, the following CSS rule selects all `div` elements that include `a` elements with `href` attributes that starts with `https://`:
+
+```css
+div:has(a[href^="https://"])
+{
+  color: pink;
+}
+```
+
+By doing this, all `div` elements that have a `a` element whose `href` attribute starts with `https://` are selected. Other attribute selectors, including `=` for exact matches and `$=` for suffix matches, are also available.
+
+## Advanced techniques
+
+To use more complex queries, you can combine the `:has` pseudo-class with other selectors. The `:not` pseudo-class, for instance, can be used to select items that don't contain a specific element. When making exceptions to a more general rule, this can be effective.
+
+```css
+div:not(:has(p)) {
+  border: 1px solid pink;
+}
+```
+
+With the addition of a border, this selects all `div` elements that do not contain any `p` elements. To create more complicated searches, you can also use `:not` with selectors like `:first-child` or attribute selectors.
+
+The `:has` pseudo-class can also be used to select elements based on their descendent structure. You can, for instance, select all `li` elements that contain a `a` element, followed by a `span` element:
+
+```css
+li:has(a + span) {
+  background-color: pink;
+}
+```
+
+The `:has` pseudo-class can also be used to select items based on the status of their children. You can select all `label` elements that contain a checked `input` element, for instance:
+
+```css
+label:has(input:checked) {
+  background-color: pink;
+}
+```
+
+This selects all `label` elements that contain an `input` element that is checked. If you want to target other states of the `input` element, you can use any other pseudo-class or attribute selector in place of `:checked`.
+
+## Conclusion
+
+The computationally expensive `:contains` pseudo-class can be avoided by using the dynamic and complex style provided by the `:has` pseudo-class, which is based on child elements. Advanced CSS techniques can be used to increase CSS proficiency.
