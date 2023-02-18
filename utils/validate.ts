@@ -1,3 +1,10 @@
+const checkInput = (validate: string) => !validate || validate.trim() === '';
+
+const testInput = (reg: RegExp, validate: string) => !reg.test(validate);
+
+const checkLength = (validate: string, num: number = 1000) =>
+  validate.length > num;
+
 export const validate = ({
   name,
   email,
@@ -18,21 +25,21 @@ export const validate = ({
     deadline?: string;
     details?: string;
   } = {};
-  if (!name || name.trim() === '') {
+  if (checkInput(name)) {
     errors.name = 'Name is required';
   }
-  if (!email || email.trim() === '') {
+  if (checkInput(email)) {
     errors.email = 'Email is required';
-  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
+  } else if (testInput(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i, email)) {
     errors.email = 'Invalid email address';
   }
-  if (!job || job.trim() === '') {
+  if (checkInput(job)) {
     errors.job = 'Job is required';
   }
-  if (!deadline || deadline.trim() === '') {
+  if (checkInput(deadline)) {
     errors.deadline = 'Deadline is required';
   }
-  if (details.length > 1000) {
+  if (checkLength(details)) {
     errors.details = "Your details can't be more than 1000 characters";
   }
   return errors;
