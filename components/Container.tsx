@@ -38,6 +38,7 @@ export default function Container(props) {
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
+        <meta name="twitter:image:alt" content={meta.imageAlt} />
         {meta.date && (
           <meta property="article:published_time" content={meta.date} />
         )}

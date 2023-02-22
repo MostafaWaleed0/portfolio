@@ -11,7 +11,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
 export default function PostPage({
-  frontmatter: { title, description, date, banner },
+  frontmatter: { title, description, date, banner, alt },
   content,
   readingTime
 }: PostType) {
@@ -35,6 +35,7 @@ export default function PostPage({
       description={description}
       date={date}
       image={banner}
+      imageAlt={alt}
       type="article"
     >
       <article className="[ wrapper flow ] [ region ]">
