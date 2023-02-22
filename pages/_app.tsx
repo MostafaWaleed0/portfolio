@@ -30,6 +30,7 @@ const satoshi = localFont({
       style: 'normal'
     }
   ],
+  display: 'swap',
   variable: '--font-body'
 });
 
@@ -51,6 +52,7 @@ const cascadiaCode = localFont({
       style: 'italic'
     }
   ],
+  display: 'swap',
   variable: '--font-mono'
 });
 
