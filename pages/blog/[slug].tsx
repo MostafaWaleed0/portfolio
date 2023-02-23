@@ -50,7 +50,9 @@ export default function PostPage({
               <div className="flex-row">
                 <span className="margin-inline-end-100">{readingTime}</span>
                 {` • `}
-                <span className="margin-inline-start-100">{view} views</span>
+                <span className="margin-inline-start-100">
+                  {view === 0 ? 'No views' : `${view} views`}
+                </span>
               </div>
             </div>
           </div>
