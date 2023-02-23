@@ -137,6 +137,7 @@ export async function getStaticProps() {
   }
 
   return {
-    props: { repos: repos, posts: posts }
+    props: { repos: repos, posts: posts },
+    revalidate: 10
   };
 }
