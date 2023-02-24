@@ -3,7 +3,8 @@ export default function Rss({ ...props }) {
     <svg
       height="1.3em"
       width="1.3em"
-      aria-hidden="true"
+      aria-hidden
+      focusable={false}
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"

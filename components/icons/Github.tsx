@@ -8,6 +8,8 @@ const Github = (props: SVGProps<SVGSVGElement>) => (
     viewBox="0 0 24 24"
     height="1.4em"
     width="1.4em"
+    aria-hidden
+    focusable={false}
     {...props}
   >
     <g>
