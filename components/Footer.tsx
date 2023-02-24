@@ -46,11 +46,21 @@ export default function Footer() {
             </li>
           </ul>
           <div className="[ margin-block-start-100 ] [ flex-row ]">
-            <a href="https://github.com/Mostafa-MW" className="flex-row">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/Mostafa-MW"
+              className="flex-row"
+            >
               <Github />
               <span className="visually-hidden">GitHub</span>
             </a>
-            <a href="/feed.xml" className="flex-row">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="/feed.xml"
+              className="flex-row"
+            >
               <Rss className="margin-inline-start-100" />
               <span className="visually-hidden">RSS</span>
             </a>
