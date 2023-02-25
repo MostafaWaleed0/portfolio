@@ -51,7 +51,7 @@ export default function PostPage({
                 <span className="margin-inline-end-100">{readingTime}</span>
                 {` • `}
                 <span className="margin-inline-start-100">
-                  {view === 0 ? 'No views' : `${view} views`}
+                  {view ? `${view} views` : 'No views'}
                 </span>
               </div>
             </div>
