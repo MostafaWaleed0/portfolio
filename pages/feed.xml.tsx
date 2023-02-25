@@ -17,7 +17,7 @@ export async function getServerSideProps({ res }) {
   });
 
   const feed = new RSS({
-    title: 'MW',
+    title: 'Mostafa Waleed',
     site_url: 'https://mostafawaleed.me',
     feed_url: 'https://mostafawaleed.me/feed.xml',
     language: 'en',
