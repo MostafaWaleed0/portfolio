@@ -48,7 +48,7 @@ export default function Header() {
                   <a href="https://github.com/mostafa-mw">gitHub</a>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com/in/mostafa-waleed-b06034217/">
+                  <a href="https://www.linkedin.com/in/mostafawaleed">
                     linkedin
                   </a>
                 </li>

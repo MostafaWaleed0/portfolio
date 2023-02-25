@@ -30,7 +30,7 @@ export default function Footer() {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://www.linkedin.com/in/mostafa-waleed-b06034217/"
+                  href="https://www.linkedin.com/in/mostafawaleed"
                 >
                   linkedin
                 </a>{' '}
