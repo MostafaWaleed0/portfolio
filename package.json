@@ -8,7 +8,6 @@
   "dependencies": {
     "@apollo/client": "^3.7.9",
     "@emailjs/browser": "^3.10.0",
-    "@next/font": "^13.2.1",
     "@vercel/analytics": "^0.1.10",
     "graphql": "^16.6.0",
     "gray-matter": "^4.0.3",

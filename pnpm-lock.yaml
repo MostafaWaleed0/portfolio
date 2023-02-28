@@ -3,7 +3,6 @@ lockfileVersion: 5.4
 specifiers:
   '@apollo/client': ^3.7.9
   '@emailjs/browser': ^3.10.0
-  '@next/font': ^13.2.1
   '@types/marked': ^4.0.8
   '@types/node': ^18.14.1
   '@types/react': 18.0.28
@@ -41,7 +40,6 @@ specifiers:
 dependencies:
   '@apollo/client': 3.7.9_gdcq4dv6opitr3wbfwyjmanyra
   '@emailjs/browser': 3.10.0
-  '@next/font': 13.2.1
   '@vercel/analytics': 0.1.10_react@18.2.0
   graphql: 16.6.0
   gray-matter: 4.0.3
@@ -216,10 +214,6 @@ packages:
     dependencies:
       glob: 7.1.7
     dev: true
-
-  /@next/font/13.2.1:
-    resolution: {integrity: sha512-4sergLt7xp9+mZuKME/xM4tLlHGTcmL7naCq0qCTcAlof6NnttshYgiLOdhSiy0NcI+/yM3BjvdEk++O96UzTg==}
-    dev: false
 
   /@next/swc-android-arm-eabi/13.2.1:
     resolution: {integrity: sha512-Yua7mUpEd1wzIT6Jjl3dpRizIfGp9NR4F2xeRuQv+ae+SDI1Em2WyM9m46UL+oeW5GpMiEHoaBagr47RScZFmQ==}
