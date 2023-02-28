@@ -1,8 +1,8 @@
 @use '../abstracts/tokens/tokens' as *;
 
-.body {
-  display: flex;
-  flex-direction: column;
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   min-height: 100vh;
   background-color: $color-page-background;
   transition: background-color 400ms linear 0s;
