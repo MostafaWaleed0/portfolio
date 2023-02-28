@@ -10,11 +10,13 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }): Promise<Metadata | null> {
+export async function generateMetadata({
+  params
+}): Promise<Metadata | undefined> {
   const findSlug = getPosts().find((post) => post.slug === params.slug);
   const post = await readPosts(findSlug);
   if (!post) {
-    return null;
+    return;
   }
 
   const {
