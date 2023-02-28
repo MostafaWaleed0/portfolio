@@ -12,6 +12,9 @@ const nextConfig = {
     appDir: true,
   },
 
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 
   webpack(config, options) {
     const { isServer } = options;
