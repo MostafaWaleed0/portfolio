@@ -1,5 +1,4 @@
 // @ts-check
-
 /**
  * @type {import('next').NextConfig}
  **/
@@ -8,6 +7,11 @@ const nextConfig = {
   images: {
     domains: ['image/png', 'image/webp', 's3-alpha.figma.com', "images.pexels.com"],
   },
+
+  experimental: {
+    appDir: true,
+  },
+
 
   webpack(config, options) {
     const { isServer } = options;

@@ -1,3 +1,5 @@
+'use client';
+
 import { useQuery } from '@apollo/client';
 import { Star } from 'components/icons';
 import { GET_PINNED_REPOS } from 'lib/apolloClient';
@@ -38,7 +40,7 @@ export default function GitHubCards({ repos, username }: Props) {
 
   return (
     <ol className="auto-grid" role="list">
-      {data.user.pinnedItems.nodes.map((pinnedRepos) => {
+      {data?.user.pinnedItems.nodes.map((pinnedRepos) => {
         return repos.map(
           ({
             node_id,
