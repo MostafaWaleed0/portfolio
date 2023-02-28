@@ -3,9 +3,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "lint": "next lint",
-    "watch:sass": "sass  --no-source-map --watch assets/scss:assets/css --style compressed",
-    "postcss:build": "postcss assets/css/*.css -u autoprefixer cssnano -r --no-map"
+    "lint": "next lint"
   },
   "dependencies": {
     "@apollo/client": "^3.7.9",
