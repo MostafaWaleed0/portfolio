@@ -9,11 +9,6 @@ import '../style/scss/style.scss';
 const satoshi = localFont({
   src: [
     {
-      path: '../public/fonts/Satoshi-Black.woff2',
-      weight: '900',
-      style: 'normal'
-    },
-    {
       path: '../public/fonts/Satoshi-Regular.woff2',
       weight: '400',
       style: 'normal'
