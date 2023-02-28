@@ -96,8 +96,7 @@ export default function Form() {
                 type="text"
                 id="name"
                 onChange={handleChange}
-                error={!!errors.name}
-                errorMessage={errors.name ? errors.name : ''}
+                error={errors?.name}
               />
             </div>
             <div>
@@ -106,8 +105,7 @@ export default function Form() {
                 type="email"
                 id="email"
                 onChange={handleChange}
-                error={!!errors.email}
-                errorMessage={errors.email ? errors.email : ''}
+                error={errors?.email}
               />
             </div>
           </div>
@@ -118,8 +116,7 @@ export default function Form() {
                 type="text"
                 id="job"
                 onChange={handleChange}
-                error={!!errors.job}
-                errorMessage={errors.job ? errors.job : ''}
+                error={errors?.job}
               />
             </div>
             <div>
@@ -128,8 +125,7 @@ export default function Form() {
                 type="text"
                 id="deadline"
                 onChange={handleChange}
-                error={!!errors.deadline}
-                errorMessage={errors.deadline ? errors.deadline : ''}
+                error={errors?.deadline}
               />
             </div>
           </div>
@@ -139,8 +135,7 @@ export default function Form() {
               id="details"
               label="add any details or information"
               onChange={handleChange}
-              error={!!errors.details}
-              errorMessage={errors.details ? errors.details : ''}
+              error={errors?.details}
             ></TextArea>
           </div>
           <div>

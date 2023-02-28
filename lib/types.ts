@@ -20,7 +20,7 @@ export interface InputType extends InputHTMLAttributes<HTMLInputElement> {
   [x: string]: any;
   type: string;
   id: string;
-  error?: boolean;
+  error?: string;
   errorMessage?: string;
   variablePropName?: string;
   variablePropValue?: string;
@@ -31,7 +31,7 @@ export interface TextAreaType
   [x: string]: any;
   id: string;
   label: string;
-  error?: boolean;
+  error?: string;
   errorMessage?: string;
   variablePropName?: string;
   variablePropValue?: string;

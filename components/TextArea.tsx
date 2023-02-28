@@ -3,13 +3,13 @@ import { TextAreaType } from 'lib/types';
 export default function TextArea({
   id,
   label,
-  error = false,
-  errorMessage = '',
+  error,
   variablePropName = `aria-describedby`,
   variablePropValue = `${id}_error`,
   ...props
 }: TextAreaType) {
   const variableAttribute = { [variablePropName]: variablePropValue };
+  const booleanError = Boolean(error);
 
   return (
     <>
@@ -21,9 +21,9 @@ export default function TextArea({
         rows={10}
         spellCheck="false"
         autoComplete="off"
-        {...(error ? variableAttribute : '')}
+        {...(booleanError ? variableAttribute : '')}
       ></textarea>
-      {error && <p id={`${id}_helper`}>*{errorMessage}</p>}
+      {booleanError && <p id={`${id}_error`}>*{error ? error : ''}</p>}
     </>
   );
 }
