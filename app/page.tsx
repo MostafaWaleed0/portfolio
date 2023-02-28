@@ -95,12 +95,14 @@ export default async function Home() {
           <header className="cluster" data-align="between">
             <h2 className="fs-700">Featured Projects</h2>
             <div>
-              <Link
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
                 href="https://github.com/mostafa-mw"
                 className="text-capitalize"
               >
                 see all projects
-              </Link>
+              </a>
             </div>
           </header>
           <div className="padding-block-start-200">

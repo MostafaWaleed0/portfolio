@@ -47,10 +47,20 @@ export default function Header() {
                   <Link href="/contact">contact</Link>
                 </li>
                 <li>
-                  <a href="https://github.com/mostafa-mw">gitHub</a>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://github.com/mostafa-mw"
+                  >
+                    gitHub
+                  </a>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com/in/mostafawaleed">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.linkedin.com/in/mostafawaleed"
+                  >
                     linkedin
                   </a>
                 </li>
