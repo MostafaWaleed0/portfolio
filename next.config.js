@@ -5,11 +5,14 @@
 
 const nextConfig = {
   images: {
-    domains: [
-      'image/png',
-      'image/webp',
-      's3-alpha.figma.com',
-      'images.pexels.com'
+    formats: ['image/avif', 'image/webp'],
+
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.pexels.com',
+        pathname: '/**'
+      }
     ]
   },
 
