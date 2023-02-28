@@ -5,15 +5,20 @@
 
 const nextConfig = {
   images: {
-    domains: ['image/png', 'image/webp', 's3-alpha.figma.com', "images.pexels.com"],
+    domains: [
+      'image/png',
+      'image/webp',
+      's3-alpha.figma.com',
+      'images.pexels.com'
+    ]
   },
 
   experimental: {
-    appDir: true,
+    appDir: true
   },
 
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: true
   },
 
   webpack(config, options) {
@@ -30,10 +35,10 @@ const nextConfig = {
             publicPath: `${config.assetPrefix}/_next/static/images/`,
             outputPath: `${isServer ? '../' : ''}static/images/`,
             name: '[name]-[hash].[ext]',
-            esModule: config.esModule || false,
-          },
-        },
-      ],
+            esModule: config.esModule || false
+          }
+        }
+      ]
     });
 
     return config;
@@ -42,12 +47,12 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source : '/(.*)',
-        headers: securityHeaders,
-      },
-    ]
-  },
-}
+        source: '/(.*)',
+        headers: securityHeaders
+      }
+    ];
+  }
+};
 
 const ContentSecurityPolicy = `
     default-src 'self' vercel.live;
@@ -61,33 +66,33 @@ const ContentSecurityPolicy = `
 
 const securityHeaders = [
   {
-    key  : 'Content-Security-Policy',
-    value: ContentSecurityPolicy.replace(/\n/g, ''),
+    key: 'Content-Security-Policy',
+    value: ContentSecurityPolicy.replace(/\n/g, '')
   },
   {
-    key  : 'Referrer-Policy',
-    value: 'origin-when-cross-origin',
+    key: 'Referrer-Policy',
+    value: 'origin-when-cross-origin'
   },
   {
-    key  : 'X-Frame-Options',
-    value: 'DENY',
+    key: 'X-Frame-Options',
+    value: 'DENY'
   },
   {
-    key  : 'X-Content-Type-Options',
-    value: 'nosniff',
+    key: 'X-Content-Type-Options',
+    value: 'nosniff'
   },
   {
-    key  : 'X-DNS-Prefetch-Control',
-    value: 'on',
+    key: 'X-DNS-Prefetch-Control',
+    value: 'on'
   },
   {
-    key  : 'Strict-Transport-Security',
-    value: 'max-age=31536000; includeSubDomains; preload',
+    key: 'Strict-Transport-Security',
+    value: 'max-age=31536000; includeSubDomains; preload'
   },
   {
-    key  : 'Permissions-Policy',
-    value: 'camera=(), microphone=(), geolocation=()',
-  },
-]
+    key: 'Permissions-Policy',
+    value: 'camera=(), microphone=(), geolocation=()'
+  }
+];
 
-module.exports = nextConfig
+module.exports = nextConfig;
