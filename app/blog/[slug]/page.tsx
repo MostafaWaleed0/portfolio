@@ -18,12 +18,26 @@ export async function generateMetadata({ params }): Promise<Metadata | null> {
   }
 
   const {
-    frontmatter: { title, description, banner, creator }
+    slug,
+    frontmatter: { title, description, banner, date, creator, alt }
   } = post;
 
   return {
     title,
     description,
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      publishedTime: date,
+      url: `https://mostafawaleed.me/blog/${slug}`,
+      images: [
+        {
+          url: banner,
+          alt: alt
+        }
+      ]
+    },
     twitter: {
       card: 'summary_large_image',
       title,

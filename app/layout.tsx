@@ -78,6 +78,22 @@ export const metadata: Metadata = {
       'max-snippet': -1
     }
   },
+  openGraph: {
+    title: 'Mostafa Waleed',
+    description:
+      'Mostafa Waleed, an experienced freelance web developer based in Egypt.',
+    url: 'https://mostafawaleed.me',
+    siteName: 'Mostafa Waleed',
+    images: [
+      {
+        url: 'https://mostafawaleed.me/static/favicons/android-chrome-256x256.png',
+        width: 256,
+        height: 256
+      }
+    ],
+    locale: 'en-US',
+    type: 'website'
+  },
   twitter: {
     title: 'Mostafa Waleed',
     card: 'summary_large_image'
