@@ -29,7 +29,7 @@ export default function Form() {
   const [errors, setErrors] = useState<IErrors>({});
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const errors = validate(values);
     if (errors && Object.keys(errors).length > 0) {
