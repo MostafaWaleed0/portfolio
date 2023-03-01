@@ -10,7 +10,7 @@ export const revalidate = 30;
 
 export default async function Home() {
   const posts: PostType[] = getPosts();
-  const repos: GithubReposType = await getRepos();
+  const repos = await getRepos();
 
   return (
     <>

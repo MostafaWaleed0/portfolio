@@ -1,5 +1,3 @@
-import { GithubReposType } from './types';
-
 export const getRepos = async () => {
   try {
     const res = await fetch(
@@ -10,9 +8,8 @@ export const getRepos = async () => {
         }
       }
     );
-    const data: GithubReposType = await res.json();
 
-    return data;
+    return res.json();
   } catch {
     throw new Error('Error fetching repositories');
   }
