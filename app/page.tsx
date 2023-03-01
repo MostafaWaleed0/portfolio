@@ -1,5 +1,4 @@
-import ApollosWrapper from 'components/apollo';
-import GitHubCards from 'components/GitHubCards';
+import GitHubCardsWrapper from 'components/GitHubCardsWrapper';
 import Time from 'components/Time';
 import { getRepos } from 'lib/github';
 import { getPosts } from 'lib/posts';
@@ -106,9 +105,7 @@ export default async function Home() {
             </div>
           </header>
           <div className="padding-block-start-200">
-            <ApollosWrapper>
-              <GitHubCards repos={repos} username="mostafa-mw" />
-            </ApollosWrapper>
+            <GitHubCardsWrapper repos={repos} />
           </div>
         </div>
       </section>
