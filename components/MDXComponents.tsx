@@ -23,7 +23,7 @@ function CustomImage(props) {
       height={400}
       className="object-cover"
       {...props}
-      alt={props.alt.length !== 0 ? `Illustration of ${props.alt}` : props.alt}
+      alt={props.alt.length ? `Illustration of ${props.alt}` : props.alt}
     />
   );
 }
