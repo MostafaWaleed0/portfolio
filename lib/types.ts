@@ -2,18 +2,12 @@ import { InputHTMLAttributes, TextareaHTMLAttributes } from 'react';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 export interface PostType {
-  slug: string;
-  readingTime: string;
   frontmatter: {
-    title: string;
-    description: string;
-    banner: string;
-    tags: Array<string>;
-    date: string;
-    card: boolean;
-    alt: string;
+    [key: string]: any;
   };
+  slug?: string;
   content: MDXRemoteSerializeResult;
+  readingTime: string | number;
 }
 
 export interface InputType extends InputHTMLAttributes<HTMLInputElement> {
