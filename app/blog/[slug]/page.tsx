@@ -52,8 +52,7 @@ export async function generateMetadata({
       url: `https://mostafawaleed.me/blog/${slug}`,
       images: [
         {
-          url: ogImage,
-          alt: alt
+          url: ogImage
         }
       ]
     },

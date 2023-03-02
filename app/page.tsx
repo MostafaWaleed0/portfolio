@@ -48,10 +48,7 @@ export default async function Home() {
             <ol className="auto-grid" role="list">
               {posts.map(
                 (
-                  {
-                    slug,
-                    frontmatter: { title, description, date, banner, alt }
-                  },
+                  { slug, frontmatter: { title, description, date, banner } },
                   index
                 ) => {
                   return index < 4 ? (
@@ -62,7 +59,7 @@ export default async function Home() {
                           width={500}
                           height={300}
                           className="card__image"
-                          alt={alt}
+                          alt={''}
                         />
                         <div className="card__inner">
                           <Link href={`blog/${slug}`} className="card__link">
