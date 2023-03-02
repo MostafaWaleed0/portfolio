@@ -44,6 +44,6 @@ export async function readPosts(slug?: string) {
     return { frontmatter, slug, content: html, readingTime };
   } catch (error) {
     console.error(error);
-    throw new Error('Error fetching posts');
+    throw new Error('Error reading posts');
   }
 }
