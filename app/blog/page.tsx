@@ -4,12 +4,13 @@ import Link from 'next/link';
 import type { Metadata } from 'next/types';
 
 export const metadata: Metadata = {
-  title: "Blog",
-  description: "My blog is a site where I share ideas, tips, and other random and interesting things about web development."
+  title: 'Blog',
+  description:
+    'My blog is a site where I share ideas, tips, and other random and interesting things about web development.'
 };
 
-export default function Blog() {
-  const posts = getPosts();
+export default async function Blog() {
+  const posts = await getPosts();
 
   return (
     <article className="[ wrapper-sm ] [ margin-block-start-700 margin-block-end-800 ]">

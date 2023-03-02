@@ -9,7 +9,7 @@ import Link from 'next/link';
 export const revalidate = 30;
 
 export default async function Home() {
-  const posts: PostType[] = getPosts();
+  const posts: PostType[] = await getPosts();
   const repos = await getRepos();
 
   return (
