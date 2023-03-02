@@ -39,7 +39,7 @@ export async function generateMetadata({
     frontmatter: { title, description, banner, date, creator, alt }
   } = post;
 
-  const ogImage = `${banner}`;
+  const ogImage = `https://mostafawaleed.me${banner}`;
 
   return {
     title,
