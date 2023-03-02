@@ -49,7 +49,7 @@ export async function generateMetadata({
       title,
       description,
       type: 'article',
-      publishedTime: date,
+      publishedTime: date.toISOString(),
       url: `https://mostafawaleed.me/blog/${slug}`,
       images: [
         {
