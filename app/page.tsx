@@ -2,15 +2,13 @@ import GitHubCardsWrapper from 'components/GitHubCardsWrapper';
 import Time from 'components/Time';
 import { getRepos } from 'lib/github';
 import { getPosts } from 'lib/posts';
-import { GithubReposType, PostType } from 'lib/types';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export const revalidate = 60;
 
 export default async function Home() {
-  const posts: PostType[] = await getPosts();
-  const repos = await getRepos();
+  const [posts, repos] = await Promise.all([getPosts(), getRepos()]);
 
   return (
     <>
