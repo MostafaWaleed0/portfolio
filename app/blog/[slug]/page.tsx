@@ -1,7 +1,8 @@
+// import fs from 'fs';
+import BlogLayout from 'layouts/blog';
 import { getPosts, readPosts } from 'lib/posts';
 import { notFound } from 'next/navigation';
-import BlogLayout from 'layouts/blog';
-import { Metadata } from 'next/types';
+import type { Metadata } from 'next/types';
 
 export async function generateStaticParams() {
   const posts = getPosts();
@@ -9,6 +10,19 @@ export async function generateStaticParams() {
     slug: post.slug
   }));
 }
+
+// async function createImageFolder() {
+//   const files = fs.readdirSync('content');
+
+//   for (const file of files) {
+//     const dir = file.replace('.mdx', '');
+//     fs.existsSync(`images/${dir}`)
+//       ? null
+//       : fs.mkdirSync(`public/images/${dir}`, { recursive: true });
+//   }
+// }
+
+// createImageFolder();
 
 export async function generateMetadata({
   params
@@ -24,6 +38,8 @@ export async function generateMetadata({
     frontmatter: { title, description, banner, date, creator, alt }
   } = post;
 
+  const ogImage = `https://mostafawaleed.me${banner}`;
+
   return {
     title,
     description,
@@ -35,7 +51,7 @@ export async function generateMetadata({
       url: `https://mostafawaleed.me/blog/${slug}`,
       images: [
         {
-          url: banner,
+          url: ogImage,
           alt: alt
         }
       ]
@@ -46,7 +62,7 @@ export async function generateMetadata({
       site: '@MostafaAmr206',
       creator: creator ?? 'Mostafa Waleed',
       description,
-      images: [banner]
+      images: [ogImage]
     }
   };
 }
