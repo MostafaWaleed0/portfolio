@@ -6,7 +6,7 @@ import { GithubReposType, PostType } from 'lib/types';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export const revalidate = 30;
+export const revalidate = 60;
 
 export default async function Home() {
   const posts: PostType[] = await getPosts();
