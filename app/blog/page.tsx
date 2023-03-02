@@ -20,7 +20,7 @@ export default async function Blog() {
           <ul className="[ post-list ] [ flow ]" role="list">
             {posts.map(
               ({ slug, frontmatter: { title, date, description } }) => {
-                const permalink = slug.replaceAll(' ', '-');
+                const permalink = slug?.replaceAll(' ', '-');
                 return (
                   <li className="post-list__item " key={slug}>
                     <div className="flow">
