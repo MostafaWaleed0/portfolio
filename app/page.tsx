@@ -23,11 +23,6 @@ export default async function Home() {
             constructing web-based projects. I also write about the web on my{' '}
             <Link href="/blog">blog</Link>.
           </p>
-          <p className="text-uppercase weight-bold fs-300">
-            <span className="text-primary-600">{repos.length}</span> projects
-            {' / '} <span className="text-primary-600">{allPosts.length}</span>{' '}
-            posts
-          </p>
           <Link href="/contact" className="button">
             Collaborate with me
           </Link>
