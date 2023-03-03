@@ -1,14 +1,15 @@
 import GitHubCardsWrapper from 'components/GitHubCardsWrapper';
 import Time from 'components/Time';
+import { allPosts } from 'contentlayer/generated';
 import { getRepos } from 'lib/github';
-import { getPosts } from 'lib/posts';
+import { sortPosts } from 'lib/sort';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export const revalidate = 60;
 
 export default async function Home() {
-  const [posts, repos] = await Promise.all([getPosts(), getRepos()]);
+  const repos = await getRepos();
 
   return (
     <>
@@ -24,7 +25,7 @@ export default async function Home() {
           </p>
           <p className="text-uppercase weight-bold fs-300">
             <span className="text-primary-600">{repos.length}</span> projects
-            {' / '} <span className="text-primary-600">{posts.length}</span>{' '}
+            {' / '} <span className="text-primary-600">{allPosts.length}</span>{' '}
             posts
           </p>
           <Link href="/contact" className="button">
@@ -44,12 +45,10 @@ export default async function Home() {
           </header>
           <div className="padding-block-start-200">
             <ol className="auto-grid" role="list">
-              {posts.map(
-                (
-                  { slug, frontmatter: { title, description, date, banner } },
-                  index
-                ) => {
-                  return index < 4 ? (
+              {sortPosts(allPosts)
+                .slice(0, 4)
+                .map(({ slug, title, description, date, banner }) => {
+                  return (
                     <li className="card" key={slug}>
                       <div className="card__item">
                         <Image
@@ -77,9 +76,8 @@ export default async function Home() {
                         </div>
                       </div>
                     </li>
-                  ) : null;
-                }
-              )}
+                  );
+                })}
             </ol>
           </div>
         </div>

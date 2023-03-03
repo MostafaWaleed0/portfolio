@@ -1,13 +1,11 @@
 // import fs from 'fs';
+import { allPosts } from 'contentlayer/generated';
 import BlogLayout from 'layouts/blog';
-import { getPosts, readPosts } from 'lib/posts';
-import { PostType } from 'lib/types';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next/types';
 
 export async function generateStaticParams() {
-  const posts = await getPosts();
-  return posts.map((post) => ({
+  return allPosts.map((post) => ({
     slug: post.slug
   }));
 }
@@ -28,17 +26,13 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params
 }): Promise<Metadata | undefined> {
-  const findSlug = (await getPosts()).find((post) => post.slug === params.slug);
-  const post = await readPosts(findSlug?.slug);
+  const post = allPosts.find((post) => post.slug === params.slug);
 
   if (!post) {
     return;
   }
 
-  const {
-    slug,
-    frontmatter: { title, description, banner, date, creator, alt }
-  } = post;
+  const { slug, title, description, banner, date } = post;
 
   const ogImage = `https://mostafawaleed.me${banner}`;
 
@@ -49,7 +43,7 @@ export async function generateMetadata({
       title,
       description,
       type: 'article',
-      publishedTime: date.toISOString(),
+      publishedTime: date,
       url: `https://mostafawaleed.me/blog/${slug}`,
       images: [
         {
@@ -61,7 +55,6 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title,
       site: '@MostafaAmr206',
-      creator: creator ?? 'Mostafa Waleed',
       description,
       images: [ogImage]
     }
@@ -69,8 +62,7 @@ export async function generateMetadata({
 }
 
 export default async function PostPage({ params }) {
-  const findSlug = (await getPosts()).find((post) => post.slug === params.slug);
-  const post: PostType = await readPosts(findSlug?.slug);
+  const post = allPosts.find((post) => post.slug === params.slug);
 
   if (!post) {
     notFound();

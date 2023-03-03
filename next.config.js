@@ -1,4 +1,7 @@
+const { withContentlayer } = require('next-contentlayer');
+
 // @ts-check
+
 /**
  * @type {import('next').NextConfig}
  **/
@@ -86,4 +89,4 @@ const securityHeaders = [
   }
 ];
 
-module.exports = nextConfig;
+module.exports = withContentlayer(nextConfig);
