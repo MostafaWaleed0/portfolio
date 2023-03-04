@@ -1,7 +1,6 @@
 import GitHubCardsWrapper from 'components/GitHubCardsWrapper';
 import Time from 'components/Time';
 import { allPosts } from 'contentlayer/generated';
-import { getRepos } from 'lib/github';
 import { sortPosts } from 'lib/sort';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -9,8 +8,6 @@ import Link from 'next/link';
 export const revalidate = 60;
 
 export default async function Home() {
-  const repos = await getRepos();
-
   return (
     <>
       <section className="[ wrapper ] [ region ]">
@@ -93,7 +90,7 @@ export default async function Home() {
             </div>
           </header>
           <div className="padding-block-start-200">
-            <GitHubCardsWrapper repos={repos} />
+            <GitHubCardsWrapper />
           </div>
         </div>
       </section>

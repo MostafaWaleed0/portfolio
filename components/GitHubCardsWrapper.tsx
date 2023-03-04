@@ -4,10 +4,10 @@ import { ApolloProvider } from '@apollo/client';
 import { client } from 'lib/apolloClient';
 import GitHubCards from './GitHubCards';
 
-export default function GitHubCardsWrapper({ repos }) {
+export default function GitHubCardsWrapper() {
   return (
     <ApolloProvider client={client}>
-      <GitHubCards repos={repos} username="mostafa-mw" />
+      <GitHubCards username="mostafa-mw" />
     </ApolloProvider>
   );
 }

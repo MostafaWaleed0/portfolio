@@ -28,18 +28,26 @@ export interface TimeType {
 export type PinnedReposType = {
   user: {
     pinnedItems: {
-      nodes: Array<{ name: string }>;
+      nodes: Array<{
+        id: string;
+        name: string;
+        description: string;
+        url: string;
+        primaryLanguage: {
+          name: string;
+          color: string;
+        };
+        stargazers: {
+          totalCount: string;
+        };
+        repositoryTopics: {
+          nodes: Array<{
+            topic: {
+              name: string;
+            };
+          }>;
+        };
+      }>;
     };
   };
 };
-
-export type GithubReposType = {
-  node_id: string;
-  name: string;
-  html_url: string;
-  homepage: string;
-  description: string;
-  stargazers_count: number;
-  language: string;
-  topics: string[];
-}[];

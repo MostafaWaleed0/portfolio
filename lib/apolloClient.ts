@@ -6,7 +6,24 @@ const GET_PINNED_REPOS = gql`
       pinnedItems(first: 6, types: [REPOSITORY]) {
         nodes {
           ... on Repository {
+            id
             name
+            description
+            url
+            primaryLanguage {
+              name
+              color
+            }
+            stargazers {
+              totalCount
+            }
+            repositoryTopics(first: 4) {
+              nodes {
+                topic {
+                  name
+                }
+              }
+            }
           }
         }
       }
