@@ -118,7 +118,7 @@ export const metadata: Metadata = {
       type: 'image/png'
     }
   },
-  manifest: '/static/favicons/site.webmanifest',
+  manifest: 'https://mostafawaleed.me/static/favicons/site.webmanifest',
   verification: {
     google: 'yNRfmqiqqj1EekI2rFHjrJoFVnx6zJTisszEIeWGf9Y'
   }
