@@ -73,6 +73,10 @@ export const metadata: Metadata = {
       'max-snippet': -1
     }
   },
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#fffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#11111' }
+  ],
   openGraph: {
     title: 'Mostafa Waleed',
     description:
