@@ -3,7 +3,7 @@
 @use '../abstracts/function' as *;
 
 .post {
-  --flow-space: var(--space-600);
+  --flow-space: var(--space-500);
   max-width: 42rem;
   width: 100%;
   margin-inline: auto;
@@ -21,7 +21,7 @@
   }
 
   :is(h2, h3) {
-    --flow-space: var(--space-800);
+    --flow-space: var(--space-700);
   }
 
   :is(ol, ul) {

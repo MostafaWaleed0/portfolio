@@ -29,9 +29,11 @@ export default function Post({ post }: { post: Post }) {
           </div>
         </div>
       </header>
-      <div className="[ post ] [ flow ]">
-        <hr />
-        <Component components={{ ...components }} />
+      <div>
+        <div className="[ post ] [ flow ]">
+          <hr />
+          <Component components={{ ...components }} />
+        </div>
       </div>
     </article>
   );
