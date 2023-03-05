@@ -156,6 +156,29 @@
         </item>
         <item>
             <title>
+                <![CDATA[ Creating a Theme Toggle using Sass ]]>
+            </title>
+            <description>
+                <![CDATA[ Learn how to create a theme toggle using Sass and JavaScript to allow users to switch between light and dark themes on your website or application. ]]>
+            </description>
+            <link>https://mostafawaleed.me/blog/creating-a-theme-toggle-using-sass</link>
+            <guid isPermaLink="true">https://mostafawaleed.me/blog/creating-a-theme-toggle-using-sass</guid>
+            <category>
+                <![CDATA[ design ]]>
+            </category>
+            <category>
+                <![CDATA[ javascript ]]>
+            </category>
+            <category>
+                <![CDATA[ sass ]]>
+            </category>
+            <dc:creator>
+                <![CDATA[ Mostafa Waleed ]]>
+            </dc:creator>
+            <pubDate>Sun, 05 Mar 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title>
                 <![CDATA[ Generating a Sitemap with Next.js ]]>
             </title>
             <description>
