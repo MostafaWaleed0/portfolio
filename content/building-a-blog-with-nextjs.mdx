@@ -26,28 +26,27 @@ we'll structure our application, Our application structure will be like the foll
 - site
   | - lib
       | - mdx.ts
+      | - types.ts
   | - pages
       | - blog
-          - [slug].tsx
+          | - [slug].tsx
       | - _app.tsx
       | - _document.tsx
       | - blog.tsx
   | - posts
       | - 🎉.mdx
-  | - types.tsx
 ```
 
 Now, we'll install all the dependencies that we'll need.
 
 ```powershell
-npm i --save-dev @types/node gray-matter next-mdx-remote reading-time rehype rehype-autolink-headings rehype-code-titles rehype-prism-plus rehype-slug remark-gfm
+npm i --save-dev @types/node gray-matter next-mdx-remote rehype rehype-autolink-headings rehype-code-titles rehype-prism-plus rehype-slug remark-gfm
 ```
 
 we'll write the code for the `mdx.ts` file.
 
 ```ts:lib/mdx.ts
 import { serialize } from 'next-mdx-remote/serialize';
-import readingTime from 'reading-time';
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypeCodeTitles from 'rehype-code-titles';
@@ -76,9 +75,7 @@ export async function mdxToHtml(source: string) {
   });
 
   return {
-    html: mdxSource,
-    wordCount: source.split(/\s+/gu).length,
-    readingTime: readingTime(source).text
+    html: mdxSource
   };
 }
 ```
@@ -99,10 +96,10 @@ A brief description of what's happening inside this file and what each function 
   - `rehypePrism` plugin to highlight code blocks in HTML with [Prism](https://prismjs.com/) (via [refractor](https://github.com/wooorm/refractor)) with additional line highlighting and line numbers functionalities.
   - `rehypeAutolinkHeadings` plugin to add links to headings with `id`s back to themselves and you can change the name of the `className` of the links
 
-we'll create a `types.ts` file inside of our `site` folder, where we'll construct all of our TypeScript interfaces and types.
+we'll create a `types.ts` file inside of our `lib` folder, where we'll construct all of our TypeScript interfaces and types.
 Put the following code inside the file:
 
-```ts:types.ts
+```ts:lib/types.ts
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 export interface PostPageType {
@@ -110,7 +107,6 @@ export interface PostPageType {
   frontmatter: {
     title: string;
     description: string;
-    tag: string;
     date: string;
   };
   content: MDXRemoteSerializeResult;
@@ -141,7 +137,7 @@ import { readdirSync, readFileSync } from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
 import Link from 'next/link';
-import { BlogPostType } from 'types';
+import { BlogPostType } from 'lib/types';
 
 export default function Blog({ posts }: BlogPostType) {
   return (
@@ -204,7 +200,7 @@ import { join } from 'path';
 import matter from 'gray-matter';
 import { mdxToHtml } from 'lib/mdx';
 import { MDXRemote } from 'next-mdx-remote';
-import { PostPageType } from 'types';
+import { PostPageType } from 'lib/types';
 
 export default function PostPage({
   frontmatter: { title },
@@ -235,9 +231,9 @@ export async function getStaticProps({ params: { slug } }) {
     'utf-8'
   );
   const { data: frontmatter, content } = matter(markdownWithMeta);
-  const { html, readingTime } = await mdxToHtml(content);
+  const { html } = await mdxToHtml(content);
   return {
-    props: { frontmatter, slug, content: html, readingTime }
+    props: { frontmatter, slug, content: html }
   };
 }
 ```
@@ -246,5 +242,3 @@ export async function getStaticProps({ params: { slug } }) {
 
 Using Next.js to create a blog is really simple and uncomplicated. There are several advantages to using Next.js, particularly for blogs. Your blog application will run very well,
 be lightweight, and have a high SEO ranking.
-
-{/* If you wish to improve your blog, you should read the following articles: */}
