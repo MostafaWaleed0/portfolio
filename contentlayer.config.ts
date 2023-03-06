@@ -69,15 +69,11 @@ export default makeSource({
     rehypePlugins: [
       rehypeSlug,
       rehypeCodeTitles,
-      [
-        rehypePrism,
-        {
-          showLineNumbers: true
-        }
-      ],
+      rehypePrism,
       [
         rehypeAutolinkHeadings,
         {
+          behavior: 'wrap',
           properties: {
             className: ['anchor']
           }

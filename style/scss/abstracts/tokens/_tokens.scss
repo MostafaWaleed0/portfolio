@@ -103,12 +103,9 @@ $button-padding-default: 0.8em 2em !default;
 $button-padding-icon: 1em 1em !default;
 
 // Code
-$code-surface-default: #2d2d2d;
-$code-text-default: #ccc;
-$code-border-default: #ccc;
 $code-border-radius: $border-radius-1;
 $code-font-size: $font-size-200;
-$code-font-weight: $font-weight-semibold;
+$code-font-weight: $font-weight-body;
 $code-font-family: $font-family-code;
 $code-padding-default: 2.4em 1em;
-$code-title-padding-default: 2em 1em;
+$code-title-padding-default: rem(8) rem(16);

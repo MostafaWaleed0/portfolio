@@ -1,8 +1,9 @@
 @use '../abstracts/function' as *;
 
 .wrapper {
-  width: min(100% - 2rem, rem(1200));
+  width: min(100%, rem(1200));
   margin-inline: auto;
+  padding-inline: 1rem;
 
   &-md {
     width: min(100% - 2rem, rem(970));

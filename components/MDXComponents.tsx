@@ -1,16 +1,19 @@
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const CustomLink = (props) => {
   const href = props.href;
-  const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
 
-  if (isInternalLink) {
+  if (href.startsWith('/')) {
     return (
       <Link href={href} {...props}>
         {props.children}
       </Link>
     );
+  }
+
+  if (href.startsWith('#')) {
+    return <a {...props} />;
   }
 
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
@@ -28,9 +31,20 @@ function CustomImage(props) {
   );
 }
 
+function CustomPre(props) {
+  const className = props.className;
+
+  return (
+    <pre className={className} data-lang={className.replace(/language-/i, '')}>
+      {props.children}
+    </pre>
+  );
+}
+
 const MDXComponents = {
   a: CustomLink,
-  Image: CustomImage
+  Image: CustomImage,
+  pre: CustomPre
 };
 
 export default MDXComponents;

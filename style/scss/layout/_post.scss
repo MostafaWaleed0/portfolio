@@ -13,15 +13,16 @@
   }
 
   h2 {
-    font-size: $font-size-700;
+    font-size: calc($font-size-600 + 2px);
   }
 
   h3 {
-    font-size: $font-size-600;
+    font-size: $font-size-500;
   }
 
   :is(h2, h3) {
     --flow-space: var(--space-700);
+    max-width: 100%;
   }
 
   :is(ol, ul) {
@@ -47,24 +48,8 @@
   :is(h2, h3, h4, h5) {
     scroll-margin-top: 1rem;
 
-    & > .anchor {
-      position: absolute;
-      opacity: 0;
-      text-decoration-line: none;
-      margin-left: -1em;
-      padding-right: 0.5em;
-      cursor: pointer;
-      width: 80%;
-      max-width: 700px;
-
-      &:hover,
-      &:focus-visible {
-        opacity: 1;
-      }
-
-      &::after {
-        content: '#';
-      }
+    .anchor:not(:hover) {
+      text-decoration: 0;
     }
   }
 
