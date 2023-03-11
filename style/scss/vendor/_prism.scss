@@ -128,7 +128,7 @@ code:not([class]) {
   &.punctuation {
     color: var(--base05);
   }
-  &:is(.parameter) {
+  &.parameter {
     color: var(--base0A);
   }
   &:is(.string, .attr-value) {
