@@ -107,6 +107,7 @@ code:not([class]) {
   font-weight: $font-weight-bold;
   letter-spacing: 0.04em;
   background-color: transparent;
+  font-size: 0.8em;
 
   &::before,
   &::after {
