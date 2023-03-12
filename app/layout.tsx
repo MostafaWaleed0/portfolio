@@ -120,7 +120,11 @@ export const metadata: Metadata = {
   },
   manifest: 'https://mostafawaleed.me/static/favicons/site.webmanifest',
   verification: {
-    google: 'yNRfmqiqqj1EekI2rFHjrJoFVnx6zJTisszEIeWGf9Y'
+    google: 'yNRfmqiqqj1EekI2rFHjrJoFVnx6zJTisszEIeWGf9Y',
+    yandex: '14d8968c6df31e01',
+    other: {
+      'msvalidate.01': '7C327BDC039D585E5C712E44FBB3FFFD'
+    }
   }
 };
 
