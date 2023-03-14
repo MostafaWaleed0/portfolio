@@ -7,7 +7,6 @@ import { useMDXComponent } from 'next-contentlayer/hooks';
 
 export default function Post({ post }: { post: Post }) {
   const Component = useMDXComponent(post.body.code);
-  const tags: string[] = post.tags.toString().split(',');
 
   return (
     <article className="[ wrapper flow ] [ region ]">
@@ -20,7 +19,7 @@ export default function Post({ post }: { post: Post }) {
           >
             <Time time={post.date} />
             <ul className="flex-row" role="list">
-              {tags.map((tag) => (
+              {post.tags.map((tag) => (
                 <li key={tag} className="[ pill ] [ margin-inline-end-100 ]">
                   {tag}
                 </li>
