@@ -58,7 +58,7 @@ export default function Footer() {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="/feed.xml"
+              href="/rss.xml"
               className="flex-row"
             >
               <Rss className="margin-inline-start-100" />
