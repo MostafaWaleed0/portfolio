@@ -51,7 +51,7 @@ export async function generateMetadata({
       section: 'General',
       siteName: 'Mostafa Waleed',
       url: url,
-      tags: [...tags],
+      tags: tags,
       images: [
         {
           url: ogImage
