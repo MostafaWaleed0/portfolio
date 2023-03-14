@@ -39,7 +39,11 @@ export default function Header() {
               data-visible={visible}
               tabIndex={-1}
             >
-              <ul className="[ nav ] [ fs-300 weight-medium ]" role="list">
+              <ul
+                className="[ nav ] [ fs-300 weight-medium ]"
+                role="list"
+                onClick={() => setVisible(false)}
+              >
                 <li>
                   <Link href="/blog">blog</Link>
                 </li>

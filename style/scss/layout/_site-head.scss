@@ -31,6 +31,7 @@
       @include breakpoint-down(medium) {
         display: flex;
         justify-content: center;
+        align-items: center;
         position: fixed;
         inset: 0;
         z-index: 9998;
@@ -44,6 +45,7 @@
         ul {
           font-size: $font-size-600;
           flex-direction: column;
+          height: fit-content;
           align-items: flex-start;
           justify-content: center;
         }
