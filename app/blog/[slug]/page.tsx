@@ -32,24 +32,32 @@ export async function generateMetadata({
     return;
   }
 
-  const { slug, title, description, banner, date } = post;
+  const { slug, title, description, banner, date, tags } = post;
 
   const ogImage = `https://mostafawaleed.me${banner}`;
+  const url = `https://mostafawaleed.me/blog/${slug}`;
 
   return {
     title,
     description,
+    alternates: {
+      canonical: url
+    },
     openGraph: {
       title,
       description,
       type: 'article',
       publishedTime: date,
-      url: `https://mostafawaleed.me/blog/${slug}`,
+      section: 'General',
+      siteName: 'Mostafa Waleed',
+      url: url,
+      tags: [...tags],
       images: [
         {
           url: ogImage
         }
-      ]
+      ],
+      locale: 'en-US'
     },
     twitter: {
       card: 'summary_large_image',
