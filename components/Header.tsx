@@ -1,10 +1,10 @@
 'use client';
 
+import { List, Logo } from 'components/icons';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 import useSound from 'use-sound';
-import { Logo, List } from 'components/icons';
 import click from '/public/audio/click.mp3';
 
 export default function Header() {
@@ -12,14 +12,14 @@ export default function Header() {
   const [play] = useSound(click);
   const [visible, setVisible] = useState(false);
 
-  const toggleTheme = useCallback(() => {
+  const toggleTheme = () => {
     setTheme(resolvedTheme === 'light' ? 'dark' : 'light');
     play();
-  }, [play, setTheme, resolvedTheme]);
+  };
 
-  const toggleNav = useCallback(() => {
+  const toggleNav = () => {
     setVisible((x) => !x);
-  }, []);
+  };
 
   return (
     <header role="banner" className="site-head">
