@@ -2,17 +2,10 @@
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
 
-  &[data-line='2'] {
-    -webkit-line-clamp: 2;
-  }
-
-  &[data-line='4'] {
-    -webkit-line-clamp: 4;
-  }
-
-  &[data-line='5'] {
-    -webkit-line-clamp: 5;
+  @for $line from 1 through 10 {
+    &[data-line='#{$line}'] {
+      -webkit-line-clamp: $line;
+    }
   }
 }

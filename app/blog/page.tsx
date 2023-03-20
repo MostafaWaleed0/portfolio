@@ -37,7 +37,9 @@ export default function Blog() {
                     >
                       <Time time={date} />
                     </div>
-                    <p className="line-clamp flow-space-50">{description}</p>
+                    <p className="line-clamp flow-space-50" data-line="3">
+                      {description}
+                    </p>
                   </div>
                 </li>
               );
