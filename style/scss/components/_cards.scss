@@ -144,7 +144,6 @@
 
       &:where(:hover, :focus-within) .card__image {
         transform: scale(1.2, 1.2);
-        object-position: 0 0;
       }
 
       &:where(:focus-within, :hover) .card__date {
