@@ -142,22 +142,18 @@
           transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
-      &:where(:hover, :focus-within) {
-        .card__image {
-          transform: scale(1.2, 1.2);
-          object-position: 0 0;
-        }
+      &:where(:hover, :focus-within) .card__image {
+        transform: scale(1.2, 1.2);
+        object-position: 0 0;
       }
 
-      &:where(:hover, &__link:focus) {
-        .card__description {
-          transform: translateY(0);
-          opacity: 1;
-        }
-      }
-
-      &:hover .card__date {
+      &:where(:focus-within, :hover) .card__date {
         display: none;
+      }
+
+      &:where(:focus-within, :hover) .card__description {
+        transform: translateY(0);
+        opacity: 1;
       }
 
       &__image {
