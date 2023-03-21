@@ -1,0 +1,96 @@
+---
+title: Guide to Creating Reflection Effects using CSS
+description: Create reflection effects with -webkit-box-reflect property in WebKit. This tutorial provides easy instructions and examples to enhance website's appeal.
+banner: /images/reflection-effect/og.jpg
+date: 2023-03-12
+tags: [HTML, CSS, design]
+---
+
+With CSS, you can add reflections to elements to give your website's design a special touch. One way to create reflections is by using the -`webkit-box-reflect` property. This property enables you to create a reflection of an element and is only supported by WebKit browsers (such as Safari and Chrome). In this tutorial, we'll learn how to create a reflection below an element by using the `-webkit-box-reflect` property.
+
+## Create the HTML structure
+
+Let's start by creating the HTML structure that will be used to demonstrate the `-webkit-box-reflect` property.
+
+```html
+<div class="container">
+  <div class="box"></div>
+</div>
+```
+
+## Style the container and the box
+
+Next, we'll style the container and the box. We'll set the background color of the container to a light gray color and add some padding to it. We'll also set the width and height of the box and add a background color to it.
+
+```css
+.container {
+  background-color: #f7f7f7;
+  padding: 20px;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: #ddd;
+}
+```
+
+## Add the reflection using `-webkit-box-reflect`
+
+With the `-webkit-box-reflect` property, we'll now add the reflection to the box. We'll set the reflection's distance from the element to `0` and use the value `below` to signify that it should be placed below the element. Moreover, We'll also use a linear gradient to make the reflection fade out gradually. Here's the code:
+
+```css
+.box {
+  -webkit-box-reflect: below 0 linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+}
+```
+
+## Add support for `-webkit-box-reflect`
+
+At last, we'll use the `@supports` rule to add support for the `-webkit-box-reflect` property. This rule enables us to create CSS code that is only applied if a certain condition is met. Before applying the reflection in this case, we'll ascertain if the browser supports the '-`webkit-box-reflect` property.
+
+```css
+@supports (
+  -webkit-box-reflect: below 0 linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4))
+) {
+  .box {
+    -webkit-box-reflect: below 0 linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+  }
+}
+```
+
+## The full code
+
+Here's the full code:
+
+```html
+<div class="container">
+  <div class="box"></div>
+</div>
+```
+
+```css
+.container {
+  background-color: #f7f7f7;
+  padding: 20px;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: #ddd;
+  -webkit-box-reflect: below 0 linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+}
+
+@supports (
+  -webkit-box-reflect: below 0 linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4))
+) {
+  .box {
+    -webkit-box-reflect: below 0 linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+  }
+}
+```
+
+## Conclusion
+
+In this tutorial, we have learned how to use the `-webkit-box-reflect` property to create reflections on elements in WebKit browsers. We have also used the `@supports` rule to provide support for the property. With a little creativity, you can use this property to create unique and interesting designs for your website.
