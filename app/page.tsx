@@ -58,7 +58,7 @@ export default async function Home() {
                           </Link>
                           <p
                             className="[ card__description ] [ line-clamp fs-300 ]"
-                            data-line="4"
+                            data-line="6"
                           >
                             {description}
                           </p>
