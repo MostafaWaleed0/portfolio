@@ -1,8 +1,8 @@
-import localFont from 'next/font/local';
-import AnalyticsWrapper from 'components/analytics';
+import { Analytics } from '@vercel/analytics/react';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
 import ThemeWrapper from 'components/theme';
+import localFont from 'next/font/local';
 import type { Metadata } from 'next/types';
 import '../style/scss/style.scss';
 
@@ -139,7 +139,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <Header />
           <main id="main-content" tabIndex={-1}>
             {children}
-            <AnalyticsWrapper />
+            <Analytics />
           </main>
           <Footer />
         </ThemeWrapper>

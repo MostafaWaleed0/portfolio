@@ -1,5 +1,3 @@
-'use client';
-
 import components from 'components/MDXComponents';
 import Time from 'components/Time';
 import { type Post } from 'contentlayer/generated';

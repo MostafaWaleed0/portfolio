@@ -1,5 +1,3 @@
-'use client';
-
 import { useQuery } from '@apollo/client';
 import { Star } from 'components/icons';
 import { GET_PINNED_REPOS } from 'lib/apolloClient';
