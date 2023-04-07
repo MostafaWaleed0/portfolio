@@ -6,13 +6,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@apollo/client": "^3.7.10",
+    "@apollo/client": "^3.7.11",
     "@emailjs/browser": "^3.10.0",
     "@vercel/analytics": "^0.1.11",
-    "contentlayer": "^0.3.0",
+    "contentlayer": "^0.3.1",
     "graphql": "^16.6.0",
     "next": "13.2.5-canary.16",
-    "next-contentlayer": "^0.3.0",
+    "next-contentlayer": "^0.3.1",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -20,20 +20,20 @@
     "use-sound": "^4.0.1"
   },
   "devDependencies": {
-    "@types/node": "^18.15.9",
-    "@types/react": "18.0.29",
+    "@types/node": "^18.15.11",
+    "@types/react": "18.0.33",
     "@types/rss": "^0.0.30",
     "cross-env": "^7.0.3",
-    "eslint": "8.36.0",
-    "eslint-config-next": "13.2.4",
+    "eslint": "8.37.0",
+    "eslint-config-next": "13.3.0",
     "file-loader": "^6.2.0",
     "rehype-autolink-headings": "6.1.1",
     "rehype-code-titles": "1.2.0",
     "rehype-prism-plus": "^1.5.1",
     "rehype-slug": "5.1.0",
     "remark-gfm": "^3.0.1",
-    "sass": "^1.60.0",
-    "typescript": "5.0.2",
+    "sass": "^1.61.0",
+    "typescript": "5.0.3",
     "url-loader": "^4.1.1"
   }
 }
