@@ -50,7 +50,8 @@ export const Post = defineDocumentType(() => ({
       required: true
     },
     tags: {
-      type: 'json',
+      type: 'list',
+      of: { type: 'string' },
       required: true
     },
     banner: {
