@@ -1,0 +1,132 @@
+---
+title: A Guide to Animated Theme Toggle
+description: Discover the power of animated theme toggle to elevate your website's user experience. Our comprehensive guide walks you through creating stylish toggle with ease. Improve engagement and keep your audience delighted with this essential web design feature.
+banner: /images/a-guide-to-animated-theme-toggle/og.jpg
+date: 2023-12-15
+tags:
+  - CSS
+  - Javascript
+  - UI
+---
+
+User interfaces must be improved with interactive aspects in the changing world of web development. Your website will seem more sophisticated with animated theme toggles in addition to providing a better user experience. You may create a sophisticated and fashionable animated theme toggle using CSS by following this guide.
+
+## Understanding the CSS Variables
+
+The provided CSS code makes use of CSS variables to define color schemes for light and dark themes. The `--clr-main` variable defines the main background color, while `--toggle-moon` and `--toggle-sun` provide the colors of the moon and sun buttons, respectively.
+
+```CSS
+html[data-theme='light'] {
+  --clr-main: white;
+  --toggle-moon: transparent;
+  --toggle-sun: #ffe55b;
+}
+
+html[data-theme='dark'] {
+  --clr-main: #000000;
+  --toggle-moon: white;
+  --toggle-sun: transparent;
+}
+```
+
+## The HTML Document's Structure
+
+Make sure your document semantics are correct and include the necessary meta tags for a clean HTML structure.
+
+```html
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Animated Theme Toggle</title>
+  </head>
+  <body>
+    <button type="button" class="theme-toggle"></button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+```
+
+Make sure to link the CSS and JavaScript files, then set the initial theme using the `data-theme` attribute.
+
+## Styling the Body
+
+```css
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background-color: var(--clr-main);
+  transition: background-color 0.5s ease;
+}
+```
+
+The transition effect ensures a smooth color transition when the theme changes.
+
+## Styling the Animated Theme Toggle Button
+
+Sure! For the `.theme-toggle` button, let's add style to improve both its aesthetic appeal and user experience:
+
+```css
+.theme-toggle {
+  border: 0;
+  outline: 0;
+  display: flex;
+  z-index: 9999;
+  cursor: pointer;
+  -webkit-appearance: button;
+  height: min(15vw, 65rem);
+  aspect-ratio: 1 / 1;
+  border-radius: 9999px;
+  box-shadow: inset -15px -13px 3px -2px var(--toggle-moon);
+  background-color: var(--toggle-sun);
+  transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+```
+
+Let's break it down into parts:
+
+**Webkit Appearance**: To improve cross-browser compatibility, the `-webkit-appearance: button` property maintains a button-like look while ensuring consistent rendering across browsers.
+
+**Height and Aspect Ratio**: The toggle button's height is defined by its height attribute, which is set to `min(15vw, 65rem)`. A balanced and visually pleasing design is enhanced by the square form that is provided by the `aspect-ratio` of `1:1`.
+
+**Box Shadow**: The `box-shadow` property provides an inset shadow (`inset -15px -13px 3px -2px var(--toggle-moon)`), creating depth. The color and offset values contribute to the toggle's visual appeal.
+
+## JavaScript for Theme Switching
+
+We need to give the user a way to toggle between themes after we've defined them. JavaScript will be used to toggle the `data-theme` attribute on the `html` element in order to do this. We can listen for a click event on a toggle switch element and toggle the attribute accordingly.
+
+```js
+// Toggle between light and dark themes when the theme toggle button is clicked
+const themeToggle = document.querySelector('.theme-toggle');
+themeToggle.addEventListener('click', toggleTheme);
+
+function toggleTheme() {
+  const html = document.querySelector('html');
+  const currentTheme = html.getAttribute('data-theme');
+
+  if (currentTheme === 'dark') {
+    setTheme('light');
+  } else {
+    setTheme('dark');
+  }
+}
+
+function setTheme(theme) {
+  const html = document.querySelector('html');
+  html.setAttribute('data-theme', theme);
+}
+```
+
+This code selects an element in the Document Object Model (DOM) with a class of `theme-toggle` and adds a click event listener to it. When the button is clicked, the `toggleTheme()` function is called.
+
+The html element is retrieved by the `toggleTheme()` function, which also returns the `data-theme` attribute's current value. Depending on the value of the attribute, it then calls the `setTheme()` function with either `light` or `dark` as an argument.
+
+The `setTheme()` function gets the html element again and sets the value of the `data-theme` attribute to the value passed as an argument. This changes the theme of the page.
+
+## Conclusion
+
+You can develop an advanced and animated theme toggle that improves the user experience and gives your website a visually attractive touch by combining HTML, CSS, and JavaScript. Feel free to customize the colors, animations, and styles to suit your design preferences.
