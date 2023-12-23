@@ -1,5 +1,5 @@
+import { sortPosts } from '@/lib/sort';
 import { allPosts } from 'contentlayer/generated';
-import { sortPosts } from 'lib/sort';
 
 export default async function sitemap() {
   const posts = sortPosts(allPosts).map((post) => ({

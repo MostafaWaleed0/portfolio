@@ -1,11 +1,9 @@
-import GitHubCardsWrapper from 'components/GitHubCardsWrapper';
-import Time from 'components/Time';
+import { Time } from '@/components/time';
+import { sortPosts } from '@/lib/sort';
 import { allPosts } from 'contentlayer/generated';
-import { sortPosts } from 'lib/sort';
 import Image from 'next/image';
 import Link from 'next/link';
-
-export const revalidate = 60;
+import { GitHubCards } from '@/components/github-cards';
 
 export default async function Home() {
   return (
@@ -90,7 +88,7 @@ export default async function Home() {
             </div>
           </header>
           <div className="padding-block-start-200">
-            <GitHubCardsWrapper />
+            <GitHubCards />
           </div>
         </div>
       </section>

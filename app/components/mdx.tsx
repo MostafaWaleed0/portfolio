@@ -41,10 +41,8 @@ function CustomPre(props) {
   );
 }
 
-const MDXComponents = {
+export const MDXComponents = {
   a: CustomLink,
   Image: CustomImage,
   pre: CustomPre
 };
-
-export default MDXComponents;

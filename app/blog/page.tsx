@@ -1,6 +1,6 @@
-import Time from 'components/Time';
+import { Time } from '@/components/time';
+import { sortPosts } from '@/lib/sort';
 import { allPosts } from 'contentlayer/generated';
-import { sortPosts } from 'lib/sort';
 import Link from 'next/link';
 import type { Metadata } from 'next/types';
 
@@ -20,7 +20,7 @@ export default function Blog() {
             {sortPosts(allPosts).map(({ slug, title, date, description }) => {
               const permalink = slug.replaceAll(' ', '-');
               return (
-                <li className="post-list__item " key={slug}>
+                <li className="post-list__item" key={slug}>
                   <div className="flow">
                     <h2 className="fs-600" id={permalink}>
                       <Link className="whitespace-wrap" href={`/blog/${slug}`}>

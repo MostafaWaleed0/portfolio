@@ -1,13 +1,13 @@
 'use client';
 
-import { List, Logo } from 'components/icons';
+import { List, Logo } from '@/components/icons';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import { useState } from 'react';
 import useSound from 'use-sound';
 import click from '/public/audio/click.mp3';
 
-export default function Header() {
+export function Header() {
   const { resolvedTheme, setTheme } = useTheme();
   const [play] = useSound(click);
   const [visible, setVisible] = useState(false);

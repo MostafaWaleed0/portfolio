@@ -2,9 +2,7 @@
 
 import emailjs from '@emailjs/browser';
 import { useRef, useState } from 'react';
-import { validate } from '../utils/validate';
-import Input from './Input';
-import TextArea from './TextArea';
+import { validate } from './validate';
 
 interface IValues {
   name: string;
@@ -16,7 +14,7 @@ interface IValues {
 
 interface IErrors extends Partial<IValues> {}
 
-export default function Form() {
+export function Form() {
   const form = useRef<any>();
   const [success, setSuccess] = useState(false);
   const [values, setValues] = useState<IValues>({
@@ -145,6 +143,80 @@ export default function Form() {
           </div>
         </form>
       )}
+    </>
+  );
+}
+
+function Input({
+  type,
+  id,
+  error,
+  variablePropName = `aria-describedby`,
+  variablePropValue = `${id}_error`,
+  ...props
+}: {
+  [x: string]: any;
+  type: string;
+  id: string;
+  error?: string;
+  errorMessage?: string;
+  variablePropName?: string;
+  variablePropValue?: string;
+}) {
+  const variableAttribute = { [variablePropName]: variablePropValue };
+  const booleanError = Boolean(error);
+
+  return (
+    <>
+      <label htmlFor={id}>{id}</label>
+      <input
+        {...props}
+        type={type}
+        name={id}
+        id={id}
+        autoComplete="off"
+        spellCheck="false"
+        aria-required="true"
+        {...(booleanError ? variableAttribute : '')}
+        {...props}
+      />
+      {booleanError && <p id={`${id}_error`}>*{error ? error : ''}</p>}
+    </>
+  );
+}
+
+function TextArea({
+  id,
+  label,
+  error,
+  variablePropName = `aria-describedby`,
+  variablePropValue = `${id}_error`,
+  ...props
+}: {
+  [x: string]: any;
+  id: string;
+  label: string;
+  error?: string;
+  errorMessage?: string;
+  variablePropName?: string;
+  variablePropValue?: string;
+}) {
+  const variableAttribute = { [variablePropName]: variablePropValue };
+  const booleanError = Boolean(error);
+
+  return (
+    <>
+      <label htmlFor={id}>{label}</label>
+      <textarea
+        {...props}
+        name={id}
+        id={id}
+        rows={10}
+        spellCheck="false"
+        autoComplete="off"
+        {...(booleanError ? variableAttribute : '')}
+      ></textarea>
+      {booleanError && <p id={`${id}_error`}>*{error ? error : ''}</p>}
     </>
   );
 }

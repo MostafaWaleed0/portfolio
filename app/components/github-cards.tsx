@@ -1,9 +1,37 @@
-import { useQuery } from '@apollo/client';
-import { Star } from 'components/icons';
-import { GET_PINNED_REPOS } from 'lib/apolloClient';
-import { PinnedReposType } from 'lib/types';
+'use client';
 
-export default function GitHubCards({ username }: { username: string }) {
+import { Star } from '@/components/icons';
+import { GET_PINNED_REPOS, client } from '@/lib/apollo-client';
+import { ApolloProvider, useQuery } from '@apollo/client';
+
+type PinnedReposType = {
+  user: {
+    pinnedItems: {
+      nodes: Array<{
+        id: string;
+        name: string;
+        description: string;
+        url: string;
+        primaryLanguage: {
+          name: string;
+          color: string;
+        };
+        stargazers: {
+          totalCount: string;
+        };
+        repositoryTopics: {
+          nodes: Array<{
+            topic: {
+              name: string;
+            };
+          }>;
+        };
+      }>;
+    };
+  };
+};
+
+function Cards({ username }: { username: string }) {
   const { loading, error, data } = useQuery<PinnedReposType>(GET_PINNED_REPOS, {
     variables: { username }
   });
@@ -84,5 +112,13 @@ export default function GitHubCards({ username }: { username: string }) {
         }
       )}
     </ol>
+  );
+}
+
+export function GitHubCards() {
+  return (
+    <ApolloProvider client={client}>
+      <Cards username="mostafa-mw" />
+    </ApolloProvider>
   );
 }

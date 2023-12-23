@@ -1,6 +1,7 @@
-// import fs from 'fs';
+import { MDXComponents } from '@/components/mdx';
+import { Time } from '@/components/time';
 import { allPosts } from 'contentlayer/generated';
-import BlogLayout from 'layouts/blog';
+import { useMDXComponent } from 'next-contentlayer/hooks';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next/types';
 
@@ -9,19 +10,6 @@ export async function generateStaticParams() {
     slug: post.slug
   }));
 }
-
-// async function createImageFolder() {
-//   const files = fs.readdirSync('content');
-
-//   for (const file of files) {
-//     const dir = file.replace('.mdx', '');
-//     fs.existsSync(`images/${dir}`)
-//       ? null
-//       : fs.mkdirSync(`public/images/${dir}`, { recursive: true });
-//   }
-// }
-
-// createImageFolder();
 
 export async function generateMetadata({
   params
@@ -76,5 +64,32 @@ export default async function PostPage({ params }) {
     notFound();
   }
 
-  return <BlogLayout post={post} />;
+  const MDXContent = useMDXComponent(post.body.code);
+
+  return (
+    <article className="[ wrapper flow ] [ region ]">
+      <header className="headline" data-align="center">
+        <h1>{post.title}</h1>
+        <div className="measure-short margin-inline-auto">
+          <div
+            className="[ cluster ] [ flex-wrap ] [ margin-block-start-500 ]"
+            data-align="between"
+          >
+            <Time time={post.date} />
+            <ul className="flex-row" role="list">
+              {post.tags.map((tag) => (
+                <li key={tag} className="[ pill ] [ margin-inline-end-100 ]">
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div className="[ post ] [ flow ]">
+        <hr />
+        <MDXContent components={{ ...MDXComponents }} />
+      </div>
+    </article>
+  );
 }

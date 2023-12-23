@@ -1,5 +1,5 @@
+import { sortPosts } from '@/lib/sort';
 import { allPosts } from 'contentlayer/generated';
-import { sortPosts } from 'lib/sort';
 import RSS from 'rss';
 
 export async function GET() {
@@ -8,8 +8,7 @@ export async function GET() {
     site_url: 'https://mostafawaleed.me',
     feed_url: 'https://mostafawaleed.me/rss.xml',
     language: 'en-US',
-    image_url:
-      'https://mostafawaleed.me/static/favicons/android-chrome-256x256.png'
+    image_url: 'https://mostafawaleed.me/favicon.ico'
   });
 
   sortPosts(allPosts).map((post) => {

@@ -1,7 +1,8 @@
+import { Footer } from '@/components/footer';
+import { Header } from '@/components/header';
+import { ThemeWrapper } from '@/components/theme';
 import { Analytics } from '@vercel/analytics/react';
-import Footer from 'components/Footer';
-import Header from 'components/Header';
-import ThemeWrapper from 'components/theme';
+import type { Viewport } from 'next';
 import localFont from 'next/font/local';
 import type { Metadata } from 'next/types';
 import '../style/scss/style.scss';
@@ -50,7 +51,15 @@ const cascadiaCode = localFont({
   variable: '--font-mono'
 });
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#fffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#11111' }
+  ]
+};
+
 export const metadata: Metadata = {
+  metadataBase: new URL('https://mostafawaleed.me'),
   title: {
     default: 'Mostafa Waleed',
     template: '%s - Mostafa Waleed'
@@ -59,8 +68,17 @@ export const metadata: Metadata = {
     'Mostafa Waleed, an experienced freelance web developer based in Egypt.',
   alternates: {
     types: {
-      'application/rss+xml': 'https://mostafawaleed.me/feed.xml'
+      'application/rss+xml': 'https://mostafawaleed.me/rss.xml'
     }
+  },
+  openGraph: {
+    title: 'Mostafa Waleed',
+    description:
+      'Mostafa Waleed, an experienced freelance web developer based in Egypt.',
+    url: 'https://mostafawaleed.me',
+    siteName: 'Mostafa Waleed',
+    locale: 'en-US',
+    type: 'website'
   },
   robots: {
     index: true,
@@ -73,52 +91,11 @@ export const metadata: Metadata = {
       'max-snippet': -1
     }
   },
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#fffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#11111' }
-  ],
-  openGraph: {
-    title: 'Mostafa Waleed',
-    description:
-      'Mostafa Waleed, an experienced freelance web developer based in Egypt.',
-    url: 'https://mostafawaleed.me',
-    siteName: 'Mostafa Waleed',
-    images: [
-      {
-        url: 'https://mostafawaleed.me/static/favicons/android-chrome-256x256.png',
-        width: 256,
-        height: 256
-      }
-    ],
-    locale: 'en-US',
-    type: 'website'
-  },
   twitter: {
     title: 'Mostafa Waleed',
     card: 'summary_large_image'
   },
-  icons: {
-    icon: [
-      {
-        url: '/static/favicons/favicon-32x32.png',
-        sizes: '32x32',
-        type: 'image/png'
-      },
-      {
-        url: '/static/favicons/favicon-16x16.png',
-        sizes: '16x16',
-        type: 'image/png'
-      }
-    ],
-
-    shortcut: '/static/favicons/favicon.ico',
-    apple: {
-      url: '/static/favicons/apple-touch-icon.png',
-      sizes: '180x180',
-      type: 'image/png'
-    }
-  },
-  manifest: 'https://mostafawaleed.me/static/favicons/site.webmanifest',
+  manifest: 'https://mostafawaleed.me/manifest.webmanifest',
   verification: {
     google: 'yNRfmqiqqj1EekI2rFHjrJoFVnx6zJTisszEIeWGf9Y',
     yandex: '14d8968c6df31e01',

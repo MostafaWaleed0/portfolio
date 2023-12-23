@@ -1,5 +1,5 @@
-import From from 'components/Form';
 import type { Metadata } from 'next/types';
+import { Form } from './form';
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -19,7 +19,7 @@ export default function Contact() {
       <section className="[ region ] [ bg-inverse ]">
         <div className="wrapper">
           <h1 className="visually-hidden">for contact with me</h1>
-          <From />
+          <Form />
         </div>
       </section>
     </>

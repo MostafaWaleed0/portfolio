@@ -1,9 +1,8 @@
-/* eslint-disable @next/next/no-html-link-for-pages */
 import Link from 'next/link';
-import { Rss } from 'components/icons';
-import { Github } from 'components/icons';
+import { Rss } from '@/components/icons';
+import { Github } from '@/components/icons';
 
-export default function Footer() {
+export function Footer() {
   return (
     <footer className="[ site-foot ] [ region ]" role="contentinfo">
       <div className="wrapper">

@@ -1,6 +1,4 @@
-import { TimeType } from 'lib/types';
-
-export default function Time({ time }: TimeType) {
+export function Time({ time }: { time: string }) {
   const options: Intl.DateTimeFormatOptions = {
     year: 'numeric',
     month: 'short',
