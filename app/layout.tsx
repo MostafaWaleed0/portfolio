@@ -76,6 +76,13 @@ export const metadata: Metadata = {
     description:
       'Mostafa Waleed, an experienced freelance web developer based in Egypt.',
     url: 'https://mostafawaleed.me',
+    images: [
+      {
+        url: 'https://mostafawaleed.me/apple-icon.png',
+        width: 1200,
+        height: 630
+      }
+    ],
     siteName: 'Mostafa Waleed',
     locale: 'en-US',
     type: 'website'
