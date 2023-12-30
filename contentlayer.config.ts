@@ -18,7 +18,7 @@ const computedFields: import('contentlayer/source-files').ComputedFields = {
       '@type': 'BlogPosting',
       headline: doc.title,
       datePublished: doc.date,
-      dateModified: doc.publishedAt,
+      dateModified: doc.date,
       description: doc.description,
       tags: doc.tags,
       image: `https://mostafawaleed.me${doc.banner}`,
