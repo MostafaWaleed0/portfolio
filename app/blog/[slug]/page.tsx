@@ -50,7 +50,7 @@ export async function generateMetadata({
     twitter: {
       card: 'summary_large_image',
       title,
-      site: '@MostafaAmr206',
+      site: '@MostafaAmr_',
       description,
       images: [ogImage]
     }

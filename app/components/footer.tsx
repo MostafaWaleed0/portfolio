@@ -37,7 +37,7 @@ export function Footer() {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://twitter.com/MostafaAmr206"
+                  href="https://twitter.com/MostafaAmr_"
                 >
                   twitter
                 </a>
