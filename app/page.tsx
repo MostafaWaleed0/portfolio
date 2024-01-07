@@ -12,11 +12,10 @@ export default async function Home() {
         <div className="[ headline ] [ flow ]">
           <h1>Hi👋, I&rsquo;m Mostafa.</h1>
           <p>
-            I'm a
-            <strong className="text-primary-600"> front-end developer </strong>
-            living in Egypt. I take pleasure in finding solutions and
-            constructing web-based projects. I also write about the web on my{' '}
-            <Link href="/blog">blog</Link>.
+            I'm an Egypt-based{' '}
+            <strong className="text-primary-600">front-end developer</strong>. I
+            find joy in proble­ms solving and building web projects. I also pen
+            down my thoughts about the­ web on my <Link href="/blog">blog</Link>
           </p>
           <Link href="/contact" className="button">
             Collaborate with me
