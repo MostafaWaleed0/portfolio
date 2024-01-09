@@ -9,6 +9,7 @@
     "@apollo/client": "^3.8.8",
     "@emailjs/browser": "^3.11.0",
     "@vercel/analytics": "^1.1.1",
+    "@vercel/speed-insights": "^1.0.2",
     "contentlayer": "^0.3.4",
     "graphql": "^16.8.1",
     "next": "canary",

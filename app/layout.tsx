@@ -2,6 +2,7 @@ import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { ThemeWrapper } from '@/components/theme';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Viewport } from 'next';
 import localFont from 'next/font/local';
 import type { Metadata } from 'next/types';
@@ -124,6 +125,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <main id="main-content" tabIndex={-1}>
             {children}
             <Analytics />
+            <SpeedInsights />
           </main>
           <Footer />
         </ThemeWrapper>
