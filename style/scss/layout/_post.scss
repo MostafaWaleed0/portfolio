@@ -50,9 +50,10 @@
   }
 
   img {
-    block-size: rem(330);
-    inline-size: 100%;
-    object-position: 34% 0;
+    height: auto;
+    width: auto;
+    border-radius: $border-radius-1;
+    border: 2.5px solid $color-border-inverse;
   }
 
   strong + h3 {
