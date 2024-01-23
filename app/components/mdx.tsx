@@ -22,9 +22,8 @@ const CustomLink = (props) => {
 function CustomImage(props) {
   return (
     <Image
-      width={400}
-      height={400}
-      className="object-cover"
+      width={1280}
+      height={720}
       {...props}
       alt={props.alt.length ? `Illustration of ${props.alt}` : props.alt}
     />
