@@ -84,11 +84,9 @@ export function Header() {
               type="button"
               className="[ site-head__theme-toggle ] [ margin-inline-start-400 ]"
               onClick={toggleTheme}
-              aria-label={
-                resolvedTheme === 'dark'
-                  ? 'Switch to light Theme'
-                  : 'Switch to dark Theme'
-              }
+              aria-label={`Switch to ${
+                resolvedTheme === 'dark' ? 'light' : 'dark'
+              } Theme`}
             ></button>
           </div>
         </div>
