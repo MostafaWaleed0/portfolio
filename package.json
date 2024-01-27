@@ -18,9 +18,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "rss": "^1.2.2",
-    "use-sound": "^4.0.1"
-  },
-  "devDependencies": {
+    "use-sound": "^4.0.1",
     "@types/node": "^20.11.4",
     "@types/react": "18.2.45",
     "@types/rss": "^0.0.32",

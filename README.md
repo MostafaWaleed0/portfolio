@@ -7,10 +7,10 @@
 Make sure you have the following installed:
 
 - [Node.js](https://nodejs.org/) (Version 20.x)
-- [pnpm](https://pnpm.io/) - If not installed, run:
+- [bun](https://bun.sh/) - If not installed, run:
 
   ```bash
-  npm install -g pnpm
+  npm install -g bun
   ```
 
 ### Installation
@@ -20,7 +20,7 @@ Clone the repository and install dependencies:
 ```bash
 git clone https://github.com/mostafa-mw/mostafawaleed.me.git
 cd mostafawaleed.me
-pnpm install
+bun i
 ```
 
 ## Running Locally
@@ -28,7 +28,7 @@ pnpm install
 Start the development server:
 
 ```bash
-pnpm dev
+bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
