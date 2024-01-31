@@ -7,7 +7,7 @@ export async function GET() {
     title: 'Mostafa Waleed',
     site_url: 'https://mostafawaleed.me',
     feed_url: 'https://mostafawaleed.me/rss.xml',
-    language: 'en-US',
+    language: 'en_US',
     image_url: 'https://mostafawaleed.me/favicon.ico'
   });
 

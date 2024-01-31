@@ -28,24 +28,18 @@ export async function generateMetadata({
   return {
     title,
     description,
-    alternates: {
-      canonical: url
-    },
     openGraph: {
       title,
       description,
       type: 'article',
       publishedTime: date,
-      section: 'General',
-      siteName: 'Mostafa Waleed',
       url: url,
       tags: tags,
       images: [
         {
           url: ogImage
         }
-      ],
-      locale: 'en-US'
+      ]
     },
     twitter: {
       card: 'summary_large_image',

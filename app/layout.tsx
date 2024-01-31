@@ -66,19 +66,19 @@ export const metadata: Metadata = {
     template: '%s - Mostafa Waleed'
   },
   description:
-    'Mostafa Waleed, an experienced freelance web developer based in Egypt.',
+    'Mostafa Waleed, a seasoned freelance web developer based in Egypt.',
   alternates: {
     types: {
-      'application/rss+xml': 'https://mostafawaleed.me/rss.xml'
+      'application/rss+xml': '/rss.xml'
     }
   },
   openGraph: {
     title: 'Mostafa Waleed',
     description:
-      'Mostafa Waleed, an experienced freelance web developer based in Egypt.',
+      'Mostafa Waleed, a seasoned freelance web developer based in Egypt.',
     url: 'https://mostafawaleed.me',
     siteName: 'Mostafa Waleed',
-    locale: 'en-US',
+    locale: 'en_US',
     type: 'website'
   },
   robots: {
@@ -96,7 +96,7 @@ export const metadata: Metadata = {
     title: 'Mostafa Waleed',
     card: 'summary_large_image'
   },
-  manifest: 'https://mostafawaleed.me/manifest.webmanifest',
+  manifest: '/manifest.webmanifest',
   verification: {
     google: 'yNRfmqiqqj1EekI2rFHjrJoFVnx6zJTisszEIeWGf9Y',
     yandex: '14d8968c6df31e01',
