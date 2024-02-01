@@ -68,6 +68,7 @@ export const metadata: Metadata = {
   description:
     'Mostafa Waleed, a seasoned freelance web developer based in Egypt.',
   alternates: {
+    canonical: '/',
     types: {
       'application/rss+xml': '/rss.xml'
     }
