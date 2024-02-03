@@ -51,7 +51,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function PostPage({ params }) {
+export default function PostPage({ params }) {
   const post = allPosts.find((post) => post.slug === params.slug);
 
   if (!post) {
