@@ -2,6 +2,8 @@ import { sortPosts } from '@/lib/sort';
 import { allPosts } from 'contentlayer/generated';
 import RSS from 'rss';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   const feed = new RSS({
     title: 'Mostafa Waleed',
