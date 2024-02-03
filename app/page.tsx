@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { GitHubCards } from '@/components/github-cards';
 
-export default async function Home() {
+export default function Home() {
   return (
     <>
       <section className="[ wrapper ] [ region ]">
