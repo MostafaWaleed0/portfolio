@@ -28,7 +28,7 @@ const nextConfig = {
     return config;
   },
 
-  async headers() {
+  headers() {
     return [
       {
         source: '/(.*)',
@@ -46,6 +46,7 @@ const ContentSecurityPolicy = `
     media-src 'none';
     connect-src *;
     font-src 'self' data:;
+    frame-src 'self' vercel.live;
 `;
 
 const securityHeaders = [
