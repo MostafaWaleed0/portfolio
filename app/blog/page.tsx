@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     'My blog is a site where I share ideas, tips, and other random and interesting things about web development.'
 };
 
-export default function Blog() {
+export default function BlogPage() {
   return (
     <article className="[ wrapper-sm ] [ margin-block-start-700 margin-block-end-800 ]">
       <h1>Blog</h1>

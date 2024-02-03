@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "If you want to know more about me or my work, I'll be happy to answer questions and share what I'm up to. You can contact me directly through the contact form."
 };
 
-export default function Contact() {
+export default function ContactPage() {
   return (
     <>
       <section className="[ wrapper ] [ margin-block-start-700 margin-block-end-800 ]">

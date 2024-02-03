@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { GitHubCards } from '@/components/github-cards';
 
-export default function Home() {
+export default function Page() {
   return (
     <>
       <section className="[ wrapper ] [ region ]">
