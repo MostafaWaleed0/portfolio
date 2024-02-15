@@ -42,8 +42,6 @@
   }
 
   :is(h2, h3, h4, h5) {
-    scroll-margin-top: 1rem;
-
     .anchor:not(:hover) {
       text-decoration: 0;
     }
