@@ -54,7 +54,7 @@ export function Header() {
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://github.com/mostafa-mw"
+                    href="https://github.com/MostafaWaleed0"
                   >
                     gitHub
                   </a>

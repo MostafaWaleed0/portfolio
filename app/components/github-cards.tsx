@@ -118,7 +118,7 @@ function Cards({ username }: { username: string }) {
 export function GitHubCards() {
   return (
     <ApolloProvider client={client}>
-      <Cards username="mostafa-mw" />
+      <Cards username="MostafaWaleed0" />
     </ApolloProvider>
   );
 }

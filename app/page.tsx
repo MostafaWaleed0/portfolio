@@ -79,7 +79,7 @@ export default function Page() {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://github.com/mostafa-mw"
+                href="https://github.com/MostafaWaleed0"
                 className="text-capitalize"
               >
                 see all projects

@@ -18,7 +18,7 @@ Make sure you have the following installed:
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/mostafa-mw/mostafawaleed.me.git
+git clone https://github.com/MostafaWaleed0/mostafawaleed.me.git
 cd mostafawaleed.me
 bun i
 ```

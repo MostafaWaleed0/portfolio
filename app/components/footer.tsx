@@ -48,7 +48,7 @@ export function Footer() {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://github.com/Mostafa-MW"
+              href="https://github.com/MostafaWaleed0"
               className="flex-row"
             >
               <Github />
