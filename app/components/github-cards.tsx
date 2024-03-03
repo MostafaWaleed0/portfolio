@@ -68,15 +68,17 @@ function Cards({ username }: { username: string }) {
                 <a target="_blank" rel="noopener noreferrer" href={url}>
                   {name}
                 </a>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={`${url}/stargazers`}
-                  className="card-head__star"
-                >
-                  <Star />
-                  {stargazers.totalCount}
-                </a>
+                {stargazers.totalCount ? (
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={`${url}/stargazers`}
+                    className="card-head__star"
+                  >
+                    <Star />
+                    {stargazers.totalCount}
+                  </a>
+                ) : null}
               </header>
               <p className="fs-300 weight-medium">
                 {description && description}
