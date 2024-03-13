@@ -1,4 +1,4 @@
-@use '../abstracts/base/spacing' as *;
+@use "../abstracts/base/spacing" as *;
 
 $sides: inline, inline-start, inline-end, block, block-start, block-end;
 @each $space, $space-value in $spaces {

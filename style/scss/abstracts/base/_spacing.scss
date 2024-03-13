@@ -1,14 +1,14 @@
-@use '../function' as *;
+@use "../function" as *;
 
 $spaces: (
-  '50': rem(8),
-  '100': rem(12),
-  '200': rem(16),
-  '300': rem(21),
-  '400': rem(28),
-  '500': rem(38),
-  '600': clamp(1.5rem, calc(1.14rem + 1.57vw), rem(48)),
-  '700': clamp(2rem, calc(1.61rem + 1.7vw), rem(58)),
-  '800': clamp(2.5rem, calc(1.9rem + 2.61vw), rem(80)),
-  '900': clamp(3rem, calc(2.25rem + 3.26vw), rem(96)),
+  "50": rem(8),
+  "100": rem(12),
+  "200": rem(16),
+  "300": rem(21),
+  "400": rem(28),
+  "500": rem(38),
+  "600": clamp(1.5rem, calc(1.14rem + 1.57vw), rem(48)),
+  "700": clamp(2rem, calc(1.61rem + 1.7vw), rem(58)),
+  "800": clamp(2.5rem, calc(1.9rem + 2.61vw), rem(80)),
+  "900": clamp(3rem, calc(2.25rem + 3.26vw), rem(96)),
 );

@@ -1,4 +1,4 @@
-@use '../abstracts/breakpoint' as *;
+@use "../abstracts/breakpoint" as *;
 
 .block {
   display: block;
@@ -14,7 +14,7 @@
   }
 }
 
-[class*='flex-wrap'] {
+[class*="flex-wrap"] {
   flex-wrap: wrap;
 }
 

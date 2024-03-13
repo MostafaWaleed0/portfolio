@@ -1,37 +1,37 @@
 $light-theme: (
-  'toggle': (
-    'sun': #ffe55b,
-    'moon': transparent,
+  "toggle": (
+    "sun": #ffe55b,
+    "moon": transparent,
   ),
-  'red': (
-    '800': #c40000,
+  "red": (
+    "800": #c40000,
   ),
-  'primary': (
-    '600': #d900b5,
-    '400': #ff85dc,
+  "primary": (
+    "600": #d900b5,
+    "400": #ff85dc,
   ),
-  'neutral': (
-    '100': #ffffff,
-    '200': #eaeaea,
-    '900': #000000,
+  "neutral": (
+    "100": #ffffff,
+    "200": #eaeaea,
+    "900": #000000,
   ),
 );
 
 $dark-theme: (
-  'toggle': (
-    'sun': transparent,
-    'moon': #fff,
+  "toggle": (
+    "sun": transparent,
+    "moon": #fff,
   ),
-  'red': (
-    '300': #ff0000,
+  "red": (
+    "300": #ff0000,
   ),
-  'primary': (
-    '600': #e300be,
-    '400': #ff85dc,
+  "primary": (
+    "600": #e300be,
+    "400": #ff85dc,
   ),
-  'neutral': (
-    '100': #111111,
-    '200': #000000,
-    '900': #ffffff,
+  "neutral": (
+    "100": #111111,
+    "200": #000000,
+    "900": #ffffff,
   ),
 );

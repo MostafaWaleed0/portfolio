@@ -1,5 +1,5 @@
-@use '../abstracts/tokens/tokens' as *;
-@use '../abstracts/breakpoint' as *;
+@use "../abstracts/tokens/tokens" as *;
+@use "../abstracts/breakpoint" as *;
 
 :root {
   --base00: #f3f3f3;
@@ -20,7 +20,7 @@
   --base0F: #d3423e;
 }
 
-html[data-theme='dark'] {
+html[data-theme="dark"] {
   --base00: #011220;
   --base01: #2d2d2d;
   --base02: #424242;
@@ -112,7 +112,7 @@ code:not([class]) {
 
   &::before,
   &::after {
-    content: '`';
+    content: "`";
   }
 }
 

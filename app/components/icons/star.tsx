@@ -1,4 +1,4 @@
-import { SVGProps } from 'react';
+import { SVGProps } from "react";
 
 const Star = (props: SVGProps<SVGSVGElement>) => (
   <svg width="1em" height="1em" fill="currentColor" {...props}>

@@ -113,23 +113,23 @@ We need to give the user a way to toggle between themes after we've defined them
 
 ```js
 // Toggle between light and dark themes when the theme toggle button is clicked
-const themeToggle = document.querySelector('.theme-toggle');
-themeToggle.addEventListener('click', toggleTheme);
+const themeToggle = document.querySelector(".theme-toggle");
+themeToggle.addEventListener("click", toggleTheme);
 
 function toggleTheme() {
-  const html = document.querySelector('html');
-  const currentTheme = html.getAttribute('data-theme');
+  const html = document.querySelector("html");
+  const currentTheme = html.getAttribute("data-theme");
 
-  if (currentTheme === 'dark') {
-    setTheme('light');
+  if (currentTheme === "dark") {
+    setTheme("light");
   } else {
-    setTheme('dark');
+    setTheme("dark");
   }
 }
 
 function setTheme(theme) {
-  const html = document.querySelector('html');
-  html.setAttribute('data-theme', theme);
+  const html = document.querySelector("html");
+  html.setAttribute("data-theme", theme);
 }
 ```
 

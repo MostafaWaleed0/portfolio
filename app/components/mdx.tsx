@@ -1,10 +1,10 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
 const CustomLink = (props) => {
   const href = props.href;
 
-  if (href.startsWith('/')) {
+  if (href.startsWith("/")) {
     return (
       <Link href={href} {...props}>
         {props.children}
@@ -12,7 +12,7 @@ const CustomLink = (props) => {
     );
   }
 
-  if (href.startsWith('#')) {
+  if (href.startsWith("#")) {
     return <a {...props} />;
   }
 
@@ -34,7 +34,7 @@ function CustomPre(props) {
   const className = props.className;
 
   return (
-    <pre className={className} data-lang={className.replace(/language-/i, '')}>
+    <pre className={className} data-lang={className.replace(/language-/i, "")}>
       {props.children}
     </pre>
   );
@@ -43,5 +43,5 @@ function CustomPre(props) {
 export const MDXComponents = {
   a: CustomLink,
   Image: CustomImage,
-  pre: CustomPre
+  pre: CustomPre,
 };

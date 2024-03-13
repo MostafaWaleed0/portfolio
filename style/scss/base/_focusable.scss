@@ -1,6 +1,6 @@
-@use '../abstracts/tokens/tokens' as *;
+@use "../abstracts/tokens/tokens" as *;
 
-[class*='focusable'] {
+[class*="focusable"] {
   display: flex;
   align-items: center;
   justify-content: center;

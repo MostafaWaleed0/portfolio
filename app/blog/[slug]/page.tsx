@@ -1,18 +1,18 @@
-import { MDXComponents } from '@/components/mdx';
-import { Time } from '@/components/time';
-import { allPosts } from 'contentlayer/generated';
-import { useMDXComponent } from 'next-contentlayer/hooks';
-import { notFound } from 'next/navigation';
-import type { Metadata } from 'next/types';
+import { MDXComponents } from "@/components/mdx";
+import { Time } from "@/components/time";
+import { allPosts } from "contentlayer/generated";
+import { useMDXComponent } from "next-contentlayer/hooks";
+import { notFound } from "next/navigation";
+import type { Metadata } from "next/types";
 
 export async function generateStaticParams() {
   return allPosts.map((post) => ({
-    slug: post.slug
+    slug: post.slug,
   }));
 }
 
 export async function generateMetadata({
-  params
+  params,
 }): Promise<Metadata | undefined> {
   const post = allPosts.find((post) => post.slug === params.slug);
 
@@ -31,23 +31,23 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      type: 'article',
+      type: "article",
       publishedTime: date,
       url: url,
       tags: tags,
       images: [
         {
-          url: ogImage
-        }
-      ]
+          url: ogImage,
+        },
+      ],
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title,
-      site: '@MostafaAmr_',
+      site: "@MostafaAmr_",
       description,
-      images: [ogImage]
-    }
+      images: [ogImage],
+    },
   };
 }
 

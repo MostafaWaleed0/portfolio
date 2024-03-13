@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import { Rss } from '@/components/icons';
-import { Github } from '@/components/icons';
+import Link from "next/link";
+import { Rss } from "@/components/icons";
+import { Github } from "@/components/icons";
 
 export function Footer() {
   return (
@@ -32,8 +32,8 @@ export function Footer() {
                   href="https://www.linkedin.com/in/mostafawaleed"
                 >
                   linkedin
-                </a>{' '}
-                {' / '}
+                </a>{" "}
+                {" / "}
                 <a
                   target="_blank"
                   rel="noopener noreferrer"

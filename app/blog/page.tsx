@@ -1,13 +1,13 @@
-import { Time } from '@/components/time';
-import { sortPosts } from '@/lib/sort';
-import { allPosts } from 'contentlayer/generated';
-import Link from 'next/link';
-import type { Metadata } from 'next/types';
+import { Time } from "@/components/time";
+import { sortPosts } from "@/lib/sort";
+import { allPosts } from "contentlayer/generated";
+import Link from "next/link";
+import type { Metadata } from "next/types";
 
 export const metadata: Metadata = {
-  title: 'Blog',
+  title: "Blog",
   description:
-    'My blog is a site where I share ideas, tips, and other random and interesting things about web development.'
+    "My blog is a site where I share ideas, tips, and other random and interesting things about web development.",
 };
 
 export default function BlogPage() {
@@ -18,7 +18,7 @@ export default function BlogPage() {
         <div>
           <ul className="[ post-list ] [ flow ]" role="list">
             {sortPosts(allPosts).map(({ slug, title, date, description }) => {
-              const permalink = slug.replaceAll(' ', '-');
+              const permalink = slug.replaceAll(" ", "-");
               return (
                 <li className="post-list__item" key={slug}>
                   <div className="flow">

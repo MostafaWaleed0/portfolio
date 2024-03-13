@@ -17,18 +17,18 @@ The first step is to create an array with all the months to get it using the ind
 ```js
 export default function Time() {
   var arrayMonths = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December'
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
   ];
 
   return (
@@ -43,24 +43,24 @@ The next step is to add the day, month, and year in variables **_Time function_*
 
 ```js
 export default function Time({
-  day = '',
+  day = "",
   month,
-  separator = ' ', // not mandatory
-  year = ''
+  separator = " ", // not mandatory
+  year = "",
 }) {
   var arrayMonths = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December'
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
   ];
 
   return (
@@ -77,24 +77,24 @@ Let’s deal with the data time. Add the following variable named dataTime:
 
 ```js
 export default function Time({
-  day = '',
+  day = "",
   month,
-  separator = ' ', // not mandatory
-  year = ''
+  separator = " ", // not mandatory
+  year = "",
 }) {
   var arrayMonths = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December'
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
   ];
 
   const dataTime = `${year}-${month < 10 ? `0${month}` : `${month}`}-${
@@ -123,24 +123,24 @@ Let's concentrate on the text content. Add the following variable named dataText
 
 ```js
 export default function Time({
-  day = '',
+  day = "",
   month,
-  separator = ' ', // not mandatory
-  year = ''
+  separator = " ", // not mandatory
+  year = "",
 }) {
   var arrayMonths = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December'
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
   ];
 
   const dataTime = `${year}-${month < 10 ? `0${month}` : `${month}`}-${
@@ -165,7 +165,7 @@ then getting the day. then getting the year.
 ## Using it
 
 ```js
-import Time from '../components/Time';
+import Time from "../components/Time";
 
 export default function Time() {
   return <Time day={6} month={7} year={2022} separator={undefined} />;

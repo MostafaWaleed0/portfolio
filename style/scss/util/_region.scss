@@ -1,11 +1,11 @@
-@use '../abstracts/function' as *;
-@use '../abstracts/tokens/tokens' as *;
+@use "../abstracts/function" as *;
+@use "../abstracts/tokens/tokens" as *;
 
 .region {
   padding-block: var(--region-padding, var(--space-800));
   overflow: hidden;
 
-  &[data-layout='texture'] {
+  &[data-layout="texture"] {
     background-color: $color-surface-inverse;
     background-image: linear-gradient($color-surface-default 1px, transparent 0),
       linear-gradient(90deg, $color-surface-default 1px, transparent 0);

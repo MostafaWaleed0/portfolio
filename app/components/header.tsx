@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { List, Logo } from '@/components/icons';
-import { useTheme } from 'next-themes';
-import Link from 'next/link';
-import { useState } from 'react';
-import useSound from 'use-sound';
-import click from '/public/audio/click.mp3';
+import { List, Logo } from "@/components/icons";
+import { useTheme } from "next-themes";
+import Link from "next/link";
+import { useState } from "react";
+import useSound from "use-sound";
+import click from "/public/audio/click.mp3";
 
 export function Header() {
   const { resolvedTheme, setTheme } = useTheme();
@@ -13,7 +13,7 @@ export function Header() {
   const [visible, setVisible] = useState(false);
 
   const toggleTheme = () => {
-    setTheme(resolvedTheme === 'light' ? 'dark' : 'light');
+    setTheme(resolvedTheme === "light" ? "dark" : "light");
     play();
   };
 
@@ -85,7 +85,7 @@ export function Header() {
               className="[ site-head__theme-toggle ] [ margin-inline-start-400 ]"
               onClick={toggleTheme}
               aria-label={`Switch to ${
-                resolvedTheme === 'dark' ? 'light' : 'dark'
+                resolvedTheme === "dark" ? "light" : "dark"
               } Theme`}
             ></button>
           </div>

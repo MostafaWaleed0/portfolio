@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import emailjs from '@emailjs/browser';
-import { useRef, useState } from 'react';
-import { validate } from './validate';
+import emailjs from "@emailjs/browser";
+import { useRef, useState } from "react";
+import { validate } from "./validate";
 
 interface IValues {
   name: string;
@@ -18,11 +18,11 @@ export function Form() {
   const form = useRef<any>();
   const [success, setSuccess] = useState(false);
   const [values, setValues] = useState<IValues>({
-    name: '',
-    email: '',
-    job: '',
-    deadline: '',
-    details: ''
+    name: "",
+    email: "",
+    job: "",
+    deadline: "",
+    details: "",
   });
   const [errors, setErrors] = useState<IErrors>({});
   const [loading, setLoading] = useState(false);
@@ -41,15 +41,15 @@ export function Form() {
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
         form.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string,
       )
       .then(() => {
         setValues({
-          name: '',
-          email: '',
-          job: '',
-          deadline: '',
-          details: ''
+          name: "",
+          email: "",
+          job: "",
+          deadline: "",
+          details: "",
         });
       });
 
@@ -60,11 +60,11 @@ export function Form() {
   const handleChange = (
     e:
       | React.ChangeEvent<HTMLInputElement>
-      | React.ChangeEvent<HTMLTextAreaElement>
+      | React.ChangeEvent<HTMLTextAreaElement>,
   ) => {
     setValues((prevInput) => ({
       ...prevInput,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
 
@@ -177,10 +177,10 @@ function Input({
         autoComplete="off"
         spellCheck="false"
         aria-required="true"
-        {...(booleanError ? variableAttribute : '')}
+        {...(booleanError ? variableAttribute : "")}
         {...props}
       />
-      {booleanError && <p id={`${id}_error`}>*{error ? error : ''}</p>}
+      {booleanError && <p id={`${id}_error`}>*{error ? error : ""}</p>}
     </>
   );
 }
@@ -214,9 +214,9 @@ function TextArea({
         rows={10}
         spellCheck="false"
         autoComplete="off"
-        {...(booleanError ? variableAttribute : '')}
+        {...(booleanError ? variableAttribute : "")}
       ></textarea>
-      {booleanError && <p id={`${id}_error`}>*{error ? error : ''}</p>}
+      {booleanError && <p id={`${id}_error`}>*{error ? error : ""}</p>}
     </>
   );
 }

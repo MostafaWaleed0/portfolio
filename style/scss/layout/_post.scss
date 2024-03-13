@@ -1,6 +1,6 @@
-@use '../abstracts/breakpoint' as *;
-@use '../abstracts/tokens/tokens' as *;
-@use '../abstracts/function' as *;
+@use "../abstracts/breakpoint" as *;
+@use "../abstracts/tokens/tokens" as *;
+@use "../abstracts/function" as *;
 
 .post {
   --flow-space: var(--space-500);

@@ -1,10 +1,10 @@
-import type { Metadata } from 'next/types';
-import { Form } from './form';
+import type { Metadata } from "next/types";
+import { Form } from "./form";
 
 export const metadata: Metadata = {
-  title: 'Contact',
+  title: "Contact",
   description:
-    "If you want to know more about me or my work, I'll be happy to answer questions and share what I'm up to. You can contact me directly through the contact form."
+    "If you want to know more about me or my work, I'll be happy to answer questions and share what I'm up to. You can contact me directly through the contact form.",
 };
 
 export default function ContactPage() {

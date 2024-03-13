@@ -39,7 +39,7 @@ html[data-theme='dark'] {
 Make sure your document semantics are correct and include the necessary meta tags for a clean HTML structure.
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
@@ -88,7 +88,9 @@ Sure! For the `.theme-toggle` button, let's add style to improve both its aesthe
   border-radius: 9999px;
   box-shadow: inset -15px -13px 3px -2px var(--toggle-moon);
   background-color: var(--toggle-sun);
-  transition: background-color 0.5s ease, box-shadow 0.5s ease;
+  transition:
+    background-color 0.5s ease,
+    box-shadow 0.5s ease;
 }
 ```
 
@@ -106,23 +108,23 @@ We need to give the user a way to toggle between themes after we've defined them
 
 ```js
 // Toggle between light and dark themes when the theme toggle button is clicked
-const themeToggle = document.querySelector('.theme-toggle');
-themeToggle.addEventListener('click', toggleTheme);
+const themeToggle = document.querySelector(".theme-toggle");
+themeToggle.addEventListener("click", toggleTheme);
 
 function toggleTheme() {
-  const html = document.querySelector('html');
-  const currentTheme = html.getAttribute('data-theme');
+  const html = document.querySelector("html");
+  const currentTheme = html.getAttribute("data-theme");
 
-  if (currentTheme === 'dark') {
-    setTheme('light');
+  if (currentTheme === "dark") {
+    setTheme("light");
   } else {
-    setTheme('dark');
+    setTheme("dark");
   }
 }
 
 function setTheme(theme) {
-  const html = document.querySelector('html');
-  html.setAttribute('data-theme', theme);
+  const html = document.querySelector("html");
+  html.setAttribute("data-theme", theme);
 }
 ```
 

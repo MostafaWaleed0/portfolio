@@ -1,12 +1,12 @@
-const { withContentlayer } = require('next-contentlayer');
+const { withContentlayer } = require('next-contentlayer')
 
 const nextConfig = {
   experimental: {
     ppr: true
   },
 
-  webpack(config, options) {
-    const { isServer } = options;
+  webpack (config, options) {
+    const { isServer } = options
     config.module.rules.push({
       test: /\.(ogg|mp3|wav|mpe?g)$/i,
       exclude: config.exclude,
@@ -23,20 +23,20 @@ const nextConfig = {
           }
         }
       ]
-    });
+    })
 
-    return config;
+    return config
   },
 
-  headers() {
+  headers () {
     return [
       {
         source: '/(.*)',
         headers: securityHeaders
       }
-    ];
+    ]
   }
-};
+}
 
 const ContentSecurityPolicy = `
     default-src 'self' vercel.live;
@@ -47,7 +47,7 @@ const ContentSecurityPolicy = `
     connect-src *;
     font-src 'self' data:;
     frame-src 'self' vercel.live;
-`;
+`
 
 const securityHeaders = [
   {
@@ -78,6 +78,6 @@ const securityHeaders = [
     key: 'Permissions-Policy',
     value: 'camera=(), microphone=(), geolocation=()'
   }
-];
+]
 
-module.exports = withContentlayer(nextConfig);
+module.exports = withContentlayer(nextConfig)

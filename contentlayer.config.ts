@@ -1,21 +1,21 @@
-import { defineDocumentType, makeSource } from 'contentlayer/source-files';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypeCodeTitles from 'rehype-code-titles';
-import rehypePrism from 'rehype-prism-plus';
-import rehypeSlug from 'rehype-slug';
+import { defineDocumentType, makeSource } from "contentlayer/source-files";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeCodeTitles from "rehype-code-titles";
+import rehypePrism from "rehype-prism-plus";
+import rehypeSlug from "rehype-slug";
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 
-const computedFields: import('contentlayer/source-files').ComputedFields = {
+const computedFields: import("contentlayer/source-files").ComputedFields = {
   slug: {
-    type: 'string',
-    resolve: (doc) => doc._raw.flattenedPath
+    type: "string",
+    resolve: (doc) => doc._raw.flattenedPath,
   },
   structuredData: {
-    type: 'mdx',
+    type: "mdx",
     resolve: (doc) => ({
-      '@context': 'https://schema.org',
-      '@type': 'BlogPosting',
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
       headline: doc.title,
       datePublished: doc.date,
       dateModified: doc.date,
@@ -24,45 +24,45 @@ const computedFields: import('contentlayer/source-files').ComputedFields = {
       image: `https://mostafawaleed.me${doc.banner}`,
       url: `https://mostafawaleed.me/blog/${doc._raw.flattenedPath}`,
       author: {
-        '@type': 'Person',
-        name: 'Mostafa Waleed'
-      }
-    })
-  }
+        "@type": "Person",
+        name: "Mostafa Waleed",
+      },
+    }),
+  },
 };
 
 export const Post = defineDocumentType(() => ({
-  name: 'Post',
+  name: "Post",
   filePathPattern: `**/*.mdx`,
-  contentType: 'mdx',
+  contentType: "mdx",
   fields: {
     title: {
-      type: 'string',
-      required: true
+      type: "string",
+      required: true,
     },
     date: {
-      type: 'string',
-      required: true
+      type: "string",
+      required: true,
     },
     description: {
-      type: 'string',
-      required: true
+      type: "string",
+      required: true,
     },
     tags: {
-      type: 'list',
-      of: { type: 'string' },
-      required: true
+      type: "list",
+      of: { type: "string" },
+      required: true,
     },
     banner: {
-      type: 'string',
-      required: true
-    }
+      type: "string",
+      required: true,
+    },
   },
-  computedFields
+  computedFields,
 }));
 
 export default makeSource({
-  contentDirPath: 'content',
+  contentDirPath: "content",
   documentTypes: [Post],
   mdx: {
     rehypePlugins: [
@@ -72,12 +72,12 @@ export default makeSource({
       [
         rehypeAutolinkHeadings,
         {
-          behavior: 'wrap',
+          behavior: "wrap",
           properties: {
-            className: ['anchor']
-          }
-        }
-      ]
-    ]
-  }
+            className: ["anchor"],
+          },
+        },
+      ],
+    ],
+  },
 } as any);

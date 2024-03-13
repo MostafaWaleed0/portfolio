@@ -1,7 +1,7 @@
 // Declarations for modules without types
-declare module 'next-themes';
+declare module "next-themes";
 
-declare module '*.mp3' {
+declare module "*.mp3" {
   const content: string;
   export default content;
 }

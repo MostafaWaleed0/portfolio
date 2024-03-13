@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { Star } from '@/components/icons';
-import { GET_PINNED_REPOS, client } from '@/lib/apollo-client';
-import { ApolloProvider, useQuery } from '@apollo/client';
+import { Star } from "@/components/icons";
+import { GET_PINNED_REPOS, client } from "@/lib/apollo-client";
+import { ApolloProvider, useQuery } from "@apollo/client";
 
 type PinnedReposType = {
   user: {
@@ -33,19 +33,19 @@ type PinnedReposType = {
 
 function Cards({ username }: { username: string }) {
   const { loading, error, data } = useQuery<PinnedReposType>(GET_PINNED_REPOS, {
-    variables: { username }
+    variables: { username },
   });
 
   if (loading)
     return (
-      <div className="flex-row" style={{ height: '300px' }}>
+      <div className="flex-row" style={{ height: "300px" }}>
         <h3 className="margin-auto">Loading...</h3>
       </div>
     );
 
   if (error)
     return (
-      <div className="flex-row" style={{ height: '300px' }}>
+      <div className="flex-row" style={{ height: "300px" }}>
         <h3 className="text-warring margin-auto">{error.message}</h3>
       </div>
     );
@@ -60,7 +60,7 @@ function Cards({ username }: { username: string }) {
           description,
           stargazers,
           primaryLanguage,
-          repositoryTopics
+          repositoryTopics,
         }) => {
           return (
             <li className="[ card ] [ flow ] [ bg-default ]" key={id}>
@@ -91,7 +91,7 @@ function Cards({ username }: { username: string }) {
                   <span
                     className="card-foot__language-color"
                     style={{
-                      backgroundColor: primaryLanguage.color
+                      backgroundColor: primaryLanguage.color,
                     }}
                   ></span>
                   {primaryLanguage.name}
@@ -111,7 +111,7 @@ function Cards({ username }: { username: string }) {
               </footer>
             </li>
           );
-        }
+        },
       )}
     </ol>
   );
