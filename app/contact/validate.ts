@@ -2,7 +2,7 @@ const checkInput = (validate: string) => !validate || validate.trim() === '';
 
 const testInput = (reg: RegExp, validate: string) => !reg.test(validate);
 
-const checkLength = (validate: string, num: number = 1000) =>
+const checkLength = (validate: string, num = 1000) =>
   validate.length > num;
 
 export const validate = ({
