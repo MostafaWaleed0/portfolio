@@ -1,5 +1,5 @@
-@use '../abstracts/' as *;
-@use '../abstracts/tokens/tokens' as *;
+@use "../abstracts/" as *;
+@use "../abstracts/tokens/tokens" as *;
 
 .site-head {
   padding-block: var(--space-300);
@@ -38,7 +38,7 @@
         background-color: $color-page-background;
         padding: var(--space-300);
 
-        &[data-visible='false'] {
+        &[data-visible="false"] {
           display: none;
         }
 

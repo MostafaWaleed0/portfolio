@@ -25,7 +25,7 @@ Here's an example of how you can use `Object.prototype.hasOwnProperty.call`:
 
 ```js
 let obj = Object.create(null);
-console.log(Object.prototype.hasOwnProperty.call(obj, 'propertyName')); // false
+console.log(Object.prototype.hasOwnProperty.call(obj, "propertyName")); // false
 ```
 
 In this example, `Object.prototype.hasOwnProperty.call` is used to check if the property `propertyName` exists on `obj`. Since `obj` does not have a `propertyName` property, the result is `false`.

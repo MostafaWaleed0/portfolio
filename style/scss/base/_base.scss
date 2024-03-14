@@ -1,4 +1,4 @@
-@use '../abstracts/tokens/tokens' as *;
+@use "../abstracts/tokens/tokens" as *;
 
 body {
   display: grid;
@@ -22,12 +22,12 @@ main {
   outline-offset: 0.2rem;
 }
 
-[tabindex='-1'] {
+[tabindex="-1"] {
   outline: 0;
 }
 
-ul[role='list'],
-ol[role='list'] {
+ul[role="list"],
+ol[role="list"] {
   padding: 0;
   margin-bottom: 0;
 }

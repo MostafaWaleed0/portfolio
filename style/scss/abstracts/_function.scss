@@ -1,4 +1,4 @@
-@use 'sass:math';
+@use "sass:math";
 
 // =====================================================================|
 // == Source: https://css-tricks.com/snippets/sass/px-to-em-functions/
@@ -6,9 +6,9 @@
 
 $browser-context: 16;
 @function rem($pixels, $context: $browser-context) {
- @return math.div($pixels, $context) * 1rem;
+  @return math.div($pixels, $context) * 1rem;
 }
 
 @function em($pixels, $context: $browser-context) {
- @return math.div($pixels, $context) * 1em;
+  @return math.div($pixels, $context) * 1em;
 }

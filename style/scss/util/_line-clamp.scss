@@ -4,7 +4,7 @@
   -webkit-box-orient: vertical;
 
   @for $line from 1 through 10 {
-    &[data-line='#{$line}'] {
+    &[data-line="#{$line}"] {
       -webkit-line-clamp: $line;
     }
   }

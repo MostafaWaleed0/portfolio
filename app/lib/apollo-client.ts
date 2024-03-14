@@ -1,4 +1,4 @@
-import { ApolloClient, InMemoryCache, HttpLink, gql } from '@apollo/client';
+import { ApolloClient, InMemoryCache, HttpLink, gql } from "@apollo/client";
 
 const GET_PINNED_REPOS = gql`
   query GetPinnedRepos($username: String!) {
@@ -34,11 +34,11 @@ const GET_PINNED_REPOS = gql`
 const client = new ApolloClient({
   cache: new InMemoryCache(),
   link: new HttpLink({
-    uri: 'https://api.github.com/graphql',
+    uri: "https://api.github.com/graphql",
     headers: {
-      authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_ACCESS_TOKEN}`
-    }
-  })
+      authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_ACCESS_TOKEN}`,
+    },
+  }),
 });
 
 export { client, GET_PINNED_REPOS };

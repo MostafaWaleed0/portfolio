@@ -1,9 +1,9 @@
-import { Time } from '@/components/time';
-import { sortPosts } from '@/lib/sort';
-import { allPosts } from 'contentlayer/generated';
-import Image from 'next/image';
-import Link from 'next/link';
-import { GitHubCards } from '@/components/github-cards';
+import { Time } from "@/components/time";
+import { sortPosts } from "@/lib/sort";
+import { allPosts } from "contentlayer/generated";
+import Image from "next/image";
+import Link from "next/link";
+import { GitHubCards } from "@/components/github-cards";
 
 export default function Page() {
   return (
@@ -12,7 +12,7 @@ export default function Page() {
         <div className="[ headline ] [ flow ]">
           <h1>Hi👋, I&rsquo;m Mostafa.</h1>
           <p>
-            I'm an Egypt-based{' '}
+            I'm an Egypt-based{" "}
             <strong className="text-primary-600">front-end developer</strong>. I
             find joy in proble­ms solving and building web projects. I also pen
             down my thoughts about the­ web on my <Link href="/blog">blog</Link>
@@ -45,7 +45,7 @@ export default function Page() {
                           width={500}
                           height={300}
                           className="card__image"
-                          alt={''}
+                          alt={""}
                         />
                         <div className="card__inner">
                           <Link href={`blog/${slug}`} className="card__link">

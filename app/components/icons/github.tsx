@@ -1,4 +1,4 @@
-import { SVGProps } from 'react';
+import { SVGProps } from "react";
 
 const Github = (props: SVGProps<SVGSVGElement>) => (
   <svg

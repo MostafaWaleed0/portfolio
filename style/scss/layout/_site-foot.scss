@@ -1,5 +1,5 @@
-@use '../abstracts/' as *;
-@use '../abstracts/tokens/tokens' as *;
+@use "../abstracts/" as *;
+@use "../abstracts/tokens/tokens" as *;
 
 .site-foot {
   --region-padding: var(--space-400);
