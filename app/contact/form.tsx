@@ -151,7 +151,7 @@ function Input({
   type,
   id,
   error,
-  variablePropName = `aria-describedby`,
+  variablePropName = "aria-describedby",
   variablePropValue = `${id}_error`,
   ...props
 }: {
@@ -189,7 +189,7 @@ function TextArea({
   id,
   label,
   error,
-  variablePropName = `aria-describedby`,
+  variablePropName = "aria-describedby",
   variablePropValue = `${id}_error`,
   ...props
 }: {
