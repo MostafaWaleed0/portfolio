@@ -1,5 +1,3 @@
-# mostafawaleed.me 🤖
-
 ## Getting Started
 
 ### Prerequisites
