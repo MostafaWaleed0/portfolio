@@ -24,11 +24,9 @@
     "rehype-code-titles": "1.2.0",
     "rehype-prism-plus": "^1.6.3",
     "rehype-slug": "6.0.0",
-    "file-loader": "^6.2.0",
     "rss": "^1.2.2",
     "sass": "^1.77.1",
     "typescript": "5.3.3",
-    "use-sound": "^4.0.1",
-    "url-loader": "^4.1.1"
+    "use-sound": "^4.0.1"
   }
 }

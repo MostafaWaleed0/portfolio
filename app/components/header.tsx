@@ -5,11 +5,10 @@ import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import { useState } from 'react';
 import useSound from 'use-sound';
-import click from '/public/audio/click.mp3';
 
 export function Header() {
   const { resolvedTheme, setTheme } = useTheme();
-  const [play] = useSound(click);
+  const [play] = useSound('/audio/click.mp3');
   const [visible, setVisible] = useState(false);
 
   const toggleTheme = () => {
