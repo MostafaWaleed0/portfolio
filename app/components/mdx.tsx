@@ -1,3 +1,5 @@
+'use client';
+import { MDXRemote } from 'next-mdx-remote';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -34,14 +36,23 @@ function CustomPre(props) {
   const className = props.className;
 
   return (
-    <pre className={className} data-lang={className.replace(/language-/i, '')}>
+    <pre className={className} data-lang={className?.replace(/language-/i, '')}>
       {props.children}
     </pre>
   );
 }
 
-export const MDXComponents = {
+let components = {
   a: CustomLink,
   Image: CustomImage,
   pre: CustomPre
 };
+
+export function CustomMDX(props) {
+  return (
+    <MDXRemote
+      {...props}
+      components={{ ...components, ...(props.components || {}) }}
+    />
+  );
+}

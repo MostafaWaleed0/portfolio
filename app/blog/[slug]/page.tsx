@@ -1,26 +1,22 @@
-import { MDXComponents } from '@/components/mdx';
+import { CustomMDX } from '@/components/mdx';
 import { Time } from '@/components/time';
-import { allPosts } from 'contentlayer/generated';
-import { useMDXComponent } from 'next-contentlayer/hooks';
+import { getBlogPosts } from '@/lib/blog';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next/types';
-
-export async function generateStaticParams() {
-  return allPosts.map((post) => ({
-    slug: post.slug
-  }));
-}
 
 export async function generateMetadata({
   params
 }): Promise<Metadata | undefined> {
-  const post = allPosts.find((post) => post.slug === params.slug);
+  const post = (await getBlogPosts()).find((post) => post.slug === params.slug);
 
   if (!post) {
     return;
   }
 
-  const { slug, title, description, banner, date, tags } = post;
+  const {
+    slug,
+    metadata: { title, description, banner, date, tags }
+  } = post;
 
   const ogImage = `https://mostafawaleed.me${banner}`;
   const url = `https://mostafawaleed.me/blog/${slug}`;
@@ -51,27 +47,25 @@ export async function generateMetadata({
   };
 }
 
-export default function PostPage({ params }) {
-  const post = allPosts.find((post) => post.slug === params.slug);
+export default async function PostPage({ params }) {
+  let post = (await getBlogPosts()).find((post) => post.slug === params.slug);
 
   if (!post) {
     notFound();
   }
 
-  const MDXContent = useMDXComponent(post.body.code);
-
   return (
     <article className="[ wrapper flow ] [ region ]">
       <header className="headline" data-align="center">
-        <h1>{post.title}</h1>
+        <h1>{post.metadata.title}</h1>
         <div className="measure-short margin-inline-auto">
           <div
             className="[ cluster ] [ flex-wrap ] [ margin-block-start-500 ]"
             data-align="between"
           >
-            <Time time={post.date} />
+            <Time time={post.metadata.date} />
             <ul className="flex-row" role="list">
-              {post.tags.map((tag) => (
+              {post.metadata.tags.map((tag) => (
                 <li key={tag} className="[ pill ] [ margin-inline-end-100 ]">
                   {tag}
                 </li>
@@ -82,7 +76,7 @@ export default function PostPage({ params }) {
       </header>
       <div className="[ post ] [ flow ]">
         <hr />
-        <MDXContent components={{ ...MDXComponents }} />
+        <CustomMDX {...post.content} />
       </div>
     </article>
   );

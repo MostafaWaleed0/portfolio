@@ -1,10 +1,4 @@
-const { withContentlayer } = require('next-contentlayer');
-
 const nextConfig = {
-  experimental: {
-    ppr: true
-  },
-
   headers() {
     return [
       {
@@ -57,4 +51,4 @@ const securityHeaders = [
   }
 ];
 
-module.exports = withContentlayer(nextConfig);
+module.exports = nextConfig;

@@ -1,10 +1,12 @@
+import { getBlogPosts } from '@/lib/blog';
 import { sortPosts } from '@/lib/sort';
-import { allPosts } from 'contentlayer/generated';
 
 export default async function sitemap() {
-  const posts = sortPosts(allPosts).map((post) => ({
-    url: `https://mostafawaleed.me/blog/${post.slug}`,
-    lastModified: post.date
+  let allPosts = await getBlogPosts();
+
+  const posts = sortPosts(allPosts).map(({ slug, metadata }) => ({
+    url: `https://mostafawaleed.me/blog/${slug}`,
+    lastModified: metadata.date
   }));
 
   const routes = ['', 'blog', 'contact'].map((route) => ({

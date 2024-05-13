@@ -1,7 +1,7 @@
-import { Post } from 'contentlayer/generated';
-
-export function sortPosts(array: Post[]) {
+export function sortPosts(array) {
   return array.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    (a, b) =>
+      new Date(b?.metadata?.date).getTime() -
+      new Date(a?.metadata?.date).getTime()
   );
 }

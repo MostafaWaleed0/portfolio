@@ -34,7 +34,6 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ## Built With
 
 - **Framework**: [Next.js](https://nextjs.org/)
-- **Content SDK**: [Contentlayer](https://contentlayer.dev/)
 - **Deployment**: [Vercel](https://vercel.com)
 - **Styling**: [Sass](https://sass-lang.com/)
 - **Analytics**: [Vercel Analytics](https://vercel.com/analytics)
