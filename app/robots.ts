@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/'
     },
-    host: 'https://mostafawaleed.me',
-    sitemap: 'https://mostafawaleed.me/sitemap.xml'
+    host: 'https://mwtech.vercel.app',
+    sitemap: 'https://mwtech.vercel.app/sitemap.xml'
   };
 }

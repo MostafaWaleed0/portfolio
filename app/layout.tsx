@@ -60,7 +60,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://mostafawaleed.me'),
+  metadataBase: new URL('https://mwtech.vercel.app'),
   title: {
     default: 'Mostafa Waleed',
     template: '%s - Mostafa Waleed'
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     title: 'Mostafa Waleed',
     description:
       'Mostafa Waleed, a seasoned freelance web developer based in Egypt.',
-    url: 'https://mostafawaleed.me',
+    url: 'https://mwtech.vercel.app',
     siteName: 'Mostafa Waleed',
     locale: 'en_US',
     type: 'website'

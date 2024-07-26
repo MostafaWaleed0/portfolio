@@ -18,8 +18,8 @@ export async function generateMetadata({
     metadata: { title, description, banner, date, tags }
   } = post;
 
-  const ogImage = `https://mostafawaleed.me${banner}`;
-  const url = `https://mostafawaleed.me/blog/${slug}`;
+  const ogImage = `https://mwtech.vercel.app${banner}`;
+  const url = `https://mwtech.vercel.app/blog/${slug}`;
 
   return {
     title,

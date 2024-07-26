@@ -9,16 +9,16 @@ export async function GET() {
 
   const feed = new RSS({
     title: 'Mostafa Waleed',
-    site_url: 'https://mostafawaleed.me',
-    feed_url: 'https://mostafawaleed.me/rss.xml',
+    site_url: 'https://mwtech.vercel.app',
+    feed_url: 'https://mwtech.vercel.app/rss.xml',
     language: 'en_US',
-    image_url: 'https://mostafawaleed.me/favicon.ico'
+    image_url: 'https://mwtech.vercel.app/favicon.ico'
   });
 
   sortPosts(allPosts).map(({ slug, metadata }) => {
     feed.item({
       title: metadata.title,
-      url: `https://mostafawaleed.me/blog/${slug}`,
+      url: `https://mwtech.vercel.app/blog/${slug}`,
       date: metadata.date,
       description: metadata.description,
       categories: metadata.tags
