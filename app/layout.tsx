@@ -99,8 +99,8 @@ export const metadata: Metadata = {
   },
   manifest: '/manifest.webmanifest',
   verification: {
-    google: 'yNRfmqiqqj1EekI2rFHjrJoFVnx6zJTisszEIeWGf9Y',
-    yandex: '14d8968c6df31e01',
+    google: '3Ie9_BMzfU7i6S_Jrt7ckAL6MgcW5fmVc8m-RldvYzg',
+    yandex: '146231e50e9ee800',
     other: {
       'msvalidate.01': '7C327BDC039D585E5C712E44FBB3FFFD'
     }
