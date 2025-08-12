@@ -9,13 +9,25 @@ tags:
   - design
 ---
 
-The color scheme used when creating a website or application is one of the most crucial elements of web development. The general appearance and feel of the interface can be greatly influenced by a decent color scheme. In order to reduce eye fatigue and improve readability, many users favor a dark theme. Offering users the ability to switch between light and dark modes is essential as a result.
+Colors aren’t just decoration — they shape how a website feels and how usable it is. Light and dark themes can completely change that experience. Some people like the brightness, others prefer the comfort of a darker interface, and many want the choice. With Sass, we can make switching between them effortless, and in this guide, we’ll build a simple theme toggle that works instantly.
 
-In this tutorial, we'll examine at how to use Sass to create a theme toggle. Sass is a powerful preprocessor that allows for the creation of modular and reusable CSS. We can create a theme option much more quickly by using Sass.
+---
 
-## Setting up the Colors
+## Why Sass?
 
-Let's take a minute to understand how the color scheme is structured before we start writing the code. We have two different color schemes in the code, `$light-theme`, and `$dark-theme`. Both of these themes contain a `primary` and `neutral` color palette.
+I’ve used plain CSS variables, Tailwind, and even JS-based styling solutions for theming. But Sass has always had a special place in my heart. It’s stable, expressive, and makes writing modular, reusable styles a breeze.
+
+For this project, Sass gave me exactly what I needed:
+
+- A way to organize my colors into logical palettes.
+- Loops and maps to generate CSS variables automatically.
+- The flexibility to switch entire themes with minimal code duplication.
+
+---
+
+## Setting the Stage: My Color Palettes
+
+Before I wrote a single line of JavaScript, I thought about my colors. I didn’t want to sprinkle hex codes across my styles like confetti. Instead, I created two Sass maps: one for light mode, and one for dark mode.
 
 ```scss:scss/abstracts/_colors.scss
 $light-theme: (
@@ -24,15 +36,15 @@ $light-theme: (
     '400': #ff85dc
   ),
   'neutral': (
-    '100': '#f7f7f7',
-    '200': '#e6e9ee',
-    '300': '#dde0e4',
-    '400': '#818890',
-    '500': '#535661',
-    '600': '#4b4c53',
-    '700': '#3a3d4a',
-    '800': '#2e3039',
-    '900': '#1f2028'
+    '100': #f7f7f7,
+    '200': #e6e9ee,
+    '300': #dde0e4,
+    '400': #818890,
+    '500': #535661,
+    '600': #4b4c53,
+    '700': #3a3d4a,
+    '800': #2e3039,
+    '900': #1f2028
   )
 );
 
@@ -42,103 +54,98 @@ $dark-theme: (
     '400': #ff85dc
   ),
   'neutral': (
-    '900': '#f7f7f7',
-    '800': '#e6e9ee',
-    '700': '#dde0e4',
-    '600': '#818890',
-    '500': '#535661',
-    '400': '#4b4c53',
-    '300': '#3a3d4a',
-    '200': '#2e3039',
-    '100': '#1f2028'
+    '900': #f7f7f7,
+    '800': #e6e9ee,
+    '700': #dde0e4,
+    '600': #818890,
+    '500': #535661,
+    '400': #4b4c53,
+    '300': #3a3d4a,
+    '200': #2e3039,
+    '100': #1f2028
   )
 );
 ```
 
-Two shades of pink, represented by the values `600` and `400`, can be found in the `primary` color palette. These colors can be used to focus on important components like buttons, links, etc.
+I kept things simple: two shades of pink for my “primary” color (buttons, highlights, links) and a range of grays for “neutral” colors (backgrounds, text).
+By defining them this way, I could swap the whole theme without touching every single CSS rule.
 
-From light to dark, there are nine different shades in the `neutral` color palette. These shades can be applied to text colors, background colors, and other design components.
+---
 
-## Creating the CSS Variables
+## Generating CSS Variables Automatically
 
-To start creating the theme toggle, define the CSS variables that will hold the color values. A `@each` loop that iterates over the color and shade values in the variable `$active-theme` can be used to do this. The `$active-theme` variable refers to either the `$light-theme` or the `$dark-theme`, depending on the current theme.
-
-For each color and shade, we can create a CSS variable using the `--clr-#{$color}-#{$prop}` naming convention. The `#{$color}` and `#{$prop}` placeholders will be replaced with the actual color and shade values during compilation.
+This is where Sass really shines. I didn’t want to write `--clr-neutral-100` by hand nine times. Instead, I let Sass loop through my theme map and generate them for me.
 
 ```scss:scss/base/_root.scss
 :root {
   $active-theme: $light-theme;
 
-  @each $color, $shade in $active-theme {
-    @each $prop, $value in $shade {
-      --clr-#{$color}-#{$prop}: #{$value};
+  @each $color, $shades in $active-theme {
+    @each $shade, $value in $shades {
+      --clr-#{$color}-#{$shade}: #{$value};
     }
   }
 }
 ```
 
-This code uses the `:root` selector to define our CSS variables for each color and shade in the active theme. We loop over the color and shade values in the variable `$active-theme` using the `@each` function. For each color and shade, we create a CSS variable using the `--clr-#{$color}-#{$prop}` naming convention. During compilation, the placeholder values for `#{$color}` and `#{$prop}` are replaced with the actual color and shade values.
+At this point, all my colors lived as CSS variables. My light theme was the default, but that was about to change.
 
-## Switching Themes
+---
 
-Now that we have our CSS variables defined, we can switch between the light and dark themes using a data attribute on the `html` element. To do this, we'll use another `@each` loop to iterate over the colors and shades in the `$dark-theme` and `$light-theme` variables.
+## The Magic of Theme Switching
 
-Then, we'll use the `html[data-theme='dark']` selector to apply the color values of the dark theme to the appropriate CSS variables. The `:root` selector's values will use by default to the `html` element.
+Switching themes was just a matter of swapping variables at the `html` level. Sass made this ridiculously clean:
 
 ```scss:scss/base/_root.scss
-:root {
-  $active-theme: $light-theme;
-
-  @each $color, $shade in $active-theme {
-    @each $prop, $value in $shade {
-      --clr-#{$color}-#{$prop}: #{$value};
-    }
-  }
-}
-
 html[data-theme='dark'] {
-  @each $color, $shade in $dark-theme {
-    @each $prop, $value in $shade {
-      --clr-#{$color}-#{$prop}: #{$value};
+  @each $color, $shades in $dark-theme {
+    @each $shade, $value in $shades {
+      --clr-#{$color}-#{$shade}: #{$value};
     }
   }
 }
 ```
 
-Now we can repeat this process for the light theme by changing the selector to `html[data-theme='light']`.
+The beauty of this approach? I didn’t have to rewrite my styles at all. Whether I was styling a card background or text, I just used the variables:
 
-## Toggling the Themes
+```scss
+background-color: var(--clr-neutral-100);
+```
 
-We need to give the user a way to toggle between themes after we've defined them. JavaScript will be used to toggle the `data-theme` attribute on the `html` element in order to do this. We can listen for a click event on a toggle switch element and toggle the attribute accordingly.
+Light theme or dark theme—it didn’t matter. The variables handled the heavy lifting.
+
+---
+
+## Adding the Toggle (A Bit of JavaScript)
+
+Of course, all of this was useless without a way to actually toggle the theme. Enter JavaScript:
 
 ```js
-// Toggle between light and dark themes when the theme toggle button is clicked
 const themeToggle = document.querySelector('.theme-toggle');
 themeToggle.addEventListener('click', toggleTheme);
 
 function toggleTheme() {
-  const html = document.querySelector('html');
+  const html = document.documentElement;
   const currentTheme = html.getAttribute('data-theme');
 
-  if (currentTheme === 'dark') {
-    setTheme('light');
-  } else {
-    setTheme('dark');
-  }
+  setTheme(currentTheme === 'dark' ? 'light' : 'dark');
 }
 
 function setTheme(theme) {
-  const html = document.querySelector('html');
-  html.setAttribute('data-theme', theme);
+  document.documentElement.setAttribute('data-theme', theme);
 }
 ```
 
-This code selects an element in the Document Object Model (DOM) with a class of `theme-toggle` and adds a click event listener to it. When the button is clicked, the `toggleTheme()` function is called.
+No fancy state management. No third-party libraries. Just a click event that flips between `data-theme="light"` and `data-theme="dark"`.
 
-The html element is retrieved by the `toggleTheme()` function, which also returns the `data-theme` attribute's current value. Depending on the value of the attribute, it then calls the `setTheme()` function with either `light` or `dark` as an argument.
+---
 
-The `setTheme()` function gets the html element again and sets the value of the `data-theme` attribute to the value passed as an argument. This changes the theme of the page.
+## Reflections
 
-## Conclusion
+I’ve built complex theming systems before—some over-engineered to the point of absurdity. This time, I wanted something clean, understandable, and maintainable. Sass gave me the tools to do exactly that.
 
-In this tutorial, we looked at how to use Sass to create a theme toggle. First, we used variables to define our color schemes, and then we created CSS variables for each color and shade. We then used the `html[data-theme='dark']` and `html[data-theme='light']` selectors to apply the appropriate color values to the CSS variables. The user can now select between light and dark themes by using JavaScript to toggle the `data-theme` attribute on the `html` element.
+Will this theme toggle change the world? Probably not. But it does make my projects more accessible, more pleasant to use, and honestly, more fun to build. And that’s reason enough.
+
+If you’re thinking about adding a theme toggle to your own site, I encourage you to start simple. Organize your colors, use variables, and let your tools do the heavy lifting.
+
+Because sometimes, the best features are the ones that quietly make everything better.
