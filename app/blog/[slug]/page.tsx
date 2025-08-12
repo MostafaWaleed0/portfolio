@@ -1,22 +1,22 @@
-import { CustomMDX } from '@/components/mdx';
 import { Time } from '@/components/time';
-import { getBlogPosts } from '@/lib/blog';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next/types';
 
 export async function generateMetadata({
   params
+}: {
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata | undefined> {
-  const post = (await getBlogPosts()).find((post) => post.slug === params.slug);
+  const { slug } = await params;
+  const { frontmatter: metadata } = await import(
+    `../../../content/${slug}.mdx`
+  );
 
-  if (!post) {
+  if (!metadata) {
     return;
   }
 
-  const {
-    slug,
-    metadata: { title, description, banner, date, tags }
-  } = post;
+  const { title, description, banner, date, tags } = metadata;
 
   const ogImage = `https://mwtech.vercel.app${banner}`;
   const url = `https://mwtech.vercel.app/blog/${slug}`;
@@ -29,13 +29,9 @@ export async function generateMetadata({
       description,
       type: 'article',
       publishedTime: date,
-      url: url,
-      tags: tags,
-      images: [
-        {
-          url: ogImage
-        }
-      ]
+      url,
+      tags,
+      images: [{ url: ogImage }]
     },
     twitter: {
       card: 'summary_large_image',
@@ -47,25 +43,32 @@ export async function generateMetadata({
   };
 }
 
-export default async function PostPage({ params }) {
-  let post = (await getBlogPosts()).find((post) => post.slug === params.slug);
+export default async function PostPage({
+  params
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  let { slug } = await params;
+  const { default: Post, frontmatter: metadata } = await import(
+    `../../../content/${slug}.mdx`
+  );
 
-  if (!post) {
+  if (!Post) {
     notFound();
   }
 
   return (
     <article className="[ wrapper flow ] [ region ]">
       <header className="headline" data-align="center">
-        <h1>{post.metadata.title}</h1>
+        <h1>{metadata.title}</h1>
         <div className="measure-short margin-inline-auto">
           <div
             className="[ cluster ] [ flex-wrap ] [ margin-block-start-500 ]"
             data-align="between"
           >
-            <Time time={post.metadata.date} />
+            <Time time={metadata.date} />
             <ul className="flex-row" role="list">
-              {post.metadata.tags.map((tag) => (
+              {metadata.tags.map((tag: string) => (
                 <li key={tag} className="[ pill ] [ margin-inline-end-100 ]">
                   {tag}
                 </li>
@@ -76,8 +79,9 @@ export default async function PostPage({ params }) {
       </header>
       <div className="[ post ] [ flow ]">
         <hr />
-        <CustomMDX {...post.content} />
+        <Post />
       </div>
     </article>
   );
 }
+export const dynamicParams = false;

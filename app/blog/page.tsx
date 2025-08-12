@@ -1,6 +1,5 @@
 import { Time } from '@/components/time';
 import { getBlogPosts } from '@/lib/blog';
-import { sortPosts } from '@/lib/sort';
 import Link from 'next/link';
 import type { Metadata } from 'next/types';
 
@@ -19,7 +18,7 @@ export default async function BlogPage() {
       <div className="margin-block-start-700">
         <div>
           <ul className="[ post-list ] [ flow ]" role="list">
-            {sortPosts(allPosts).map(({ slug, metadata }) => {
+            {allPosts.map(({ slug, metadata }) => {
               const permalink = slug.replaceAll(' ', '-');
               return (
                 <li className="post-list__item" key={slug}>

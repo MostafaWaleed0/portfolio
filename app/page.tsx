@@ -1,7 +1,6 @@
 import { GitHubCards } from '@/components/github-cards';
 import { Time } from '@/components/time';
 import { getBlogPosts } from '@/lib/blog';
-import { sortPosts } from '@/lib/sort';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -36,39 +35,37 @@ export default async function Page() {
           </header>
           <div className="padding-block-start-200">
             <ol className="auto-grid" role="list">
-              {sortPosts(allPosts)
-                .slice(0, 4)
-                .map(({ slug, metadata }) => {
-                  return (
-                    <li className="card" key={slug}>
-                      <div className="card__item">
-                        <Image
-                          src={metadata.banner}
-                          width={500}
-                          height={300}
-                          className="card__image"
-                          alt={''}
-                        />
-                        <div className="card__inner">
-                          <Link href={`blog/${slug}`} className="card__link">
-                            <h3 className="weight-medium fs-500 margin-block-end-100">
-                              {metadata.title}
-                            </h3>
-                          </Link>
-                          <p
-                            className="[ card__description ] [ line-clamp fs-300 ]"
-                            data-line="6"
-                          >
-                            {metadata.description}
-                          </p>
-                          <p className="card__date">
-                            <Time time={metadata.date} />
-                          </p>
-                        </div>
+              {allPosts.slice(0, 4).map(({ slug, metadata }) => {
+                return (
+                  <li className="card" key={slug}>
+                    <div className="card__item">
+                      <Image
+                        src={metadata.banner}
+                        width={500}
+                        height={300}
+                        className="card__image"
+                        alt={''}
+                      />
+                      <div className="card__inner">
+                        <Link href={`blog/${slug}`} className="card__link">
+                          <h3 className="weight-medium fs-500 margin-block-end-100">
+                            {metadata.title}
+                          </h3>
+                        </Link>
+                        <p
+                          className="[ card__description ] [ line-clamp fs-300 ]"
+                          data-line="6"
+                        >
+                          {metadata.description}
+                        </p>
+                        <p className="card__date">
+                          <Time time={metadata.date} />
+                        </p>
                       </div>
-                    </li>
-                  );
-                })}
+                    </div>
+                  </li>
+                );
+              })}
             </ol>
           </div>
         </div>
