@@ -7,11 +7,15 @@ tags:
   - CSS
 ---
 
-The `:has` pseudo-class, which enables you to select items based on the existence of other elements within them, is one of the most recent additions to CSS. The `:has` pseudo-class will be used instead of the `:contains`, which may be computationally costly and is not commonly supported, as we study the advanced features of the `:has` pseudo-class in this tutorial.
+When I first started learning CSS, I quickly realized there was one thing I couldn’t do: **style a parent element based on what was inside it**.
+If I wanted that, I had to use JavaScript or add extra classes manually.
 
-## The basics of the `:has` pseudo-class
+Then I found the `:has` pseudo-class — and it felt like unlocking a hidden superpower.
+Now CSS can actually _“look inside”_ an element and style it based on its children.
 
-To select items based on the existence of other elements within them, use the `:has` pseudo-class. For instance, the CSS rule that follows selects all `div` elements that include a `a` element:
+## Why It’s a Big Deal
+
+With `:has`, you can style an element if it contains something specific inside it. For example:
 
 ```css
 div:has(a) {
@@ -19,9 +23,9 @@ div:has(a) {
 }
 ```
 
-No matter what the content of the `a` element is, this selects all `div` components that include it.
+Every `<div>` with a link turns red. No scripting, no class juggling.
 
-The `:has` pseudo-class can also be used to select components depending on the attributes or properties of their children. For instance, the following CSS rule selects all `div` elements that include `a` elements with `href` attributes that starts with `https://`:
+You can even target based on attributes:
 
 ```css
 div:has(a[href^="https://"])
@@ -30,11 +34,11 @@ div:has(a[href^="https://"])
 }
 ```
 
-By doing this, all `div` elements that have a `a` element whose `href` attribute starts with `https://` are selected. Other attribute selectors, including `=` for exact matches and `$=` for suffix matches, are also available.
+Now you’re only styling `<div>` elements with secure links.
 
-## Advanced techniques
+## Combining Powers
 
-To use more complex queries, you can combine the `:has` pseudo-class with other selectors. The `:not` pseudo-class, for instance, can be used to select items that don't contain a specific element. When making exceptions to a more general rule, this can be effective.
+The fun starts when you mix it with other selectors. For example:
 
 ```css
 div:not(:has(p)) {
@@ -42,9 +46,9 @@ div:not(:has(p)) {
 }
 ```
 
-With the addition of a border, this selects all `div` elements that do not contain any `p` elements. To create more complicated searches, you can also use `:not` with selectors like `:first-child` or attribute selectors.
+That means “give a border to every div that doesn’t have a paragraph.”
 
-The `:has` pseudo-class can also be used to select elements based on their descendent structure. You can, for instance, select all `li` elements that contain a `a` element, followed by a `span` element:
+Or get really specific:
 
 ```css
 li:has(a + span) {
@@ -52,7 +56,11 @@ li:has(a + span) {
 }
 ```
 
-The `:has` pseudo-class can also be used to select items based on the status of their children. You can select all `label` elements that contain a checked `input` element, for instance:
+That matches list items with a link immediately followed by a span.
+
+## Styling by State
+
+One of my favorite tricks:
 
 ```css
 label:has(input:checked) {
@@ -60,8 +68,10 @@ label:has(input:checked) {
 }
 ```
 
-This selects all `label` elements that contain an `input` element that is checked. If you want to target other states of the `input` element, you can use any other pseudo-class or attribute selector in place of `:checked`.
+That’s all it takes to style a label when its checkbox is checked — no JavaScript listeners needed.
 
-## Conclusion
+## My Take
 
-The computationally expensive `:contains` pseudo-class can be avoided by using the dynamic and complex style provided by the `:has` pseudo-class, which is based on child elements. Advanced CSS techniques can be used to increase CSS proficiency.
+`:has` feels like one of those CSS features we’ll look back on and wonder how we lived without. It keeps styling logic where it belongs — in the CSS — and removes a ton of messy DOM manipulation.
+
+It’s not something I use every day, but when the problem calls for it, it’s elegant, declarative, and surprisingly powerful. If you haven’t played with it yet, spin up a CodePen and see what parent-aware CSS can do for you.
