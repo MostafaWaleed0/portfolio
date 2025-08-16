@@ -1,6 +1,7 @@
 'use client';
 
 import emailjs from '@emailjs/browser';
+import Link from 'next/link';
 import { useRef, useState } from 'react';
 import { validate } from './validate';
 
@@ -77,6 +78,9 @@ export function Form() {
             <p>
               Thank you! I've got your details and will be in touch as soon 😊
             </p>
+            <Link href="/" className="[ flow-space-100 ] [ block ]">
+              Back to Home
+            </Link>
           </div>
         </div>
       ) : (
@@ -151,7 +155,7 @@ function Input({
   type,
   id,
   error,
-  variablePropName = "aria-describedby",
+  variablePropName = 'aria-describedby',
   variablePropValue = `${id}_error`,
   ...props
 }: {
@@ -189,7 +193,7 @@ function TextArea({
   id,
   label,
   error,
-  variablePropName = "aria-describedby",
+  variablePropName = 'aria-describedby',
   variablePropValue = `${id}_error`,
   ...props
 }: {
