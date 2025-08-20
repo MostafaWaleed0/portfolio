@@ -23,7 +23,7 @@ figure,
 blockquote,
 dl,
 dd {
-  margin-block: 0;
+  margin: 0;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -75,7 +75,8 @@ input,
 button,
 textarea,
 select {
-  font: inherit;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 /* Make sure textareas without a rows attribute are not tiny */
