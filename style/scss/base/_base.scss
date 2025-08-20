@@ -6,6 +6,10 @@ body {
   min-height: 100vh;
   background-color: $color-page-background;
   transition: background-color 400ms linear 0s;
+
+  &:has(#primary-navigation[data-visible='true']) {
+    overflow: hidden;
+  }
 }
 
 main {
